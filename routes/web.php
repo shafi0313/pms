@@ -13,9 +13,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+
+Route::prefix('admin')->namespace('Backend')->group(function(){
+    Route::get('/login','AuthController@loginShow')->name('admin.login');
+    Route::post('/login','AuthController@loginProcess');
+    Route::get('/dashboard','DashboardController@index')->name('admin.dashboard');
+
 });
+
+
+
+
 
 Auth::routes();
 
