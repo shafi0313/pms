@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<title>Login || PMS</title>
+	<title>Login | PMS</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
 	<link rel="icon" href="{{ asset('backend/assets/img/icon.ico')}}" type="image/x-icon"/>
 
@@ -25,35 +25,59 @@
 <body class="login">
 	<div class="wrapper wrapper-login">
 		<div class="container container-login animated fadeIn">
-			<h3 class="text-center">Sign In To PMS</h3>
-			<div class="login-form">
-				<div class="form-group form-floating-label">
-					<input id="username" name="username" type="text" class="form-control input-border-bottom" required>
-					<label for="username" class="placeholder">Username</label>
-				</div>
-				<div class="form-group form-floating-label">
-					<input id="password" name="password" type="password" class="form-control input-border-bottom" required>
-					<label for="password" class="placeholder">Password</label>
-					{{-- <div class="show-password">
-						<i class="flaticon-interface"></i>
-					</div> --}}
-				</div>
-				<div class="row form-sub m-0">
-					<div class="custom-control custom-checkbox">
-						<input type="checkbox" class="custom-control-input" id="rememberme">
-						<label class="custom-control-label" for="rememberme">Remember Me</label>
-					</div>
+            <h3 class="text-center">Sign In To PMS</h3>
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
 
-					<a href="#" class="link float-right">Forget Password ?</a>
-				</div>
-				<div class="form-action mb-3">
-					<a href="#" class="btn btn-primary btn-rounded btn-login">Sign In</a>
-				</div>
-				{{-- <div class="login-account">
-					<span class="msg">Don't have an account yet ?</span>
-					<a href="#" id="show-signup" class="link">Sign Up</a>
-				</div> --}}
-			</div>
+            @if(session()->has('message'))
+                <div class="alert alert-{{ session('type') }}">
+                    {{ session('message') }}
+                </div>
+            @endif
+            <form action="{{ route('admin.login') }}" method="post">
+                @csrf
+                <div class="login-form">
+                    <div class="form-group form-floating-label">
+                        <input id="email" name="email" type="text" value="{{ old('email') }}" class="form-control input-border-bottom">
+                        <label for="email" class="placeholder">Username</label>
+                        @if($errors->has('email'))
+                            <span class="text-danger">{{$errors->first('email')}}</span>
+                        @endif
+                    </div>
+                    <div class="form-group form-floating-label">
+                        <input id="password" name="password" type="password" class="form-control input-border-bottom">
+                        <label for="password" class="placeholder">Password</label>
+                        @if($errors->has('password'))
+                            <span class="text-danger">{{$errors->first('password')}}</span>
+                        @endif
+                        {{-- <div class="show-password">
+                            <i class="flaticon-interface"></i>
+                        </div> --}}
+                    </div>
+                    <div class="row form-sub m-0">
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="rememberme">
+                            <label class="custom-control-label" for="rememberme">Remember Me</label>
+                        </div>
+
+                        <a href="#" class="link float-right">Forget Password ?</a>
+                    </div>
+                    <div class="form-action mb-3">
+                        <button type="submit" class="btn btn-primary btn-rounded btn-login">Sign In</button>
+                    </div>
+                    {{-- <div class="login-account">
+                        <span class="msg">Don't have an account yet ?</span>
+                        <a href="#" id="show-signup" class="link">Sign Up</a>
+                    </div> --}}
+                </div>
+            </form>
 		</div>
 
 		<div class="container container-signup animated fadeIn">
@@ -101,3 +125,4 @@
 	<script src="{{ asset('backend/assets/js/ready.js') }}"></script>
 </body>
 </html>
+
