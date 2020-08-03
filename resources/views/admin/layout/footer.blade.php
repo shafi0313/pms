@@ -43,9 +43,9 @@
 
 <!-- Azzara JS -->
 <script src="{{ asset('backend/assets/js/ready.min.js') }}"></script>
-<script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
 <!-- Azzara DEMO methods, don't include it in your project! -->
 <script src="{{ asset('backend/assets/js/setting-demo.js') }}"></script>
 <script src="{{ asset('backend/assets/js/demo.js') }}"></script>
-
-

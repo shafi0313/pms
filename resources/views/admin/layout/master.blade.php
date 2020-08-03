@@ -4,6 +4,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<title>@yield('title') | {{config('app.name')}}</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
+{{-- <meta content='{{csrf_token()}}' name='csrf-token' /> --}}
 	<link rel="icon" href="{{ asset('backend/assets/img/icon.ico') }}" type="image/x-icon"/>
 
 	<!-- Fonts and icons -->
@@ -104,7 +105,6 @@
 @include('admin.layout.footer')
 
 @include('sweetalert::alert')
-
 
 @stack('custom_scripts')
 

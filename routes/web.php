@@ -1,5 +1,5 @@
 <?php
-use RealRashid\SweetAlert\Facades\Alert;
+
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -13,31 +13,31 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-
-
-    toast('Success Toast','success');
-
-
     return view('welcome');
-
-
-
-
-
-
-
 });
 
 
 Route::prefix('admin')->namespace('Backend')->group(function(){
+    Route::resource('/users', 'AuthController');
+
+    // Route::get('/get/users','AuthController@getUser')->name('get.user');
+    // Route::post('/users/store','AuthController@registerStore')->name('admin.registerStore');
+
     Route::get('/login','AuthController@loginShow')->name('admin.login');
-    Route::post('/login','AuthController@loginProcess');
-
-
-    Route::get('/users','AuthController@index')->name('admin.users');
-    Route::post('/users/store','AuthController@registerStore')->name('admin.registerStore');
+    Route::post('/login','AuthController@loginProcess')->name('admin.login');
 
     Route::get('/dashboard','DashboardController@index')->name('admin.dashboard');
+
+    Route::resource('/specialist', 'DoctorSpecialistController');
+    // Route::get('/specialist/destroy/{id}', 'DoctorSpecialistController@destroy');
+
+    // Route::get('/specialist', 'DoctorSpecialistController@index');
+
+    // Route::get('/specialist/create', 'DoctorSpecialistController@create');
+    // Route::post('/specialist/store', 'DoctorSpecialistController@store');
+    // Route::post('/specialist/update', 'DoctorSpecialistController@update');
+
+    Route::resource('/doctor', 'DoctorController');
 
 
 

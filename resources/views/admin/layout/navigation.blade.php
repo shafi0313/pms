@@ -46,68 +46,45 @@
 						<p>Dashboard</p>
 						<span class="badge badge-count">5</span>
 					</a>
-				</li>
+                </li>
+
+
+
 				<li class="nav-section">
 					<span class="sidebar-mini-icon">
 						<i class="fa fa-ellipsis-h"></i>
 					</span>
 					<h4 class="text-section">Components</h4>
-				</li>
-				<li class="nav-item">
-					<a data-toggle="collapse" href="#base">
-						<i class="fas fa-layer-group"></i>
-						<p>Base</p>
+                </li>
+
+                <li class="nav-item">
+					<a data-toggle="collapse" href="#forms">
+						<i class="fas fa-pen-square"></i>
+						<p>Doctor</p>
 						<span class="caret"></span>
 					</a>
-					<div class="collapse" id="base">
+					<div class="collapse" id="forms">
 						<ul class="nav nav-collapse">
 							<li>
-								<a href="components/avatars.html">
-									<span class="sub-item">Avatars</span>
+                            <a href="{{ route('specialist.index') }}">
+									<span class="sub-item">Doctor Specialist</span>
 								</a>
 							</li>
 							<li>
-								<a href="components/buttons.html">
-									<span class="sub-item">Buttons</span>
-								</a>
-							</li>
-							<li>
-								<a href="components/gridsystem.html">
-									<span class="sub-item">Grid System</span>
-								</a>
-							</li>
-							<li>
-								<a href="components/panels.html">
-									<span class="sub-item">Panels</span>
-								</a>
-							</li>
-							<li>
-								<a href="components/notifications.html">
-									<span class="sub-item">Notifications</span>
-								</a>
-							</li>
-							<li>
-								<a href="components/sweetalert.html">
-									<span class="sub-item">Sweet Alert</span>
-								</a>
-							</li>
-							<li>
-								<a href="components/font-awesome-icons.html">
-									<span class="sub-item">Font Awesome Icons</span>
-								</a>
-							</li>
-							<li>
-								<a href="components/flaticons.html">
-									<span class="sub-item">Flaticons</span>
-								</a>
-							</li>
-							<li>
-								<a href="components/typography.html">
-									<span class="sub-item">Typography</span>
+								<a href="{{ route('doctor.index') }}">
+									<span class="sub-item">Doctor</span>
 								</a>
 							</li>
 						</ul>
 					</div>
+				</li>
+
+
+				<li class="nav-item">
+                <a href="{{ route('users.index') }}">
+						<i class="fas fa-layer-group"></i>
+						<p>Users</p>
+					</a>
 				</li>
 				<li class="nav-item">
 					<a data-toggle="collapse" href="#forms">
