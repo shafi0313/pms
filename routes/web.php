@@ -29,15 +29,9 @@ Route::prefix('admin')->namespace('Backend')->group(function(){
     Route::get('/dashboard','DashboardController@index')->name('admin.dashboard');
 
     Route::resource('/specialist', 'DoctorSpecialistController');
-    // Route::get('/specialist/destroy/{id}', 'DoctorSpecialistController@destroy');
-
-    // Route::get('/specialist', 'DoctorSpecialistController@index');
-
-    // Route::get('/specialist/create', 'DoctorSpecialistController@create');
-    // Route::post('/specialist/store', 'DoctorSpecialistController@store');
-    // Route::post('/specialist/update', 'DoctorSpecialistController@update');
 
     Route::resource('/doctor', 'DoctorController');
+    Route::get('admin/doctor/destroy/{id}', 'DoctorController@destroy');
 
 
 

@@ -49,6 +49,9 @@ class DoctorSpecialistController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'specialist' => 'required',
+        ]);
         DoctorSpecialist::updateOrCreate(['id' => $request->id],
                 [
                 'specialist' => $request->specialist,

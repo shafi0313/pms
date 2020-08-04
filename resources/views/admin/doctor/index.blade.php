@@ -43,10 +43,10 @@
                         <div class="card-header">
                             <div class="d-flex align-items-center">
                                 <h4 class="card-title">Add Row</h4>
-                                <button class="btn btn-primary btn-round ml-auto" data-toggle="modal" data-target="#userModal">
+                            <a class="btn btn-primary btn-round ml-auto" href="{{ route('doctor.create') }}">
                                     <i class="fa fa-plus"></i>
                                     Add Row
-                                </button>
+                                </a>
                             </div>
                         </div>
                         <div class="card-body">
@@ -84,16 +84,23 @@
                                             <td>{{ $admin->email }}</td>
                                             <td>{{ $admin->age }}</td>
                                             <td>{{ $admin->address }}</td>
-                                            <td>{{ $admin->spesialist }}</td>
+                                            <td>{{ $admin->doctor_specialist }}</td>
                                             <td>{{ $admin->photo }}</td>
                                             <td>
                                                 <div class="form-button-action">
-                                                    <button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary" data-original-title="Edit Task">
+                                                <a href="{{ route('doctor.edit',$admin->id)}}" data-toggle="tooltip" title="" class="btn btn-link btn-primary" data-original-title="Edit Task">
                                                         <i class="fa fa-edit"></i>
-                                                    </button>
-                                                    <button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove">
+                                                    </a>
+                                                    {{-- <form action="" style="display: initial;" method="POST">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button data-toggle="tooltip" title="" class="btn btn-link btn-danger delete" data-original-title="Remove">
+                                                            <i class="fa fa-times"></i>
+                                                        </button>
+                                                    </form> --}}
+                                                    <a href="admin/doctor/destroy/{{$admin->id}}" data-toggle="tooltip" title="" class="btn btn-link btn-danger delete" data-original-title="Remove">
                                                         <i class="fa fa-times"></i>
-                                                    </button>
+                                                    </a>
                                                 </div>
                                             </td>
                                         </tr>
@@ -109,143 +116,8 @@
     </div>
 </div>
 
-<!-- Modal -->
-<form id="addUser" action=""  method="post">
-    @csrf
-    <div class="modal fade"  id="userModal" tabindex="-1" role="dialog" aria-hidden="true" >
-        @if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header no-bd">
-                    <h5 class="modal-title">
-                        <span class="fw-mediumbold">
-                        New</span>
-                        <span class="fw-light">
-                            Row
-                        </span>
-                    </h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="form-check">
-                                    <label>Select Category</label><br>
-                                    <label class="form-radio-label">
-                                        <input class="form-radio-input" type="radio" name="role" value="1" checked="" onclick="hide();">
-                                        <span class="form-radio-sign">Admin</span>
-                                    </label>
-                                    <label class="form-radio-label ml-3">
-                                        <input class="form-radio-input" type="radio" name="role" value="2" onclick="hide();">
-                                        <span class="form-radio-sign">Counter</span>
-                                    </label>
-                                    <label class="form-radio-label ml-3">
-                                        <input class="form-radio-input" id="3" type="radio" name="role" onclick="show2();">
-                                        <span class="form-radio-sign">Doctor</span>
-                                    </label>
-                                </div>
-                            </div>
-
-                            <div id="d" class="col-sm-6" style="display: none">
-                                <div class="form-group">
-                                    <label for="specialist">Specialist</label>
-                                    <select class="form-control" id="specialist">
-                                        <option value="3">Doctor</option>
-                                        <option value="2">Counter</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="col-sm-12">
-                                <div class="form-group">
-                                    <label>Name</label>
-                                    <input id="name" name="name" type="text" class="form-control" placeholder="Enter Name">
-                                </div>
-                            </div>
-
-                            <div class="col-md-8 pr-0">
-                                <div class="form-group">
-                                    <label>Email</label>
-                                    <input id="" name="email" type="text" class="form-control" placeholder="Enter Email">
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label>Age</label>
-                                    <input id="" name="age" type="text" class="form-control" placeholder="Enter Age">
-                                </div>
-                            </div>
-                            <div class="col-sm-12">
-                                <div class="form-group">
-                                    <label>Address</label>
-                                    <input id="name" name="address" type="text" class="form-control" placeholder="Enter Address">
-                                </div>
-                            </div>
-                            <div class="col-md-6 pr-0">
-                                <div class="form-group">
-                                    <label>Password</label>
-                                    <input id="" name="password" type="password" class="form-control">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label>Confrim Password</label>
-                                    <input id="" name="password_confirmation" type="password" class="form-control" >
-                                </div>
-                            </div>
-
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer no-bd">
-                    <button type="Submit" id="" class="btn btn-primary">Add</button>
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-</form>
-
-
-@include('sweetalert::alert')
 @push('custom_scripts')
-
-<script>
-    $('#addUser').on('submit', function (e) {
-        e.preventDefault();
-        form = $(this);
-        let modal = $('#userModal');
-        $.ajax({
-            url: form.attr('action'),
-            method: form.attr('method'),
-            data: form.serialize(),
-            success: function (msg) {
-            $("form").trigger("reset");
-            modal.modal('hide');
-                if (msg == 1){
-                    modal.modal('hide');
-                    toast('Insert Successful!','success');
-
-                $("form").trigger("reset");
-                }else {
-                    modal.modal('hide');
-                    toast('Insert Successful!','success');
-                    $("form").trigger("reset");
-                }
-            }
-        });
-    });
-</script>
+@include('sweetalert::alert')
 <script >
     $(document).ready(function() {
         $('#basic-datatables').DataTable({
@@ -295,12 +167,20 @@
     });
 </script>
 <script>
-    function hide(){
-        document.getElementById('d').style.display ='none';
-    }
-    function show2(){
-        document.getElementById('d').style.display = 'block';
-    }
+    $('.delete').on('click', function (event) {
+        event.preventDefault();
+        const url = $(this).attr('href');
+        swal({
+            title: 'Are you sure?',
+            text: 'This record and it`s details will be permanantly deleted!',
+            icon: 'warning',
+            buttons: ["Cancel", "Yes!"],
+        }).then(function(value) {
+            if (value) {
+                window.location.href = url;
+            }
+        });
+    });
 </script>
 @endpush
 @endsection

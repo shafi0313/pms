@@ -24,6 +24,7 @@ class CreateAdminsTable extends Migration
             $table->text('doctor_specialist')->nullable();
             $table->decimal('fees',8,2)->nullable();
             $table->integer('phone')->nullable();
+            $table->string('gender')->nullable();
             $table->string('password');
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();

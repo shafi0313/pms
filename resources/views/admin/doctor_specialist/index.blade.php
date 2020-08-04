@@ -1,11 +1,6 @@
 @extends('admin.layout.master')
-@section('title', 'Dashboard')
+@section('title', 'Doctor Specialist')
 @section('content')
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" >
-
-<meta name="csrf-token" content="{{ csrf_token() }}">
-{{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" />
-<link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" rel="stylesheet"> --}}
 
 <div class="main-panel">
     <div class="content">
@@ -18,34 +13,16 @@
                             <i class="flaticon-home"></i>
                         </a>
                     </li>
-                    <li class="separator">
-                        <i class="flaticon-right-arrow"></i>
-                    </li>
+                    <li class="separator"><i class="flaticon-right-arrow"></i></li>
                     <li class="nav-item">
-                        <a href="#">Tables</a>
+                        <a href="{{ route('specialist.index') }}">Doctor Specialist</a>
                     </li>
-                    <li class="separator">
-                        <i class="flaticon-right-arrow"></i>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#">Datatables</a>
-                    </li>
+                    <li class="separator"><i class="flaticon-right-arrow"></i></li>
                 </ul>
             </div>
             <div class="divider1"></div>
             <div class="row">
-
-                @if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
                 <div class="col-md-12">
-
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex align-items-center">
@@ -89,14 +66,14 @@
                     <div class="form-group">
                         <label for="specialist" class="col-sm-2 control-label">Specialist</label>
                         <div class="col-sm-12">
-                            <input type="text" class="form-control" id="specialist" name="specialist" placeholder="Enter Title" value="" maxlength="50" required="">
+                            <input type="text" class="form-control" id="specialist" name="specialist" placeholder="Enter Specialist" required>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Details</label>
                         <div class="col-sm-12">
-                            <textarea id="details" name="details" required="" placeholder="Enter Author" class="form-control"></textarea>
+                            <textarea id="details" name="details" required="" placeholder="Enter Details" class="form-control"></textarea>
                         </div>
                     </div>
 
@@ -110,11 +87,8 @@
     </div>
 </div>
 
-@include('sweetalert::alert')
+
 @push('custom_scripts')
-
-
-
 <script>
      $(function () {
       $.ajaxSetup({
@@ -143,8 +117,8 @@
     });
 
     $('body').on('click', '.editBook', function () {
-      var book_id = $(this).data('id');
-      $.get("{{ route('specialist.index') }}" +'/' + book_id +'/edit', function (data) {
+      var id = $(this).data('id');
+      $.get("{{ route('specialist.index') }}" +'/' + id +'/edit', function (data) {
           $('#modelHeading').html("Edit Specialist");
           $('#saveBtn').val("edit-book");
           $('#ajaxModel').modal('show');
@@ -164,25 +138,26 @@
           type: "POST",
           dataType: 'json',
           success: function (data) {
-
               $('#specialistForm').trigger("reset");
               $('#ajaxModel').modal('hide');
               table.draw();
+              toastr["success"]("Data Inserted")
           },
           error: function (data) {
               console.log('Error:', data);
               $('#saveBtn').html('Save Changes');
+              toastr["error"]("Data Insert Failed")
           }
       });
     });
 
     $('body').on('click', '.deleteBook', function () {
-        var book_id = $(this).data("id");
+        var id = $(this).data("id");
         $confirm = confirm("Are You sure want to delete !");
         if($confirm == true ){
             $.ajax({
                 type: "DELETE",
-                url: "{{ route('specialist.store') }}"+'/'+book_id,
+                url: "{{ route('specialist.store') }}"+'/'+id,
                 success: function (data) {
                     table.draw();
                 },
@@ -193,7 +168,6 @@
         }
     });
 });
-
 </script>
 
 <script>

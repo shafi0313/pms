@@ -4,7 +4,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<title>@yield('title') | {{config('app.name')}}</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-{{-- <meta content='{{csrf_token()}}' name='csrf-token' /> --}}
+    <meta content='{{csrf_token()}}' name='csrf-token' />
 	<link rel="icon" href="{{ asset('backend/assets/img/icon.ico') }}" type="image/x-icon"/>
 
 	<!-- Fonts and icons -->
@@ -23,7 +23,8 @@
 	<!-- CSS Files -->
 	<link rel="stylesheet" href="{{ asset('backend/assets/css/bootstrap.min.css') }}">
 	<link rel="stylesheet" href="{{ asset('backend/assets/css/azzara.min.css') }}">
-	<link rel="stylesheet" href="{{ asset('backend/assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('backend/assets/css/style.css') }}">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" >
 
 	<!-- CSS Just for demo purpose, don't include it in your project -->
 	<link rel="stylesheet" href="{{ asset('backend/assets/css/demo.css') }}">
@@ -103,11 +104,8 @@
 </div>
 
 @include('admin.layout.footer')
-
 @include('sweetalert::alert')
-
 @stack('custom_scripts')
-
 </body>
 </html>
 
