@@ -26,7 +26,7 @@
 	<div class="wrapper wrapper-login">
 		<div class="container container-login animated fadeIn">
             <h3 class="text-center">Sign In To PMS</h3>
-            @if ($errors->any())
+            {{-- @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul>
                         @foreach ($errors->all() as $error)
@@ -34,19 +34,20 @@
                         @endforeach
                     </ul>
                 </div>
-            @endif
+            @endif --}}
 
-            @if(session()->has('message'))
+            {{-- @if(session()->has('message'))
                 <div class="alert alert-{{ session('type') }}">
                     {{ session('message') }}
                 </div>
-            @endif
-            <form action="{{ route('admin.login') }}" method="post">
+            @endif --}}
+            <form action="{{ route('admin.login.post') }}" method="post">
                 @csrf
                 <div class="login-form">
                     <div class="form-group form-floating-label">
                         <input id="email" name="email" type="text" value="{{ old('email') }}" class="form-control input-border-bottom">
                         <label for="email" class="placeholder">Username</label>
+
                         @if($errors->has('email'))
                             <span class="text-danger">{{$errors->first('email')}}</span>
                         @endif
@@ -54,6 +55,7 @@
                     <div class="form-group form-floating-label">
                         <input id="password" name="password" type="password" class="form-control input-border-bottom">
                         <label for="password" class="placeholder">Password</label>
+
                         @if($errors->has('password'))
                             <span class="text-danger">{{$errors->first('password')}}</span>
                         @endif
@@ -63,7 +65,7 @@
                     </div>
                     <div class="row form-sub m-0">
                         <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="rememberme">
+                            <input type="checkbox" class="custom-control-input" id="rememberme" {{ old('remember') ? 'checked' : '' }}>
                             <label class="custom-control-label" for="rememberme">Remember Me</label>
                         </div>
 
@@ -80,7 +82,7 @@
             </form>
 		</div>
 
-		<div class="container container-signup animated fadeIn">
+		{{-- <div class="container container-signup animated fadeIn">
 			<h3 class="text-center">Sign Up</h3>
 			<div class="login-form">
 				<div class="form-group form-floating-label">
@@ -116,7 +118,7 @@
 					<a href="#" class="btn btn-primary btn-rounded btn-login">Sign Up</a>
 				</div>
 			</div>
-		</div>
+		</div> --}}
 	</div>
 	<script src="{{ asset('backend/assets/js/core/jquery.3.2.1.min.js') }}"></script>
 	<script src="{{ asset('backend/assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js') }}"></script>

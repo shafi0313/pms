@@ -3,17 +3,63 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Models\Admin;
-
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use RealRashid\SweetAlert\Facades\Alert;
+
 class AuthController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    use AuthenticatesUsers;
+
+    protected $redirectTo = 'admin/dashboard';
+
+
+    public function __construct()
+    {
+      $this->middleware('guest')->except('logout');
+    }
+
+    public function guard()
+    {
+     return Auth::guard('admin');
+    }
+
+    public function loginShow()
+    {
+        return view('admin.auth.login');
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::guard('admin')->logout();
+        $request->session()->invalidate();
+        return redirect()->route('admin.login');
+    }
+
+    // public function loginProcess(Request $request)
+    // {
+    //     // return $request;
+    //     // $this->validate($request, [
+    //     //     'email' => 'required|email',
+    //     //     'password' => 'required'
+    //     // ]);
+
+    //     $credentials = $request->only(['name','role']);
+    //     // dd($credentials);
+    //     if (Auth::attempt($credentials)) {
+
+    //         return redirect()->route('admin.dashboard');
+    //     }else{
+    //         session()->flash('message', 'User Name or Password Invield');
+    //         session()->flash('type', 'danger');
+    //     // if(auth()->attempt($credentials))
+    //     // {
+    //     //     return redirect()->route('admin.dashboard');
+    //     // }
+    //     return redirect()->back();
+    //     }
+    // }
     public function index()
     {
         $admins = Admin::where('role','=','1')->orWhere('role','=','2')->get();
@@ -41,7 +87,7 @@ class AuthController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'email' => 'required|email|unique:admins,email',
-            'password' => 'required|min:6|max:15|confirmed',
+            'password' => 'required|min:1|max:15|confirmed',
         ]);
 
         $data = [

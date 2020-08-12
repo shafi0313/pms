@@ -17,6 +17,10 @@ Route::get('/', function () {
 });
 
 
+// Route::group(['middleware'=>'teacher'], function() {
+//     Route::get('/teacher/home', 'Teacher\HomeController@index');
+// });
+
 Route::prefix('admin')->namespace('Backend')->group(function(){
     Route::resource('/users', 'AuthController');
 
@@ -24,7 +28,10 @@ Route::prefix('admin')->namespace('Backend')->group(function(){
     // Route::post('/users/store','AuthController@registerStore')->name('admin.registerStore');
 
     Route::get('/login','AuthController@loginShow')->name('admin.login');
-    Route::post('/login','AuthController@loginProcess')->name('admin.login');
+    Route::post('/login','AuthController@login')->name('admin.login.post');
+    Route::get('/logout','AuthController@logout')->name('adminLogout');
+    // Route::get('/logout','AuthController@logout')->name('admin.logout');
+
 
     Route::get('/dashboard','DashboardController@index')->name('admin.dashboard');
 
