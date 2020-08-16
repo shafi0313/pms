@@ -45,64 +45,65 @@
                                     </ul>
                                 </div>
                             @endif
-                            <form action="{{ route('doctor.store')}}" method="post">
+                            <form action="{{ route('doctor.update', $admins->id)}}" method="post">
                                 @csrf
+                                @method('PATCH')
                                 <div class="row">
                                     <div class="form-group form-floating-label col-md-6">
-                                        <input id="name" name="name" type="text" class="form-control input-border-bottom" value="{{old('name')}}" required="">
+                                        <input id="name" name="name" type="text" class="form-control input-border-bottom" value="{{$admins->name}}" required="">
                                         <label for="name" class="placeholder">Name</label>
                                     </div>
 
                                     <div class="form-group form-floating-label col-md-6">
-                                        <select class="form-control input-solid" id="specialist" name="doctor_specialist" required="">
-                                            <option>&nbsp;</option>
+                                        <select class="form-control input-solid" id="specialist" name="doctor_specialist" required=""alue="{{$admins->doctor_specialist}}>
+                                            <option value="">&nbsp;</option>
                                             @foreach($doctorSpecialists as $doctorSpecialist)
-                                            <option value="{{ $doctorSpecialist->id }}">{{ $doctorSpecialist->specialist }}</option>
+                                            <option value="{{ $doctorSpecialist->specialist }}">{{ $doctorSpecialist->specialist }}</option>
                                             @endforeach
                                         </select>
                                         <label for="specialist" class="placeholder">Specialist</label>
                                     </div>
 
                                     <div class="form-group form-floating-label col-md-4">
-                                        <input id="phone" name="phone" type="text" value="{{old('phone')}}" class="form-control input-border-bottom" required="">
+                                        <input id="phone" name="phone" type="text" value="{{$admins->phone}}" class="form-control input-border-bottom" required="">
                                         <label for="phone" class="placeholder">Phone</label>
                                     </div>
 
                                     <div class="form-group form-floating-label col-md-3">
-                                        <input id="age" name="age" type="text" value="{{old('age')}}" class="form-control input-border-bottom" required="">
+                                        <input id="age" name="age" type="text" value="{{$admins->age}}" class="form-control input-border-bottom" required="">
                                         <label for="age" class="placeholder">Age</label>
                                     </div>
 
                                     <div class="form-check col-md-2">
                                         <label>Gender</label><br>
                                         <label class="form-radio-label">
-                                            <input class="form-radio-input" type="radio" name="gender" value="male" checked="">
+                                            <input class="form-radio-input" type="radio" name="gender" value="male" {{$admins->gender=='male'?'checked':''}}>
                                             <span class="form-radio-sign">Male</span>
                                         </label>
                                         <label class="form-radio-label ml-4">
-                                            <input class="form-radio-input" type="radio" name="gender" value="female">
+                                            <input class="form-radio-input" type="radio" name="gender" value="female" {{$admins->gender=='female'?'checked':''}}>
                                             <span class="form-radio-sign">Female</span>
                                         </label>
                                     </div>
 
                                     <div class="form-group form-floating-label col-md-3">
-                                        <input id="fees" name="fees" value="{{old('fees')}}" type="text" class="form-control input-border-bottom" required="">
+                                        <input id="fees" name="fees" value="{{$admins->fees}}" type="text" class="form-control input-border-bottom" required="">
                                         <label for="fees" class="placeholder">Fees</label>
                                     </div>
 
 
                                     <div class="form-group form-floating-label col-md-6">
-                                        <input id="email" name="email" type="email" value="{{old('email')}}" class="form-control input-border-bottom" required="">
+                                        <input id="email" name="email" type="email" value="{{$admins->email}}" class="form-control input-border-bottom" required="">
                                         <label for="email" class="placeholder">Email</label>
                                     </div>
 
                                     <div class="form-group form-floating-label col-md-6">
-                                        <input id="address" name="address" type="text" value="{{old('address')}}" class="form-control input-border-bottom" required="">
+                                        <input id="address" name="address" type="text" value="{{$admins->address}}" class="form-control input-border-bottom" required="">
                                         <label for="address" class="placeholder">Address</label>
                                     </div>
 
                                     <div class="form-group form-floating-label col-md-6">
-                                        <input id="password" name="password" type="password" class="form-control input-border-bottom" required="">
+                                    <input id="password" name="password" type="password" class="form-control input-border-bottom" value="{{$admins->password}}" required="">
                                         <label for="password" class="placeholder">Password</label>
                                     </div>
                                     <div class="form-group form-floating-label col-md-6">
@@ -110,7 +111,7 @@
                                         <label for="password_confirmation" class="placeholder">Confirm Password</label>
                                     </div>
                                 </div>
-                                <div class="mr-auto card-action">
+                                <div align="center" class="card-action">
                                     <button type="submit" class="btn btn-success">Submit</button>
                                     <button type="reset" class="btn btn-danger">Reset</button>
                                 </div>

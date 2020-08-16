@@ -29,7 +29,7 @@ class DoctorController extends Controller
      */
     public function create()
     {
-        $doctorSpecialists = DoctorSpecialist::all();
+        $doctorSpecialists = DoctorSpecialist::where('specialist_id','=','0')->get();
         return view('admin.doctor.create', compact('doctorSpecialists'));
     }
 
@@ -64,10 +64,16 @@ class DoctorController extends Controller
             'password' => bcrypt($request->input('password')),
         ];
 
-        // dd($data);
+        $doctorSpecialists = [
+            'specialist' => $request->input('name'),
+            'specialist_id' => $request->input('doctor_specialist'),
+        ];
+
+        // dd($se);
 
         try {
             Admin::create($data);
+            DoctorSpecialist::create($doctorSpecialists);
             return redirect()->route('doctor.index');
             Alert::success('Success Title', 'Success Message');
         } catch(\Exception $e) {

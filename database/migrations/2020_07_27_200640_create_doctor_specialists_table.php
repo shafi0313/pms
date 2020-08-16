@@ -16,6 +16,7 @@ class CreateDoctorSpecialistsTable extends Migration
         Schema::create('doctor_specialists', function (Blueprint $table) {
             $table->id();
             $table->string('specialist');
+            $table->integer('specialist_id')->default('0');
             $table->text('details')->nullable();
             $table->timestamps();
         });

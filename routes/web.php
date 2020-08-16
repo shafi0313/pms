@@ -12,18 +12,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-
-// Route::group(['middleware'=>'teacher'], function() {
-//     Route::get('/teacher/home', 'Teacher\HomeController@index');
-// });
-
 Route::prefix('admin')->namespace('Backend')->group(function(){
     Route::resource('/users', 'AuthController');
-
     // Route::get('/get/users','AuthController@getUser')->name('get.user');
     // Route::post('/users/store','AuthController@registerStore')->name('admin.registerStore');
 
@@ -32,8 +22,12 @@ Route::prefix('admin')->namespace('Backend')->group(function(){
     Route::get('/logout','AuthController@logout')->name('adminLogout');
     // Route::get('/logout','AuthController@logout')->name('admin.logout');
 
-
     Route::get('/dashboard','DashboardController@index')->name('admin.dashboard');
+
+    Route::resource('/patients', 'PatientController');
+
+
+
 
     Route::resource('/specialist', 'DoctorSpecialistController');
 
@@ -44,6 +38,15 @@ Route::prefix('admin')->namespace('Backend')->group(function(){
 
 
 });
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+
+// Route::group(['middleware'=>'teacher'], function() {
+//     Route::get('/teacher/home', 'Teacher\HomeController@index');
+// });
 
 
 

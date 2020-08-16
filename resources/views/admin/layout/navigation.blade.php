@@ -58,12 +58,12 @@
                 </li>
 
                 <li class="nav-item">
-					<a data-toggle="collapse" href="#forms">
+					<a data-toggle="collapse" href="#specialist">
 						<i class="fas fa-pen-square"></i>
 						<p>Doctor</p>
 						<span class="caret"></span>
 					</a>
-					<div class="collapse" id="forms">
+					<div class="collapse" id="specialist">
 						<ul class="nav nav-collapse">
 							<li>
                             <a href="{{ route('specialist.index') }}">
@@ -78,14 +78,35 @@
 						</ul>
 					</div>
 				</li>
-
-
 				<li class="nav-item">
                 <a href="{{ route('users.index') }}">
 						<i class="fas fa-layer-group"></i>
 						<p>Users</p>
 					</a>
-				</li>
+                </li>
+
+                <li class="nav-item">
+                    <a data-toggle="collapse" href="#patients">
+                        <i class="fas fa-user"></i>
+                        <p>Patients</p>
+                        <span class="caret"></span>
+                    </a>
+                    <div class="collapse" id="patients">
+                        <ul class="nav nav-collapse">
+                            <li>
+                                <a href="{{ route('patients.index') }}">
+                                    <span class="sub-item">Patients List</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('patients.create') }}">
+                                    <span class="sub-item">Add Patient</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
 				<li class="nav-item">
 					<a data-toggle="collapse" href="#forms">
 						<i class="fas fa-pen-square"></i>
@@ -99,7 +120,6 @@
 									<span class="sub-item">Basic Form</span>
 								</a>
 							</li>
-
 						</ul>
 					</div>
 				</li>
