@@ -1,6 +1,7 @@
 @extends('admin.layout.master')
 @section('title', 'Dashboard')
 @section('content')
+
 <div class="main-panel">
     <div class="content">
         <div class="page-inner">
@@ -25,6 +26,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="card">
+                        {{-- Page Content Start --}}
                         <div class="card-header">
                             <div class="d-flex align-items-center">
                                 <h4 class="card-title">Add Patient</h4>
@@ -43,7 +45,6 @@
                             <form action="{{ route('patients.store')}}" method="post">
                                 @csrf
                                 <div class="row">
-
                                     <div class="form-group col-sm-6">
                                         <label for="name">Patient Name</label>
                                         <input type="text" name="name" class="form-control" id="name" value="{{old('name')}}" placeholder="Enter Name" required>
@@ -69,7 +70,7 @@
                                     </div>
                                     <div class="form-group col-sm-3">
                                         <label for="age">Patient Age</label>
-                                        <input type="text" name="age" class="form-control" id="age" value="{{old('age')}}" placeholder="Enter Age">
+                                        <input type="text" name="age" class="form-control" id="age" value="{{old('age')}}" placeholder="Enter Age" required>
                                     </div>
                                     <div class="form-group col-sm-12">
                                         <label for="address">Patient Address</label>
@@ -79,36 +80,42 @@
                                         <label for="medical_history">Medical History</label>
                                         <textarea class="form-control" id="medical_history" name="medical_history" rows="2"></textarea>
                                     </div>
-                                    <h1>If You can take an apointment to clock hear</h1>
-
                                 </div>
-                                <div class="row">
-                                    
-                                    <div class="form-group">
-										<label for="exampleFormControlSelect1">Example select</label>
-										<select class="form-control" id="exampleFormControlSelect1">
+
+                                <h1 id="app_sow">If You can take an apointment to clock hear</h1>
+                                <div class="row app" style="display: none">
+                                    <div class="form-group col-sm-6">
+										<label for="">Example select</label>
+                                        <select class="form-control" id="doctor">
+                                            <option>Select Specialist</option>
                                             @foreach($doctorSpecialists as $specialistt)
-                                            <option value="">{{$specialistt->specialist}}</option>
+                                            <option value="{{$specialistt->id}}">{{$specialistt->specialist}}</option>
                                             @endforeach
                                         </select>
-
-                                        <h4>Subcategory</h4>
-                                        <select class="browser-default custom-select" name="subcategory" id="subcategory">
-
-                                        </select>
-                                    </form>
-                                    </select>
-									</div>
+                                    </div>
+                                    <div class="form-group col-md-6">
+										<label for="doctor">Select Doctor</label>
+                                        <select class="form-control" name="doctor_name" id="subs" required></select>
+                                    </div>
+                                    <input type="hidden" name="pid" value="{{$patientId->id}}">
+                                    <div class="form-group col-sm-6">
+                                        <label for="">Appointment Date</label>
+                                        <input type="txte" name="date" class="form-control date-picker datepicker" Placeholder="DD/MM/YYYY" required>
+                                    </div>
+                                    <div class="form-group col-sm-6">
+                                        <label for="">Appointment Time</label>
+                                        <input type="text" name="time" class="form-control" Placeholder="HH:MM" required>
+                                    </div>
                                 </div>
-
-
-
                                 <div class="mr-auto card-action">
                                     <button type="submit" class="btn btn-success">Submit</button>
                                     <button type="reset" class="btn btn-danger">Reset</button>
                                 </div>
+
+
                             </form>
                         </div>
+                    {{-- Page Content End --}}
                     </div>
                 </div>
             </div>
@@ -117,33 +124,31 @@
 </div>
 
 @push('custom_scripts')
+<script>
+    $('#app_sow').click(function() {
+        $('.app').toggle("slide");
+    });
+</script>
 <script type="text/javascript">
-    // $.ajaxSetup({
-    //     headers: {
-    //         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-    //     }
-    // });
-
     $(document).ready(function () {
-        $('#category').on('change',function(e) {
-         var cat_id = e.target.value;
+        $('#doctor').on('change',function(e) {
+         var cat_id = $("#doctor").val();
          $.ajax({
-               url:"{{ route('specialists.create') }}",
-               type:"POST",
+               url:'{{ route("subcat") }}',
+               type:"get",
                data: {
                    cat_id: cat_id
                 },
-               success:function (data) {
-                $('#subcategory').empty();
-                $.each(data.subcategories[0].subcategories,function(index,subcategory){
-                    $('#subcategory').append('<option value="'+subcategory.id+'">'+subcategory.name+'</option>');
-                })
+               success:function (res) {
+                   res = $.parseJSON(res);
+                   console.log(res.subCat)
+                    $('#subs').html(res.subCat);
                }
            })
         });
-
     });
 </script>
 @endpush
+
 @endsection
 

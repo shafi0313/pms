@@ -1,10 +1,9 @@
 <!-- Sidebar -->
 <div class="sidebar">
-
 	<div class="sidebar-background"></div>
 	<div class="sidebar-wrapper scrollbar-inner">
 		<div class="sidebar-content">
-			<div class="user">
+			{{-- <div class="user">
 				<div class="avatar-sm float-left mr-2">
 					<img src="{{asset('backend/assets/img/profile.jpg')}}" alt="..." class="avatar-img rounded-circle">
 				</div>
@@ -38,17 +37,16 @@
 						</ul>
 					</div>
 				</div>
-			</div>
+            </div> --}}
+
 			<ul class="nav">
 				<li class="nav-item active">
                     <a href="{{ route('admin.dashboard') }}">
 						<i class="fas fa-home"></i>
 						<p>Dashboard</p>
-						<span class="badge badge-count">5</span>
+						{{-- <span class="badge badge-count">5</span> --}}
 					</a>
                 </li>
-
-
 
 				<li class="nav-section">
 					<span class="sidebar-mini-icon">
@@ -106,6 +104,29 @@
                         </ul>
                     </div>
                 </li>
+                <li class="nav-item">
+                    <a data-toggle="collapse" href="#appointment">
+                        <i class="fas fa-user"></i>
+                        <p>Appointments</p>
+                        <span class="caret"></span>
+                    </a>
+                    <div class="collapse" id="appointment">
+                        <ul class="nav nav-collapse">
+                            <li>
+                                <a href="{{ route('appointment.patient') }}">
+                                    <span class="sub-item">Add Appointment</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('appointment.show') }}">
+                                    <span class="sub-item">Show Appointment</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+
+
 
 				<li class="nav-item">
 					<a data-toggle="collapse" href="#forms">
@@ -122,114 +143,9 @@
 							</li>
 						</ul>
 					</div>
-				</li>
-				<li class="nav-item">
-					<a data-toggle="collapse" href="#tables">
-						<i class="fas fa-table"></i>
-						<p>Tables</p>
-						<span class="caret"></span>
-					</a>
-					<div class="collapse" id="tables">
-						<ul class="nav nav-collapse">
-							<li>
-								<a href="tables/tables.html">
-									<span class="sub-item">Basic Table</span>
-								</a>
-							</li>
-							<li>
-								<a href="tables/datatables.html">
-									<span class="sub-item">Datatables</span>
-								</a>
-							</li>
-						</ul>
-					</div>
-				</li>
-				<li class="nav-item">
-					<a data-toggle="collapse" href="#maps">
-						<i class="fas fa-map-marker-alt"></i>
-						<p>Maps</p>
-						<span class="caret"></span>
-					</a>
-					<div class="collapse" id="maps">
-						<ul class="nav nav-collapse">
-							<li>
-								<a href="maps/googlemaps.html">
-									<span class="sub-item">Google Maps</span>
-								</a>
-							</li>
-							<li>
-								<a href="maps/fullscreenmaps.html">
-									<span class="sub-item">Full Screen Maps</span>
-								</a>
-							</li>
-							<li>
-								<a href="maps/jqvmap.html">
-									<span class="sub-item">JQVMap</span>
-								</a>
-							</li>
-						</ul>
-					</div>
-				</li>
-				<li class="nav-item">
-					<a data-toggle="collapse" href="#charts">
-						<i class="far fa-chart-bar"></i>
-						<p>Charts</p>
-						<span class="caret"></span>
-					</a>
-					<div class="collapse" id="charts">
-						<ul class="nav nav-collapse">
-							<li>
-								<a href="charts/charts.html">
-									<span class="sub-item">Chart Js</span>
-								</a>
-							</li>
-							<li>
-								<a href="charts/sparkline.html">
-									<span class="sub-item">Sparkline</span>
-								</a>
-							</li>
-						</ul>
-					</div>
-				</li>
+                </li>
 
-				<li class="nav-item">
-					<a href="widgets.html">
-						<i class="fas fa-desktop"></i>
-						<p>Widgets</p>
-						<span class="badge badge-count badge-success">4</span>
-					</a>
-				</li>
-				<li class="nav-item">
-					<a data-toggle="collapse" href="#custompages">
-						<i class="fas fa-paint-roller"></i>
-						<p>Custom Pages</p>
-						<span class="caret"></span>
-					</a>
-					<div class="collapse" id="custompages">
-						<ul class="nav nav-collapse">
-							<li>
-								<a href="login.html">
-									<span class="sub-item">Login & Register 1</span>
-								</a>
-							</li>
-							<li>
-								<a href="login2.html">
-									<span class="sub-item">Login & Register 2</span>
-								</a>
-							</li>
-							<li>
-								<a href="userprofile.html">
-									<span class="sub-item">User Profile</span>
-								</a>
-							</li>
-							<li>
-								<a href="404.html">
-									<span class="sub-item">404</span>
-								</a>
-							</li>
-						</ul>
-					</div>
-				</li>
+
 				<li class="nav-item">
 					<a data-toggle="collapse" href="#submenu">
 						<i class="fas fa-bars"></i>

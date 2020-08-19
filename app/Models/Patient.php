@@ -8,9 +8,9 @@ class Patient extends Model
 {
     protected $guarded = [];
 
-    public function subcategories(){
+    // public function subcategories(){
 
-        return $this->hasMany('App\Models\DoctorSpecialist', 'specialis_id');
+    //     return $this->hasMany('App\Models\DoctorSpecialist', 'specialist_id');
 
-    }
+    // }
 }

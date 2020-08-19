@@ -17,7 +17,7 @@ class DoctorSpecialistController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            $data = DoctorSpecialist::latest()->get();
+            $data = DoctorSpecialist::where('specialist_id',0)->latest()->get();
             return Datatables::of($data)
                     ->addIndexColumn()
                     ->addColumn('action', function($row){

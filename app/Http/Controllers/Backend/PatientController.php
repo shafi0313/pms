@@ -3,10 +3,12 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
-use App\Models\Admin;
+use App\Models\Appointment;
 use App\Models\DoctorSpecialist;
 use Illuminate\Http\Request;
 use App\Models\Patient;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\DB;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class PatientController extends Controller
@@ -18,7 +20,6 @@ class PatientController extends Controller
      */
     public function index()
     {
-
         $patients = Patient::all();
         return view('admin.patient.index', compact('patients'));
     }
@@ -30,26 +31,20 @@ class PatientController extends Controller
      */
     public function create(Request $request)
     {
+        $patientId = DB::table('patients')->select('id')->latest('id')->first();
         $doctorSpecialists = DoctorSpecialist::where('specialist_id',0)->get();
+        return view('admin.patient.create', compact(['doctorSpecialists','patientId']));
+    }
 
-        $parent_id = $request->cat_id;
-
-        $subcategories = DoctorSpecialist::where('id',$parent_id)
-                            ->with('subcategories')
-                            ->get();
-
-        return response()->json([
-            'subcategories' => $subcategories
-        ]);
-
-        // $ds = DoctorSpecialist::with('doctor')->get();
-        // foreach($ds as $sp){
-        //     echo $sp->id,'<br/>';
-        //     foreach($sp->doctor as $dr){
-        //         echo $dr->id.'<br/>';
-        //     }
-        // }
-        return view('admin.patient.create',compact('doctorSpecialists'));
+    public function subCat(Request $request)
+    {
+        $p_id = $request->cat_id;
+        $subcategories = DoctorSpecialist::where('specialist_id',$p_id)->get();
+        $subCat = '';
+        foreach($subcategories as $sub){
+            $subCat .= '<option value="'.$sub->id.'">'.$sub->specialist.'</option>';
+        }
+        return json_encode(['subcategories' => $subcategories,'subCat'=>$subCat]);
     }
 
     /**
@@ -79,9 +74,21 @@ class PatientController extends Controller
             'mdical_history' => $request->input('mdical_history'),
         ];
 
+        // $patientId = DB::table('patients')->select('id')->latest('id')->first();
+
+        $patientId = $request->get('pid') + 1;
+
+        $appointments = [
+            'patient_id' => $patientId,
+            'doctor_id' => $request->input('doctor_name'),
+            'date' => Carbon::createFromFormat('m/d/Y', $request->date)->format('Y-m-d'),
+            'time' => $request->input('time'),
+        ];
+
         try {
             Patient::create($patient);
-            return redirect()->route('patients.index');
+            Appointment::create($appointments);
+            return redirect()->route('appointment.show');
             Alert::success('Success Title', 'Success Message');
         } catch(\Exception $ex) {
             return redirect()->back();

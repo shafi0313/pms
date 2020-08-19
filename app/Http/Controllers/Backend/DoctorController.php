@@ -6,6 +6,7 @@ use App\Models\Admin;
 use App\Models\DoctorSpecialist;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -29,8 +30,9 @@ class DoctorController extends Controller
      */
     public function create()
     {
-        $doctorSpecialists = DoctorSpecialist::where('specialist_id','=','0')->get();
-        return view('admin.doctor.create', compact('doctorSpecialists'));
+        $dortorId = DB::table('admins')->select('id')->latest('id')->first();
+        $doctorSpecialists = DoctorSpecialist::where('specialist_id',0)->get();
+        return view('admin.doctor.create', compact(['doctorSpecialists','dortorId']));
     }
 
     /**
@@ -64,8 +66,11 @@ class DoctorController extends Controller
             'password' => bcrypt($request->input('password')),
         ];
 
+        $doctorId = $request->get('doctorId') + 1;
+
         $doctorSpecialists = [
             'specialist' => $request->input('name'),
+            'doctor_s_id' => $doctorId,
             'specialist_id' => $request->input('doctor_specialist'),
         ];
 

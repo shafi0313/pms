@@ -27,7 +27,18 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" >
 
 	<!-- CSS Just for demo purpose, don't include it in your project -->
-	<link rel="stylesheet" href="{{ asset('backend/assets/css/demo.css') }}">
+    <link rel="stylesheet" href="{{ asset('backend/assets/css/demo.css') }}">
+
+            {{-- For Date Picker --}}
+    <link rel="stylesheet" href="{{ asset('backend/assets/datepicker/css/bootstrap-datepicker3.standalone.min.css') }}">
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+		{{-- <link rel="stylesheet" href="{{ asset('admin/assets/cdn/jquery-ui.css')}}"> --}}
+
+		<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		{{-- <script src="{{ asset('admin/assets/cdn/jquery-ui.js')}}"></script> --}}
+
+		{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script> --}}
+		{{-- <script src="{{ asset('admin/assets/cdn/toastr.min.js')}}"></script> --}}
 </head>
 <body>
 	<div class="wrapper">
@@ -104,6 +115,9 @@
 </div>
 
 @include('admin.layout.footer')
+{{-- <script>
+    window.date_format = "{{ pms('js_date_format') }}";
+</script> --}}
 @include('sweetalert::alert')
 @stack('custom_scripts')
 </body>

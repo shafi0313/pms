@@ -114,6 +114,7 @@
                                     <button type="submit" class="btn btn-success">Submit</button>
                                     <button type="reset" class="btn btn-danger">Reset</button>
                                 </div>
+                                <input type="hidden" name="doctorId" value="{{$dortorId->id}}">
                             </form>
                         </div>
                     </div>

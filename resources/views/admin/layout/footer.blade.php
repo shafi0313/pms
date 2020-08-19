@@ -44,6 +44,9 @@
 <!-- Azzara JS -->
 <script src="{{ asset('backend/assets/js/ready.min.js') }}"></script>
 
+
+<script src="{{ asset('backend/assets/datepicker/js/bootstrap-datepicker.min.js') }}"></script>
+
 <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
 <!-- Azzara DEMO methods, don't include it in your project! -->

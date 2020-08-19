@@ -1,3 +1,13 @@
+/* Nav */
+.sidebar .nav {
+    margin-top: 0px;
+}
+.sidebar .nav .nav-section .text-section {
+    padding: 0px 30px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
 .page-inner {
     padding: 5px 20px !important;
 }
