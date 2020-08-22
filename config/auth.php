@@ -49,11 +49,11 @@ return [
             'driver'    => 'session',
             'provider'  => 'admins',
         ],
-        'api-admin' => [
-            'driver' => 'token',
-            'provider' => 'admins',
-            'hash' => false,
-        ],
+        // 'api-admin' => [
+        //     'driver' => 'token',
+        //     'provider' => 'admins',
+        //     'hash' => false,
+        // ],
     ],
 
     /*

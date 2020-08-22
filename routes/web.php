@@ -1,5 +1,7 @@
 <?php
 
+use App\MyRole;
+use App\User;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -11,8 +13,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::prefix('admin')->namespace('Backend')->group(function(){
+// Route::get('t', function () {
+// //   return  User::with('myrole')->get();
+//   return  MyRole::with('users')->get();
+// });
+Route::middleware(['auth','admin'])->prefix('admin')->namespace('Backend')->group(function(){
     Route::resource('/users', 'AuthController');
     // Route::get('/get/users','AuthController@getUser')->name('get.user');
     // Route::post('/users/store','AuthController@registerStore')->name('admin.registerStore');

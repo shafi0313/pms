@@ -158,8 +158,8 @@
                         <div class="user-box">
                             <div class="avatar-lg"><img src="{{asset('backend/assets/img/profile.jpg')}}" alt="image profile" class="avatar-img rounded"></div>
                             <div class="u-text">
-                                <h4>Hizrian</h4>
-                                <p class="text-muted">hello@example.com</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a>
+                                <h4>{{ Auth::user()->name }}</h4>
+                                <p class="text-muted">{{ Auth::user()->email }}</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a>
                             </div>
                         </div>
                     </li>
@@ -171,7 +171,14 @@
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Account Setting</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="{{ route('adminLogout') }}">Logout</a>
+                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                        {{-- <a class="dropdown-item" href="{{ route('adminLogout') }}">Logout</a> --}}
                     </li>
                 </ul>
             </li>

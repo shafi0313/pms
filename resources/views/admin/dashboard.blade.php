@@ -22,6 +22,8 @@
                 </div> --}}
             </div>
             <div class="row">
+
+                {{-- {{Auth::admin()->name}} --}}
                 <div class="col-sm-6 col-md-3">
                     <div class="card card-stats card-round">
                         <div class="card-body ">
@@ -41,6 +43,8 @@
                         </div>
                     </div>
                 </div>
+
+                @role('admin')
                 <div class="col-sm-6 col-md-3">
                     <div class="card card-stats card-round">
                         <div class="card-body">
@@ -60,6 +64,8 @@
                         </div>
                     </div>
                 </div>
+                @endrole
+                
                 <div class="col-sm-6 col-md-3">
                     <div class="card card-stats card-round">
                         <div class="card-body">
@@ -79,6 +85,29 @@
                         </div>
                     </div>
                 </div>
+
+                @role('doctor')
+                <div class="col-sm-6 col-md-3">
+                    <div class="card card-stats card-round">
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col-icon">
+                                    <div class="icon-big text-center icon-success bubble-shadow-small">
+                                        <i class="fas fa-calendar-check"></i>
+                                    </div>
+                                </div>
+                                <div class="col col-stats ml-3 ml-sm-0">
+                                    <div class="numbers">
+                                        <p class="card-category">Appointments</p>
+                                        <h4 class="card-title">{{$doctorAppnmt}}</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @endrole
+
                 <div class="col-sm-6 col-md-3">
                     <div class="card card-stats card-round">
                         <div class="card-body">
@@ -99,10 +128,7 @@
                     </div>
                 </div>
             </div>
-
-
         </div>
     </div>
-
 </div>
 @endsection
