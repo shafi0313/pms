@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Models\Admin;
 use App\Models\DoctorSpecialist;
 use App\Http\Controllers\Controller;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
@@ -19,7 +19,7 @@ class DoctorController extends Controller
      */
     public function index()
     {
-        $admins = Admin::where('role','=', '3')->get();
+        $admins = User::where('is_',3)->get();
         return view('admin.doctor.index', compact('admins'));
     }
 
@@ -30,7 +30,7 @@ class DoctorController extends Controller
      */
     public function create()
     {
-        $dortorId = DB::table('admins')->select('id')->latest('id')->first();
+        $dortorId = DB::table('users')->select('id')->latest('id')->first();
         $doctorSpecialists = DoctorSpecialist::where('specialist_id',0)->get();
         return view('admin.doctor.create', compact(['doctorSpecialists','dortorId']));
     }
@@ -61,7 +61,8 @@ class DoctorController extends Controller
             'address' => $request->input('address'),
             'fees' => $request->input('fees'),
             'gender' => $request->input('gender'),
-            'role' => '3',
+            'role' => '1',
+            'is_' => '3',
             'doctor_specialist' => $request->input('doctor_specialist'),
             'password' => bcrypt($request->input('password')),
         ];
@@ -77,7 +78,7 @@ class DoctorController extends Controller
         // dd($se);
 
         try {
-            Admin::create($data);
+            User::create($data);
             DoctorSpecialist::create($doctorSpecialists);
             return redirect()->route('doctor.index');
             Alert::success('Success Title', 'Success Message');

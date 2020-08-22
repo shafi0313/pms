@@ -1,6 +1,7 @@
 <?php
-
+// namespace App;
 namespace App\Models;
+
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
@@ -11,7 +12,7 @@ class Appointment extends Model
 
     public function doctor()
     {
-        return $this->belongsTo(Admin::class,'doctor_id');
+        return $this->belongsTo('App\User','doctor_id');
     }
 
     public function patient()

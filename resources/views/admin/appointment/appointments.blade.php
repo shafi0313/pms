@@ -79,7 +79,7 @@
                                         <tr>
                                             <td>{{ $x++ }}</td>
                                             <td>{{ $appointment->patient->name }}</td>
-                                            <td>{{ $appointment->doctor->name }}</td>
+                                            {{-- <td>{{ $appointment->doctor->name }}</td> --}}
                                             <td>{{ \Carbon\Carbon::parse($appointment->date)->format('d/m/Y') }}</td>
                                             <td>{{ $appointment->time }}</td>
                                             <td>

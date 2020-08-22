@@ -1,7 +1,8 @@
 <?php
 
-use App\MyRole;
 use App\User;
+use App\MyRole;
+use App\Models\Appointment;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -14,8 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 // Route::get('t', function () {
-// //   return  User::with('myrole')->get();
-//   return  MyRole::with('users')->get();
+//   return  Appointment::all();
+// //   return  MyRole::with('users')->get();
 // });
 Route::middleware(['auth','admin'])->prefix('admin')->namespace('Backend')->group(function(){
     Route::resource('/users', 'AuthController');

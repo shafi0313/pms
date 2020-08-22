@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Models\Admin;
 use App\Models\Patient;
 use App\Models\Appointment;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
 
 use App\Http\Controllers\Controller;
+use App\User;
 use Illuminate\Support\Facades\Auth;
 use Spatie\Permission\Models\Permission;
 
@@ -32,7 +32,7 @@ class DashboardController extends Controller
 
         // return User::role('doctor')->get();
 
-        $doctors = Admin::where('role',3)->count();
+        $doctors = User::where('is_',3)->count();
         $patients = Patient::count();
         $appointments = Appointment::count();
         $doctorAppnmt = Appointment::where('doctor_id',$userId)->count();
