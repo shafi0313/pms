@@ -88,7 +88,7 @@
                                             <td>{{ $patient->phone }}</td>
                                             <td>{{ $patient->address }}</td>
                                             <td>{{ $patient->mdical_history }}</td>
-                                        <td><a href="{{ route('appointment.select.patient',$patient->id)}}">SSS</a></td>
+                                            <td><a href="{{ route('appointment.select.patient',$patient->id)}}">SSS</a></td>
                                         </tr>
                                         @endforeach
                                     </tbody>

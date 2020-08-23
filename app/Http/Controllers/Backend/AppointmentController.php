@@ -29,13 +29,12 @@ class AppointmentController extends Controller
         $patient = Patient::findOrFail($id);
         $appointments = Appointment::all();
         $doctorSpecialists = DoctorSpecialist::where('specialist_id',0)->get();
-        return view('admin.appointment.index', compact(['patient','doctorSpecialists','appointments']));
+        return view('admin.appointment.index', compact(['patient','appointments','doctorSpecialists']));
     }
 
     public function appointment()
     {
         $appointments = Appointment::with(['doctor','patient'])->get();
-
         return view('admin.appointment.appointments', compact('appointments'));
     }
 
@@ -45,7 +44,7 @@ class AppointmentController extends Controller
         $subcategories = DoctorSpecialist::where('specialist_id',$p_id)->get();
         $subCat = '';
         foreach($subcategories as $sub){
-            $subCat .= '<option value="'.$sub->doctor_s_id.'">'.$sub->specialist.'</option>';
+            $subCat .= '<option value="'.$sub->doctor_id.'">'.$sub->specialist.'</option>';
         }
         return json_encode(['subcategories' => $subcategories,'subCat'=>$subCat]);
     }

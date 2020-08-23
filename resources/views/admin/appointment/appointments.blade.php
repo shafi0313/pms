@@ -5,7 +5,6 @@
     <div class="content">
         <div class="page-inner">
             <div class="page-header">
-                <h4 class="page-title">Doctord</h4>
                 <ul class="breadcrumbs">
                     <li class="nav-home">
                     <a href="{{ route('admin.dashboard')}}">
@@ -16,13 +15,7 @@
                         <i class="flaticon-right-arrow"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="#">Appoinment</a>
-                    </li>
-                    <li class="separator">
-                        <i class="flaticon-right-arrow"></i>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#">All Appoinment</a>
+                        <a href="#">Appoinments</a>
                     </li>
                 </ul>
             </div>
@@ -60,7 +53,7 @@
                                             <th>Doctor Name</th>
                                             <th>Date</th>
                                             <th>Time</th>
-                                            <th style="width:7%">Action</th>
+                                            <th class="no-sort" style="width:7%">Action</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
@@ -79,7 +72,7 @@
                                         <tr>
                                             <td>{{ $x++ }}</td>
                                             <td>{{ $appointment->patient->name }}</td>
-                                            {{-- <td>{{ $appointment->doctor->name }}</td> --}}
+                                            <td>{{ $appointment->doctor->name }}</td>
                                             <td>{{ \Carbon\Carbon::parse($appointment->date)->format('d/m/Y') }}</td>
                                             <td>{{ $appointment->time }}</td>
                                             <td>

@@ -17,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name','email','role','is_','age','gender','phone','address','doctor_specialist','fees','photo','password',
     ];
 
     /**
@@ -42,4 +42,9 @@ class User extends Authenticatable
     // {
     //     return $this->hasOne(MyRole::class,'id');
     // }
+
+    public function specialist()
+    {
+        return $this->hasOne('App\Models\DoctorSpecialist','doctor_id');
+    }
 }

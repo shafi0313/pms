@@ -76,7 +76,14 @@ class PatientController extends Controller
 
         // $patientId = DB::table('patients')->select('id')->latest('id')->first();
 
-        $patientId = $request->get('pid') + 1;
+
+        $patientId = $request->get('pid');
+        if($patientId==''){
+            $patientId += 1;
+        }else{
+            $patientId = $request->get('pid')+1;
+        }
+
 
         $appointments = [
             'patient_id' => $patientId,
@@ -84,6 +91,7 @@ class PatientController extends Controller
             'date' => Carbon::createFromFormat('m/d/Y', $request->date)->format('Y-m-d'),
             'time' => $request->input('time'),
         ];
+
 
         try {
             Patient::create($patient);

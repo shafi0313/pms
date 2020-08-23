@@ -55,42 +55,39 @@
                                 <table id="multi-filter-select" class="display table table-striped table-hover" >
                                     <thead>
                                         <tr>
-                                            <th style="width:1%">SN</th>
+                                            <th style="width:6%">SN</th>
                                             <th>Name</th>
                                             <th>Email</th>
                                             <th>Role</th>
                                             <th>Age</th>
                                             <th>Address</th>
-                                            <th>Spesialist</th>
-                                            <th>Photo</th>
-                                            <th style="width:7%">Action</th>
+                                            <th>Photo</>
+                                            <th class="no-sort" style="width:5%">Action</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
                                             <th>SN</th>
                                             <th>Name</th>
-                                            <th>Office</th>
+                                            <th>Email</th>
+                                            <th>Role</th>
                                             <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
-                                            <th >Action</th>
-                                            <th >Action</th>
-                                            <th >Action</th>
+                                            <th>Address</th>
+                                            <th>Photo</>
+                                            <th style="display: none">Action</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
                                         @php $x=1;@endphp
-                                        @foreach($admins as $admin)
+                                        @foreach($users as $user)
                                         <tr>
                                             <td>{{ $x++ }}</td>
-                                            <td>{{ $admin->name }}</td>
-                                            <td>{{ $admin->email }}</td>
-                                            <td>{{($admin->role == 1) ? 'Admin':(($admin->role == 2) ? 'Counter' : 'Doctor')}}</td>
-                                            <td>{{ $admin->age }}</td>
-                                            <td>{{ $admin->address }}</td>
-                                            <td>{{ $admin->spesialist }}</td>
-                                            <td>{{ $admin->photo }}</td>
+                                            <td>{{ $user->name }}</td>
+                                            <td>{{ $user->email }}</td>
+                                            <td>{{($user->role == 1) ? 'Admin':'Counter'}}</td>
+                                            <td>{{ $user->age }}</td>
+                                            <td>{{ $user->address }}</td>
+                                            <td>{{ $user->photo }}</td>
                                             <td>
                                                 <div class="form-button-action">
                                                     <button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary" data-original-title="Edit Task">
@@ -116,7 +113,7 @@
 
 
 <!-- Modal -->
-<form id="addUser" action="{{ route('users.store') }}"  method="post">
+<form id="addUser" action=""  method="post">
     @csrf
     <div class="modal fade"  id="userModal" tabindex="-1" role="dialog" aria-hidden="true" >
         <div class="modal-dialog modal-lg" role="document">
@@ -218,34 +215,34 @@
 @push('custom_scripts')
 
 <script>
-// readUser();
+readUser();
 
-    // $('#addUser').on('submit', function () {
-    //     // e.preventDefault();
-    //     form = $(this);
-    //     let modal = $('#userModal');
-    //     $.ajax({
-    //         url: form.attr('action'),
-    //         method: form.attr('method'),
-    //         data: form.serialize(),
-    //         success: function (msg) {
-    //         $("form").trigger("reset");
-    //         modal.modal('hide');
-    //             if (msg == 1){
-    //                 modal.modal('hide');
-    //                 toast('Insert Successful!','success');
+    $('#addUser').on('submit', function () {
+        // e.preventDefault();
+        form = $(this);
+        let modal = $('#userModal');
+        $.ajax({
+            url: form.attr('action'),
+            method: form.attr('method'),
+            data: form.serialize(),
+            success: function (msg) {
+            $("form").trigger("reset");
+            modal.modal('hide');
+                if (msg == 1){
+                    modal.modal('hide');
+                    toast('Insert Successful!','success');
 
-    //             $("form").trigger("reset");
-    //             }else {
-    //                 modal.modal('hide');
-    //                 toast('Insert Successful!','success');
-    //                 $("form").trigger("reset");
-    //             }
-    //             // readUser();
-    //             console.log(msg);
-    //         }
-    //     });
-    // });
+                $("form").trigger("reset");
+                }else {
+                    modal.modal('hide');
+                    toast('Insert Successful!','success');
+                    $("form").trigger("reset");
+                }
+                // readUser();
+                console.log(msg);
+            }
+        });
+    });
 
 // function readUser() {
 //     $.ajax({
@@ -272,7 +269,7 @@
             initComplete: function () {
                 this.api().columns().every( function () {
                     var column = this;
-                    var select = $('<select class="form-control"><option value=""></option></select>')
+                    var select = $('<select class="form-control form-control-sm"><option value=""></option></select>')
                     .appendTo( $(column.footer()).empty() )
                     .on( 'change', function () {
                         var val = $.fn.dataTable.util.escapeRegex(

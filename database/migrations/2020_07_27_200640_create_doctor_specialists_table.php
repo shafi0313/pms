@@ -17,7 +17,7 @@ class CreateDoctorSpecialistsTable extends Migration
             $table->id();
             $table->string('specialist');
             $table->integer('specialist_id')->default('0');
-            $table->integer('doctor_s_id');
+            $table->integer('doctor_id')->nullable();
             $table->text('details')->nullable();
             $table->timestamps();
         });

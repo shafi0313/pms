@@ -12,9 +12,9 @@ class RoleSeeder extends Seeder
     public function run()
     {
         $roles = [
-            [ 'name' => 'admin','guard_name'=>'admin' ],
-            [ 'name' => 'doctor','guard_name'=>'admin' ],
-            [ 'name' => 'counter','guard_name'=>'admin' ],
+            [ 'name' => 'admin','guard_name'=>'web' ],
+            [ 'name' => 'doctor','guard_name'=>'web' ],
+            [ 'name' => 'counter','guard_name'=>'web' ],
         ];
         \Spatie\Permission\Models\Role::insert($roles);
     }

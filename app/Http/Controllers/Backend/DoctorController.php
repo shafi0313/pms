@@ -19,8 +19,8 @@ class DoctorController extends Controller
      */
     public function index()
     {
-        $admins = User::where('is_',3)->get();
-        return view('admin.doctor.index', compact('admins'));
+        $users = User::where('is_',3)->get();
+        return view('admin.doctor.index', compact('users'));
     }
 
     /**
@@ -49,7 +49,7 @@ class DoctorController extends Controller
             'fees' => 'required|numeric',
             'age' => 'required|numeric',
             'phone' => 'required|numeric',
-            'email' => 'required|email|unique:admins,email',
+            'email' => 'required|email|unique:users,email',
             'password' => 'required|max:15|confirmed',
         ]);
 
@@ -71,15 +71,17 @@ class DoctorController extends Controller
 
         $doctorSpecialists = [
             'specialist' => $request->input('name'),
-            'doctor_s_id' => $doctorId,
+            'doctor_id' => $doctorId,
             'specialist_id' => $request->input('doctor_specialist'),
         ];
 
-        // dd($se);
+        // dd($data);
 
-        try {
             User::create($data);
             DoctorSpecialist::create($doctorSpecialists);
+
+        try {
+
             return redirect()->route('doctor.index');
             Alert::success('Success Title', 'Success Message');
         } catch(\Exception $e) {
@@ -107,7 +109,7 @@ class DoctorController extends Controller
      */
     public function edit($id)
     {
-        $admins = Admin::find($id);
+        $admins = User::find($id);
         $doctorSpecialists = DoctorSpecialist::all();
         return view('admin.doctor.edit', compact('admins', 'doctorSpecialists'));
     }
@@ -137,7 +139,7 @@ class DoctorController extends Controller
         // dd($data);
 
         try {
-            $update  = Admin::find($id);
+            $update  = User::find($id);
             $update->update($data);
             return redirect()->route('doctor.index');
             Alert::success('Success Title', 'Success Message');

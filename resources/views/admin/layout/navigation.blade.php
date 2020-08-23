@@ -77,7 +77,7 @@
 					</div>
 				</li>
 				<li class="nav-item">
-                <a href="{{ route('users.index') }}">
+                <a href="{{ route('admin.user') }}">
 						<i class="fas fa-layer-group"></i>
 						<p>Users</p>
 					</a>

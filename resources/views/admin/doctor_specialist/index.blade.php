@@ -6,7 +6,6 @@
     <div class="content">
         <div class="page-inner">
             <div class="page-header">
-                <h4 class="page-title">Doctor Specialist</h4>
                 <ul class="breadcrumbs">
                     <li class="nav-home">
                     <a href="{{ route('admin.dashboard')}}">
@@ -26,7 +25,7 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex align-items-center">
-                                <h4 class="card-title">Add Row</h4>
+                                <h4 class="card-title">Add New</h4>
                                 <a class="btn btn-primary btn-round ml-auto" href="javascript:void(0)" id="createSpecialist"><i class="fa fa-plus"></i> Add New</a>
                             </div>
                         </div>
@@ -35,10 +34,10 @@
                                 <table class="table table-striped table-hover data-table">
                                     <thead>
                                         <tr>
-                                            <th>No</th>
+                                            <th style="width: 6%">No</th>
                                             <th>Specialist</th>
                                             <th>Details</th>
-                                            <th width="80px">Action</th>
+                                            <th style="text-align:center;width:80px" >Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>

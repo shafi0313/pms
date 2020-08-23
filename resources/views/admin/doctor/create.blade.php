@@ -5,10 +5,9 @@
     <div class="content">
         <div class="page-inner">
             <div class="page-header">
-                <h4 class="page-title">Doctord</h4>
                 <ul class="breadcrumbs">
                     <li class="nav-home">
-                    <a href="{{ route('admin.dashboard')}}">
+                        <a href="{{ route('admin.dashboard')}}">
                             <i class="flaticon-home"></i>
                         </a>
                     </li>
@@ -16,13 +15,13 @@
                         <i class="flaticon-right-arrow"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="#">Tables</a>
+                        <a href="{{ route('doctor.index')}}">Doctors</a>
                     </li>
                     <li class="separator">
                         <i class="flaticon-right-arrow"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="#">Datatables</a>
+                        <a href="#">Create</a>
                     </li>
                 </ul>
             </div>
@@ -48,32 +47,32 @@
                             <form action="{{ route('doctor.store')}}" method="post">
                                 @csrf
                                 <div class="row">
-                                    <div class="form-group form-floating-label col-md-6">
-                                        <input id="name" name="name" type="text" class="form-control input-border-bottom" value="{{old('name')}}" required="">
-                                        <label for="name" class="placeholder">Name</label>
+                                    <div class="form-group col-sm-6">
+                                        <label for="name" class="placeholder">Doctor Name</label>
+                                        <input id="name" name="name" type="text" class="form-control" value="{{old('name')}}" placeholder="Enter Doctor Name" required>
                                     </div>
 
-                                    <div class="form-group form-floating-label col-md-6">
-                                        <select class="form-control input-solid" id="specialist" name="doctor_specialist" required="">
-                                            <option>&nbsp;</option>
+                                    <div class="form-group col-sm-6">
+                                        <label for="specialist" class="placeholder">Select Specialist</label>
+                                        <select class="form-control" id="specialist" name="doctor_specialist" required>
+                                            <option selected value disabled>Select</option>
                                             @foreach($doctorSpecialists as $doctorSpecialist)
                                             <option value="{{ $doctorSpecialist->id }}">{{ $doctorSpecialist->specialist }}</option>
                                             @endforeach
                                         </select>
-                                        <label for="specialist" class="placeholder">Specialist</label>
                                     </div>
 
-                                    <div class="form-group form-floating-label col-md-4">
-                                        <input id="phone" name="phone" type="text" value="{{old('phone')}}" class="form-control input-border-bottom" required="">
-                                        <label for="phone" class="placeholder">Phone</label>
+                                    <div class="form-group col-sm-4">
+                                        <label for="phone" class="placeholder">Doctor</label>
+                                        <input id="phone" name="phone" type="text" value="{{old('phone')}}" class="form-control" placeholder="Enter Phone Number" required>
                                     </div>
 
-                                    <div class="form-group form-floating-label col-md-3">
-                                        <input id="age" name="age" type="text" value="{{old('age')}}" class="form-control input-border-bottom" required="">
+                                    <div class="form-group col-sm-2">
                                         <label for="age" class="placeholder">Age</label>
+                                        <input id="age" name="age" type="text" value="{{old('age')}}" class="form-control" placeholder="Enter Age" required>
                                     </div>
 
-                                    <div class="form-check col-md-2">
+                                    <div class="form-check col-md-3">
                                         <label>Gender</label><br>
                                         <label class="form-radio-label">
                                             <input class="form-radio-input" type="radio" name="gender" value="male" checked="">
@@ -85,29 +84,33 @@
                                         </label>
                                     </div>
 
-                                    <div class="form-group form-floating-label col-md-3">
-                                        <input id="fees" name="fees" value="{{old('fees')}}" type="text" class="form-control input-border-bottom" required="">
+                                    <div class="form-group col-sm-3">
                                         <label for="fees" class="placeholder">Fees</label>
+                                        <input id="fees" name="fees" value="{{old('fees')}}" type="text" class="form-control" placeholder="Enter Fess" required>
                                     </div>
 
 
-                                    <div class="form-group form-floating-label col-md-6">
-                                        <input id="email" name="email" type="email" value="{{old('email')}}" class="form-control input-border-bottom" required="">
+                                    <div class="form-group col-sm-6">
                                         <label for="email" class="placeholder">Email</label>
+                                        <input id="email" name="email" type="email" value="{{old('email')}}" class="form-control" placeholder="Enter Email" required>
+
                                     </div>
 
-                                    <div class="form-group form-floating-label col-md-6">
-                                        <input id="address" name="address" type="text" value="{{old('address')}}" class="form-control input-border-bottom" required="">
+                                    <div class="form-group col-sm-6">
                                         <label for="address" class="placeholder">Address</label>
+                                        <input id="address" name="address" type="text" value="{{old('address')}}" class="form-control" placeholder="Enter Address" required>
+
                                     </div>
 
-                                    <div class="form-group form-floating-label col-md-6">
-                                        <input id="password" name="password" type="password" class="form-control input-border-bottom" required="">
+                                    <div class="form-group col-sm-6">
                                         <label for="password" class="placeholder">Password</label>
+                                        <input id="password" name="password" type="password" class="form-control" required>
+
                                     </div>
-                                    <div class="form-group form-floating-label col-md-6">
-                                        <input id="password_confirmation" name="password_confirmation" type="password" class="form-control input-border-bottom" required="">
+                                    <div class="form-group col-sm-6">
                                         <label for="password_confirmation" class="placeholder">Confirm Password</label>
+                                        <input id="password_confirmation" name="password_confirmation" type="password" class="form-control" required>
+
                                     </div>
                                 </div>
                                 <div class="mr-auto card-action">

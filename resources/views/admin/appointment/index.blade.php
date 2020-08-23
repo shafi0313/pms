@@ -94,18 +94,18 @@
                                         @foreach($appointments as $appointment)
                                         <tr>
                                             <td>{{ $x++ }}</td>
-                                            <td>{{ $appointment->name }}</td>
-                                            <td>{{ $appointment->doctor_name }}</td>
+                                            <td>{{ $appointment->patient->name }}</td>
+                                            <td>{{ $appointment->doctor->name }}</td>
                                             <td>{{ $appointment->date }}</td>
                                             <td>{{ $appointment->time }}</td>
                                             <td>{{ $appointment->status }}</td>
                                             <td>
                                                 <div class="form-button-action">
-                                                <a href="{{ route('appointments.edit',$appointment->id)}}" data-toggle="tooltip" title="" class="btn btn-link btn-primary" data-original-title="Edit Task">
+                                                    <a href="{{ route('appointments.edit',$appointment->id)}}" data-toggle="tooltip" title="" class="btn btn-link btn-primary" data-original-title="Edit Task">
                                                         <i class="fa fa-edit"></i>
                                                     </a>
 
-                                                    <a href="{{route('del',$appointment->id)}}" data-toggle="tooltip" title="" class="btn btn-link btn-danger delete" data-original-title="Remove">
+                                                    <a href="{{route('appointments.destroy',$appointment->id)}}" data-toggle="tooltip" title="" class="btn btn-link btn-danger delete" data-original-title="Remove">
                                                         <i class="fa fa-times"></i>
                                                     </a>
                                                 </div>

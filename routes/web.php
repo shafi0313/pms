@@ -3,6 +3,8 @@
 use App\User;
 use App\MyRole;
 use App\Models\Appointment;
+use App\Models\DoctorSpecialist;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -14,14 +16,13 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-// Route::get('t', function () {
+Route::get('t', function () {
 //   return  Appointment::all();
-// //   return  MyRole::with('users')->get();
-// });
+  return  Appointment::with('patientForApp')->get();
+});
+
 Route::middleware(['auth','admin'])->prefix('admin')->namespace('Backend')->group(function(){
-    Route::resource('/users', 'AuthController');
-    // Route::get('/get/users','AuthController@getUser')->name('get.user');
-    // Route::post('/users/store','AuthController@registerStore')->name('admin.registerStore');
+    Route::get('/users', 'AdminUser@index')->name('admin.user');
 
     Route::get('/login','AuthController@loginShow')->name('admin.login');
     Route::post('/login','AuthController@login')->name('admin.login.post');
@@ -33,9 +34,9 @@ Route::middleware(['auth','admin'])->prefix('admin')->namespace('Backend')->grou
     Route::resource('/patients', 'PatientController');
     Route::get('/patients/get/sub', 'PatientController@subCat')->name('subcat');
 
+    Route::resource('/appointments', 'AppointmentController');
     Route::get('/appointment/patients', 'AppointmentController@patientList')->name('appointment.patient');
     Route::get('/appointment/patients/{id}', 'AppointmentController@patientSelect')->name('appointment.select.patient');
-    Route::resource('/appointments', 'AppointmentController');
 
     Route::get('/appointment/show', 'AppointmentController@appointment')->name('appointment.show');
 
