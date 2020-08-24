@@ -77,16 +77,16 @@ class DoctorController extends Controller
 
         // dd($data);
 
-            User::create($data);
-            DoctorSpecialist::create($doctorSpecialists);
+
 
         try {
-
+            User::create($data);
+            DoctorSpecialist::create($doctorSpecialists);
+            Alert::success('Data Inserted', 'Data Successfully Inserted');
             return redirect()->route('doctor.index');
-            Alert::success('Success Title', 'Success Message');
-        } catch(\Exception $e) {
+        } catch(\Exception $ex) {
+            Alert::error('DataInsert', $ex->getMessage());
             return redirect()->back();
-            Alert::error('Error Title', 'Error Message');
         }
     }
 
@@ -141,11 +141,11 @@ class DoctorController extends Controller
         try {
             $update  = User::find($id);
             $update->update($data);
+            Alert::success('Data Updeated', 'Data Successfully Updeated');
             return redirect()->route('doctor.index');
-            Alert::success('Success Title', 'Success Message');
-        } catch(\Exception $e) {
+        } catch(\Exception $ex) {
+            Alert::error('DataInsert', $ex->getMessage());
             return redirect()->back();
-            Alert::error('Error Title', 'Error Message');
         }
     }
 
@@ -157,7 +157,7 @@ class DoctorController extends Controller
      */
     public function destroy($id)
     {
-        Admin::find($id)->delete();
+        User::find($id)->delete();
         return Redirect()->back();
     }
 }

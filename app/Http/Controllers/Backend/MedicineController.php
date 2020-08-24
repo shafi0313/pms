@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\User;
+use App\Models\Medicine;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use RealRashid\SweetAlert\Facades\Alert;
 
-class AdminUser extends Controller
+class MedicineController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +16,8 @@ class AdminUser extends Controller
      */
     public function index()
     {
-        $users = User::where('role',1)->orWhere('role',2)->get();
-        return view('admin.user_management.index', compact('users'));
+        $medicines = Medicine::all();
+        return view('admin.medicine.index', compact('medicines'));
     }
 
     /**
@@ -27,7 +27,7 @@ class AdminUser extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.medicine.create');
     }
 
     /**
@@ -40,27 +40,22 @@ class AdminUser extends Controller
     {
         $this->validate($request, [
             'name' => 'required',
-            'email' => 'required|email|unique:admins,email',
-            'password' => 'required|min:1|max:15|confirmed',
+            'price' => 'numeric',
         ]);
 
         $data = [
             'name' => $request->input('name'),
-            'email' => strtolower($request->input('email')),
-            'age' => $request->input('age'),
-            'address' => $request->input('address'),
-            'role' => $request->input('role'),
-            'doctor_specialist' => $request->input('doctor_specialist'),
-            'password' => bcrypt($request->input('password')),
+            'medicine_group' => $request->input('medicine_group'),
+            'company' => $request->input('company'),
+            'price' => $request->input('price'),
         ];
 
-        // dd($data);
 
         try {
-            User::create($data);
-            Alert::success('User Inserted', 'User Successfully Inserted');
-            return redirect()->back();
-        } catch(\Exception $ex) {
+            Medicine::create($data);
+            Alert::success('Medicine Inserted', 'Medicin Successfully Inserted');
+            return redirect()->route('medicine.index');
+        } catch(\Exception $ex){
             Alert::error('DataInsert', $ex->getMessage());
             return redirect()->back();
         }
@@ -85,7 +80,8 @@ class AdminUser extends Controller
      */
     public function edit($id)
     {
-        //
+        $medicine = Medicine::find($id);
+        return view('admin.medicine.edit', compact('medicine'));
     }
 
     /**
@@ -97,7 +93,21 @@ class AdminUser extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = [
+            'name' => $request->input('name'),
+            'medicine_group' => $request->input('medicine_group'),
+            'company' => $request->input('company'),
+            'price' => $request->input('price'),
+        ];
+
+        try {
+            Medicine::find($id)->update($data);
+            Alert::success('Medicin Updated', 'Medicin Successfully Updated');
+            return redirect()->route('medicine.index');
+        } catch (\Exception $ex) {
+            Alert::error('DataInsert', $ex->getMessage());
+            return redirect()->back();
+        }
     }
 
     /**
@@ -108,6 +118,7 @@ class AdminUser extends Controller
      */
     public function destroy($id)
     {
-        //
+        Medicine::find($id)->delete();
+        return redirect()->back();
     }
 }

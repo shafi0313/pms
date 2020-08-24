@@ -97,10 +97,6 @@
 										<label for="doctor">Select Doctor</label>
                                         <select class="form-control" name="doctor_name" id="subs" required></select>
                                     </div>
-                                    @isset($patientId->id)
-                                        <input type="hidden" name="pid" value="{{$patientId->id}}">
-                                    @endisset
-
                                     <div class="form-group col-sm-6">
                                         <label for="">Appointment Date</label>
                                         <input type="txte" name="date" class="form-control date-picker datepicker" Placeholder="DD/MM/YYYY" required>

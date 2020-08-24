@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<title>@yield('title') | {{config('app.name')}}</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
@@ -18,7 +19,6 @@
 			}
 		});
     </script>
-    @include('sweetalert::alert', ['cdn' => "https://cdn.jsdelivr.net/npm/sweetalert2@9"])
 
 	<!-- CSS Files -->
 	<link rel="stylesheet" href="{{ asset('backend/assets/css/bootstrap.min.css') }}">
@@ -29,16 +29,19 @@
 	<!-- CSS Just for demo purpose, don't include it in your project -->
     <link rel="stylesheet" href="{{ asset('backend/assets/css/demo.css') }}">
 
-            {{-- For Date Picker --}}
+    {{-- For Date Picker --}}
     <link rel="stylesheet" href="{{ asset('backend/assets/datepicker/css/bootstrap-datepicker3.standalone.min.css') }}">
-		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
-		{{-- <link rel="stylesheet" href="{{ asset('admin/assets/cdn/jquery-ui.css')}}"> --}}
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+	{{-- <link rel="stylesheet" href="{{ asset('admin/assets/cdn/jquery-ui.css')}}"> --}}
 
-		<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-		{{-- <script src="{{ asset('admin/assets/cdn/jquery-ui.js')}}"></script> --}}
+    <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
-		{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script> --}}
-		{{-- <script src="{{ asset('admin/assets/cdn/toastr.min.js')}}"></script> --}}
+    @include('sweetalert::alert', ['cdn' => "https://cdn.jsdelivr.net/npm/sweetalert2@9"])
+
+	{{-- <script src="{{ asset('admin/assets/cdn/jquery-ui.js')}}"></script> --}}
+
+	{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script> --}}
+	{{-- <script src="{{ asset('admin/assets/cdn/toastr.min.js')}}"></script> --}}
 </head>
 <body>
 	<div class="wrapper">
@@ -118,8 +121,10 @@
 {{-- <script>
     window.date_format = "{{ pms('js_date_format') }}";
 </script> --}}
-@include('sweetalert::alert')
+
 @stack('custom_scripts')
+
+@include('sweetalert::alert')
 </body>
 </html>
 

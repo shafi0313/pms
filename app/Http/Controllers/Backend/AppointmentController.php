@@ -84,11 +84,11 @@ class AppointmentController extends Controller
 
         try {
             Appointment::create($data);
+            Alert::success('Appointment Inserted', 'Appointment Successfully Inserted');
             return redirect()->back();
-            Alert::success('Success Title', 'Success Message');
         } catch(\Exception $ex) {
+            Alert::error('DataInsert', $ex->getMessage());
             return redirect()->back();
-            Alert::success('Success Title', 'Success Message');
         }
     }
 

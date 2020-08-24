@@ -5,7 +5,6 @@
     <div class="content">
         <div class="page-inner">
             <div class="page-header">
-                <h4 class="page-title">Doctord</h4>
                 <ul class="breadcrumbs">
                     <li class="nav-home">
                     <a href="{{ route('admin.dashboard')}}">
@@ -16,13 +15,7 @@
                         <i class="flaticon-right-arrow"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="#">Tables</a>
-                    </li>
-                    <li class="separator">
-                        <i class="flaticon-right-arrow"></i>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#">Datatables</a>
+                        <a href="#">Medicine</a>
                     </li>
                 </ul>
             </div>
@@ -37,15 +30,15 @@
                         @endforeach
                     </ul>
                 </div>
-            @endif
+                @endif
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex align-items-center">
                                 <h4 class="card-title">Add Row</h4>
-                            <a class="btn btn-primary btn-round ml-auto" href="{{ route('patients.create') }}">
+                            <a class="btn btn-primary btn-round ml-auto" href="{{ route('medicine.create') }}">
                                     <i class="fa fa-plus"></i>
-                                    Add Row
+                                    Add New
                                 </a>
                             </div>
                         </div>
@@ -55,43 +48,38 @@
                                     <thead>
                                         <tr>
                                             <th style="width:6%">SN</th>
-                                            <th>Name</th>
-                                            <th>Email</th>
-                                            <th>Age</th>
-                                            <th>Address</th>
-                                            <th>Spesialist</th>
-                                            <th>Photo</th>
+                                            <th>Medicine Name</th>
+                                            <th>Group</th>
+                                            <th>Company</th>
+                                            <th>Price</th>
                                             <th class="no-sort" style="width:7%">Action</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th>SN</th>
-                                            <th>Name</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
+                                            <th style="width:6%">SN</th>
+                                            <th>Medicine Name</th>
+                                            <th>Group</th>
+                                            <th>Company</th>
+                                            <th>Price</th>
                                             <th>Action</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
                                         @php $x=1;@endphp
-                                        @foreach($patients as $patient)
+                                        @foreach($medicines as $medicine)
                                         <tr>
                                             <td>{{ $x++ }}</td>
-                                            <td>{{ $patient->name }}</td>
-                                            <td>{{ $patient->email }}</td>
-                                            <td>{{ $patient->age }}</td>
-                                            <td>{{ $patient->address }}</td>
-                                            <td>{{ $patient->doctor_specialist }}</td>
-                                            <td>{{ $patient->photo }}</td>
+                                            <td>{{ $medicine->name }}</td>
+                                            <td>{{ $medicine->medicine_group }}</td>
+                                            <td>{{ $medicine->company }}</td>
+                                            <td>{{ $medicine->price }}</td>
                                             <td>
                                                 <div class="form-button-action">
-                                                    <a href="{{ route('doctor.edit',$patient->id)}}" data-toggle="tooltip" title="" class="btn btn-link btn-primary" data-original-title="Edit Task">
+                                                    <a href="{{ route('medicine.edit',$medicine->id)}}" data-toggle="tooltip" title="" class="btn btn-link btn-primary" data-original-title="Edit Task">
                                                         <i class="fa fa-edit"></i>
                                                     </a>
-                                                    <a href="{{ route('patients.destroy',$patient->id)}}" data-toggle="tooltip" title="" class="btn btn-link btn-danger delete" data-original-title="Remove">
+                                                    <a href="{{ route('medicine.destroy',$medicine->id)}}" data-toggle="tooltip" title="" class="btn btn-link btn-danger delete" data-original-title="Remove">
                                                         <i class="fa fa-times"></i>
                                                     </a>
                                                 </div>

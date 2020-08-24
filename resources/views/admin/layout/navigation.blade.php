@@ -57,7 +57,7 @@
 
                 <li class="nav-item">
 					<a data-toggle="collapse" href="#specialist">
-						<i class="fas fa-pen-square"></i>
+						<i class="fas fa-user-md"></i>
 						<p>Doctor</p>
 						<span class="caret"></span>
 					</a>
@@ -78,9 +78,31 @@
 				</li>
 				<li class="nav-item">
                 <a href="{{ route('admin.user') }}">
-						<i class="fas fa-layer-group"></i>
+                        <i class="fas fa-users-cog"></i>
 						<p>Users</p>
 					</a>
+                </li>
+
+                <li class="nav-item">
+                    <a data-toggle="collapse" href="#medicine">
+                        <i class="fas fa-pills"></i>
+                        <p>Medicine</p>
+                        <span class="caret"></span>
+                    </a>
+                    <div class="collapse" id="medicine">
+                        <ul class="nav nav-collapse">
+                            <li>
+                                <a href="{{ route('medicine.index') }}">
+                                    <span class="sub-item">Medicine List</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('medicine.create') }}">
+                                    <span class="sub-item">Add Medicine</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </li>
 
                 <li class="nav-item">
@@ -106,7 +128,7 @@
                 </li>
                 <li class="nav-item">
                     <a data-toggle="collapse" href="#appointment">
-                        <i class="fas fa-user"></i>
+                        <i class="far fa-calendar-check"></i>
                         <p>Appointments</p>
                         <span class="caret"></span>
                     </a>

@@ -31,9 +31,8 @@ class PatientController extends Controller
      */
     public function create(Request $request)
     {
-        $patientId = DB::table('patients')->select('id')->latest('id')->first();
-        $doctorSpecialists = DoctorSpecialist::where('specialist_id',0)->get();
-        return view('admin.patient.create', compact(['doctorSpecialists','patientId']));
+       $doctorSpecialists = DoctorSpecialist::where('specialist_id',0)->get();
+        return view('admin.patient.create', compact(['doctorSpecialists']));
     }
 
     public function subCat(Request $request)
@@ -74,33 +73,21 @@ class PatientController extends Controller
             'mdical_history' => $request->input('mdical_history'),
         ];
 
-        // $patientId = DB::table('patients')->select('id')->latest('id')->first();
-
-
-        $patientId = $request->get('pid');
-        if($patientId==''){
-            $patientId += 1;
-        }else{
-            $patientId = $request->get('pid')+1;
-        }
-
-
         $appointments = [
-            'patient_id' => $patientId,
             'doctor_id' => $request->input('doctor_name'),
             'date' => Carbon::createFromFormat('m/d/Y', $request->date)->format('Y-m-d'),
             'time' => $request->input('time'),
         ];
 
-
         try {
-            Patient::create($patient);
+            $patient =  Patient::create($patient);
+            $appointments['patient_id'] = $patient->id;
             Appointment::create($appointments);
+            Alert::success('Patient Inserted', 'Patient Successfully Inserted');
             return redirect()->route('appointment.show');
-            Alert::success('Success Title', 'Success Message');
         } catch(\Exception $ex) {
+            Alert::error('DataInsert', $ex->getMessage());
             return redirect()->back();
-            Alert::error('Error Title', 'Error Message');
         }
     }
 
@@ -146,6 +133,7 @@ class PatientController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Patient::find($id)->delete();
+        return redirect()->back();
     }
 }
