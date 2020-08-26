@@ -41,6 +41,16 @@ Route::middleware(['auth','admin'])->prefix('admin')->namespace('Backend')->grou
     Route::get('/patients/get/sub', 'AppointmentController@subCat')->name('subcat');
     Route::get('/appointments/destroy/{id}', 'AppointmentController@destroy')->name('appointments.destroy');
 
+    // Route::get('prescription/search', 'PrescriptionController@search')->name('search');
+    Route::get('prescription/appointment', 'PrescriptionController@appointmentShow')->name('prescription.appointment');
+    Route::get('prescription/{id}', 'PrescriptionController@prescriptionCreate')->name('prescriptionCreate');
+    // Route::post('prescription/{id}', 'PrescriptionController@store')->name('prescriptionCreate');
+    Route::resource('prescription', 'PrescriptionController');
+    // Route::post('prescription', 'PrescriptionController@store')->name('ps');
+
+
+Route::get('autocomplete', 'PrescriptionController@autocomplete')->name('autocomplete');
+
 
 
 

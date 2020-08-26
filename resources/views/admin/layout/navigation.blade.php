@@ -151,16 +151,16 @@
 
 
 				<li class="nav-item">
-					<a data-toggle="collapse" href="#forms">
+					<a data-toggle="collapse" href="#prescription">
 						<i class="fas fa-pen-square"></i>
-						<p>Forms</p>
+						<p>Prescription</p>
 						<span class="caret"></span>
 					</a>
-					<div class="collapse" id="forms">
+					<div class="collapse" id="prescription">
 						<ul class="nav nav-collapse">
 							<li>
-								<a href="forms/forms.html">
-									<span class="sub-item">Basic Form</span>
+                                <a href="{{ route('prescription.appointment') }}">
+									<span class="sub-item">Create prescription</span>
 								</a>
 							</li>
 						</ul>

@@ -71,3 +71,18 @@
     cursor: default!important;
 }
 
+/* Prescription */
+.doctor_info {
+    margin-bottom: 30px;
+}
+.pres_patient {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    margin-bottom: 30px;
+}
+
+.pres_patient p {
+    margin: 2px 0;
+    font-size: 16px;
+    font-weight: 600;
+}
