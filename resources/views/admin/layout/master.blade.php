@@ -41,7 +41,10 @@
 	{{-- <script src="{{ asset('admin/assets/cdn/jquery-ui.js')}}"></script> --}}
 
 	{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script> --}}
-	{{-- <script src="{{ asset('admin/assets/cdn/toastr.min.js')}}"></script> --}}
+    {{-- <script src="{{ asset('admin/assets/cdn/toastr.min.js')}}"></script> --}}
+
+    {{-- Presscription Medicine Search --}}
+    {{-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css"> --}}
 </head>
 <body>
 	<div class="wrapper">
@@ -78,10 +81,7 @@
         @include('admin.layout.navigation')
         {{-- End Navigation --}}
 
-
         @yield('content')
-
-
 
 		<!-- Custom template | don't include it in your project! -->
 		<div class="custom-template">

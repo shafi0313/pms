@@ -49,11 +49,12 @@ Route::middleware(['auth','admin'])->prefix('admin')->namespace('Backend')->grou
     // Route::post('prescription', 'PrescriptionController@store')->name('ps');
 
 
-Route::get('autocomplete', 'PrescriptionController@autocomplete')->name('autocomplete');
+    Route::get('autocomplete', 'PrescriptionController@autocomplete')->name('autocomplete');
 
+    // Route::get('autocomplete', 'SearchController@autocomplete')->name('autocomplete');
 
-
-
+    // Route::get('searchajax','PrescriptionController@searchResponse')->name('searchajax');
+    Route::get('searchajax', ['as'=>'searchajax','uses'=>'PrescriptionController@searchResponse']);
 
 });
 

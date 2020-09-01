@@ -49,6 +49,11 @@
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
+
+{{-- Presscription Medicine Search --}}
+{{-- <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script> --}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
 <!-- Azzara DEMO methods, don't include it in your project! -->
 {{-- <script src="{{ asset('backend/assets/js/setting-demo.js') }}"></script>
 <script src="{{ asset('backend/assets/js/demo.js') }}"></script> --}}

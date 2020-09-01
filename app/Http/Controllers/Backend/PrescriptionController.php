@@ -7,6 +7,7 @@ use App\Models\Medicine;
 use App\Models\Appointment;
 use App\Models\Prescription;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -60,9 +61,12 @@ class PrescriptionController extends Controller
                 'medicine_id'=>$request->medicine_id[$key],
                 'eating_time'=>$request->eating_time[$key],
                 'days'=>$request->days[$key],
+                // 'advice'=>$request->advice[$key],
+                // 'advice_invest'=>$request->advice_invest[$key],
             ];
             $prescription = Prescription::create($data);
         }
+
         try {
             $prescription;
             Alert::success('Prescription Updeated', 'Prescription Successfully Updeated');
@@ -120,13 +124,21 @@ class PrescriptionController extends Controller
         //
     }
 
-    public function autocomplete(Request $request)
-    {
-          $search = $request->get('term');
+    public function searchResponse(Request $request){
+        $query = $request->get('term','');
+        $medicines=DB::table('medicines');
+        if($request->type=='medicinesName'){
+            $medicines->where('name','LIKE','%'.$query.'%');
+        }
 
-          $result = Medicine::where('name', 'LIKE', '%'. $search. '%')->get();
-
-          return response()->json($result);
-
+        $medicines=$medicines->get();
+        $data=array();
+        foreach ($medicines as $medicine) {
+            $data[]=array('id'=>$medicine->id, 'name'=>$medicine->name);
+        }
+        if(count($data))
+             return $data;
+        else
+            return ['id'=>'', 'name'=>''];
     }
 }
