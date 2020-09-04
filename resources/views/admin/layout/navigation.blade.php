@@ -158,6 +158,11 @@
 					</a>
 					<div class="collapse" id="prescription">
 						<ul class="nav nav-collapse">
+                            <li>
+                                <a href="{{ route('prescription.index') }}">
+									<span class="sub-item">Show prescription</span>
+								</a>
+							</li>
 							<li>
                                 <a href="{{ route('prescription.appointment') }}">
 									<span class="sub-item">Create prescription</span>

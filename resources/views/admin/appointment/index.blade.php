@@ -124,7 +124,6 @@
         </div>
     </div>
 </div>
-@include('sweetalert::alert')
 @push('custom_scripts')
 <script type="text/javascript">
     $(document).ready(function () {

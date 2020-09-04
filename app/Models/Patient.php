@@ -13,4 +13,6 @@ class Patient extends Model
     //     return $this->hasMany('App\Models\DoctorSpecialist', 'specialist_id');
 
     // }
+
+    
 }

@@ -68,7 +68,7 @@
                                     </tfoot>
                                     <tbody>
                                         @php $x=1;@endphp
-                                        @foreach($appointments as $appointment)
+                                        @forelse($appointments as $appointment)
                                         <tr>
                                             <td>{{ $x++ }}</td>
                                             <td>{{ $appointment->patient->name }}</td>
@@ -87,7 +87,14 @@
                                                 </div> --}}
                                             </td>
                                         </tr>
-                                        @endforeach
+                                        @empty
+                                        <tr>
+                                            <td colspan="8" align="center">
+                                                <h1 class="display-5 text-danger">Table Empty</h1>
+                                            </td>
+                                        </tr>
+                                        @endforelse
+
                                     </tbody>
                                 </table>
                             </div>
@@ -100,7 +107,7 @@
 </div>
 
 @push('custom_scripts')
-@include('sweetalert::alert')
+
 <script >
     $(document).ready(function() {
         $('#basic-datatables').DataTable({

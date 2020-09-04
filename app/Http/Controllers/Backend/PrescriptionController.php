@@ -19,21 +19,28 @@ class PrescriptionController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function appointmentShow()
-    {
-        $appointments = Appointment::all();
-        return view('admin.Prescription.appointments', compact('appointments'));
-    }
     public function index()
     {
-        $appointments = Appointment::all();
-        return view('admin.Prescription.index');
+        $appointments = Appointment::where('status',1)->where('doctor_id',auth()->user()->id)->groupBy('patient_id')->get();
+        return view('admin.prescription.index', compact('appointments'));
+    }
+
+    public function presscriptionDate($patient_id)
+    {
+        $presscriptionDates = Appointment::where('patient_id', $patient_id)->get();
+        return view('admin.prescription.presscription_date', compact('presscriptionDates'));
     }
 
     public function prescriptionCreate($id)
     {
         $appointments = Appointment::find($id);
         return view('admin.Prescription.create', compact('appointments'));
+    }
+
+    public function appointmentShow()
+    {
+        $appointments = Appointment::where('status',0)->where('doctor_id',auth()->user()->id)->get();
+        return view('admin.Prescription.appointments', compact('appointments'));
     }
     /**
      * Show the form for creating a new resource.
@@ -54,6 +61,12 @@ class PrescriptionController extends Controller
      */
     public function store(Request $request)
     {
+        // $s = 123;
+        // return $ss =  str_split($s,1);
+
+        $appId = $request->get('appointmentId');
+        $appointments ['status'] = 1;
+
         foreach($request->medicine_id as $key => $v){
             $data=[
                 'doctor_id'=>$request->doctor_id[$key],
@@ -68,15 +81,13 @@ class PrescriptionController extends Controller
         }
 
         try {
-            $prescription;
+            Appointment::where('id',$appId)->update($appointments);
             Alert::success('Prescription Updeated', 'Prescription Successfully Updeated');
             return redirect()->back();
         } catch(\Exception $ex){
             Alert::error('DataInsert', $ex->getMessage());
             return redirect()->back();
-
         }
-
     }
 
     /**

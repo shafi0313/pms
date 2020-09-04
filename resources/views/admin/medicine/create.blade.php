@@ -83,7 +83,7 @@
         </div>
     </div>
 </div>
-@include('sweetalert::alert')
+
 @push('custom_scripts')
 
 @endpush

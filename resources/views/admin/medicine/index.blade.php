@@ -98,7 +98,7 @@
 </div>
 
 @push('custom_scripts')
-@include('sweetalert::alert')
+
 <script >
     $(document).ready(function() {
         $('#basic-datatables').DataTable({

@@ -95,8 +95,11 @@
                                 <button type="button" class='btn btn-success addbtn'>Add More</button></td>
                                 <br>
                                 <br>
+                                <input type="hidden" name="appointmentId" value="{{$appointments->id}}">
                                 <button class="btn btn-primary col-md-offset-6" type="submit">Submit</button>
                             </form>
+
+
 
                     {{-- <form action="{{ route('prescription.store') }}" method="post" id="insert_form">
                             @csrf

@@ -68,23 +68,22 @@
                                     </tfoot>
                                     <tbody>
                                         @php $x=1;@endphp
-                                        @foreach($appointments as $appointment)
+                                        @foreach($presscriptionDates as $presscriptionDate)
                                         <tr>
                                             <td>{{ $x++ }}</td>
-                                            <td>{{ $appointment->patient->name }}</td>
-                                            <td>{{ $appointment->doctor->name }}</td>
-                                            <td>{{ \Carbon\Carbon::parse($appointment->date)->format('d/m/Y') }}</td>
-                                            <td>{{ $appointment->time }}</td>
-                                            <td>
-                                                <div class="form-button-action">
-                                                    <a href="" data-toggle="tooltip" title="" class="btn btn-link btn-primary" data-original-title="Edit Task">
+
+                                            <td>{{ $presscriptionDate->date }}</td>
+
+                                        <td><a href="{{ route('prescriptionCreate',$presscriptionDate->id)}}">Show</a>
+                                                {{-- <div class="form-button-action">
+                                                <a href="" data-toggle="tooltip" title="" class="btn btn-link btn-primary" data-original-title="Edit Task">
                                                         <i class="fa fa-edit"></i>
                                                     </a>
 
                                                     <a href="{{ route('appointments.destroy',$appointment->id)}}" data-toggle="tooltip" title="" class="btn btn-link btn-danger delete" data-original-title="Remove">
                                                         <i class="fa fa-times"></i>
                                                     </a>
-                                                </div>
+                                                </div> --}}
                                             </td>
                                         </tr>
                                         @endforeach
