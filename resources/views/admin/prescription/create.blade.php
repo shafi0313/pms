@@ -66,7 +66,7 @@
                                         <p>Age: {{$appointments->patient->age}}</p>
                                     </div>
                                     <div class="col-sm-3 text-right">
-                                        <p>Data: {{$appointments->date}}</p>
+                                        <p>Data: {{ \Carbon\Carbon::parse($appointments->date)->format('d/m/Y') }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -74,12 +74,14 @@
 
                             <form action="{{ route('prescription.store') }}" method="post">
                                 @csrf
+                                <input type="hidden" name="appointmentId" value="{{$appointments->id}}">
                                 <table class="table table-bordered">
                                     <tr>
                                         <th><input class='check_all' type='checkbox' onclick="select_all()" /></th>
                                         <th>Medicine Name</th>
-                                        <th>Eating Time</th>
+                                        <th width="10%">Eating Time</th>
                                         <th>How Many Time</th>
+                                        <th>Note</th>
                                     </tr>
                                     <tr>
                                         <td><input type='checkbox' class='chkbox' /></td>
@@ -87,15 +89,25 @@
                                         <td><input class="form-control autocomplete_txt" type="text" data-type="medicinesName" id="medicine_name_1" /></td>
                                         <td><input type="text" name="eating_time[]" placeholder="0+0+0" class="form-control" /> </td>
                                         <td><input type="text" name="days[]" placeholder="Enter medicine time" class="form-control" /></td>
+                                        <td><input type="text" name="note[]" placeholder="Enter Note" class="form-control" /></td>
                                         <input type="hidden" name="doctor_id[]" value="{{$appointments->doctor->id}}">
                                         <input type="hidden" name="patient_id[]" value="{{$appointments->patient->id}}">
+                                        <input type="hidden" name="apnmt_id[]" value="{{$appointments->id}}">
                                     </tr>
                                 </table>
                                 <button type="button" class='btn btn-danger delete'>Delete</button>
                                 <button type="button" class='btn btn-success addbtn'>Add More</button></td>
                                 <br>
                                 <br>
-                                <input type="hidden" name="appointmentId" value="{{$appointments->id}}">
+                                <div class="form-group">
+                                    <label for="advice">Advice</label>
+                                    <textarea name="advice" class="form-control" cols="30" rows="2"></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label for="next_meet">Next Meet</label>
+                                    <textarea name="next_meet" class="form-control" cols="30" rows="2"></textarea>
+                                </div>
+
                                 <button class="btn btn-primary col-md-offset-6" type="submit">Submit</button>
                             </form>
 
@@ -185,6 +197,7 @@
         medicine += '<td><input type="text" name="days[]" placeholder="Enter Medicine Time" class="form-control" /></td>';
         medicine += '<input type="hidden" name="doctor_id[]" value="{{$appointments->doctor->id}}">';
         medicine += '<input type="hidden" name="patient_id[]" value="{{$appointments->patient->id}}">';
+        medicine += '<input type="hidden" name="apnmt_id[]" value="{{$appointments->id}}">';
         medicine += '<td><button type="button" name="remove" id="' + j + '" class="btn btn-danger btn_remove">X</button></td></tr>';
 
         $('#med_add').click(function () {
@@ -246,8 +259,10 @@
         data += '<td><input class="form-control autocomplete_txt" type="text" data-type="medicinesName" id="medicine_name_' + i + '" /></td>';
         data += '<td><input type="text" name="eating_time[]" placeholder="0+0+0" class="form-control" /> </td>';
         data += '<td><input type="text" name="days[]" placeholder="Enter medicine time" class="form-control" /></td>';
+        data += '<td><input type="text" name="note[]" placeholder="Enter Note" class="form-control" /></td>';
         data += '<input type="hidden" name="doctor_id[]" value="{{$appointments->doctor->id}}">';
         data += '<input type="hidden" name="patient_id[]" value="{{$appointments->patient->id}}">';
+        data += '<input type="hidden" name="apnmt_id[]" value="{{$appointments->id}}">';
         data += "</tr>";
         $('table').append(data);
         i++;

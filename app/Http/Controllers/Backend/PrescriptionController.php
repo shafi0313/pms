@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Backend;
 
 use App\User;
+use Carbon\Carbon;
 use App\Models\Medicine;
+use App\Models\PrescriptionInfo;
 use App\Models\Appointment;
 use App\Models\Prescription;
 use Illuminate\Http\Request;
@@ -21,14 +23,24 @@ class PrescriptionController extends Controller
 
     public function index()
     {
-        $appointments = Appointment::where('status',1)->where('doctor_id',auth()->user()->id)->groupBy('patient_id')->get();
+        $appointments = Prescription::where('doctor_id',auth()->user()->id)->groupBy('apnmt_id')->get();
         return view('admin.prescription.index', compact('appointments'));
     }
 
-    public function presscriptionDate($patient_id)
+    public function prescriptionDates(Request $request, $patient_id)
     {
-        $presscriptionDates = Appointment::where('patient_id', $patient_id)->get();
-        return view('admin.prescription.presscription_date', compact('presscriptionDates'));
+        $prescriptionDates = Prescription::orderBy('id', 'DESC')->where('patient_id', $patient_id)->groupBy('date')->get();
+        return view('admin.prescription.prescription_date', compact('prescriptionDates'));
+    }
+
+    public function prescriptionShow(Request $request, $date)
+    {
+
+        // $prscriptionInfos = PrescriptionInfo::FindOrFail();
+        // $prescriptionInfos = PrescriptionInfo::all();
+        $prescriptionInfo = Prescription::where('doctor_id',auth()->user()->id)->first();
+        $prescriptionShows = Prescription::where('date', $date)->get();
+        return view('admin.prescription.prescription_show', compact(['prescriptionShows','prescriptionInfo']));
     }
 
     public function prescriptionCreate($id)
@@ -69,18 +81,26 @@ class PrescriptionController extends Controller
 
         foreach($request->medicine_id as $key => $v){
             $data=[
-                'doctor_id'=>$request->doctor_id[$key],
-                'patient_id'=>$request->patient_id[$key],
-                'medicine_id'=>$request->medicine_id[$key],
-                'eating_time'=>$request->eating_time[$key],
+                'doctor_id' => $request->doctor_id[$key],
+                'patient_id' => $request->patient_id[$key],
+                'apnmt_id' => $request->apnmt_id[$key],
+                'medicine_id' => $request->medicine_id[$key],
+                'eating_time' => $request->eating_time[$key],
                 'days'=>$request->days[$key],
-                // 'advice'=>$request->advice[$key],
-                // 'advice_invest'=>$request->advice_invest[$key],
+                'note'=>$request->note[$key],
+                'date'=> Carbon::now(),
             ];
             $prescription = Prescription::create($data);
         }
 
+        $prescriptionInfo = [
+            'apnmt_id' => $appId,
+            'next_meet' => $request->input('next_meet'),
+            'advice' => $request->input('advice'),
+        ];
+
         try {
+            PrescriptionInfo::create($prescriptionInfo);
             Appointment::where('id',$appId)->update($appointments);
             Alert::success('Prescription Updeated', 'Prescription Successfully Updeated');
             return redirect()->back();

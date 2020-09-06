@@ -85,7 +85,6 @@
                                             <th>Doctor Name</th>
                                             <th>Date</th>
                                             <th>Time</th>
-                                            <th>Status</th>
                                             <th>Action</th>
                                         </tr>
                                     </tfoot>
@@ -98,7 +97,6 @@
                                             <td>{{ $appointment->doctor->name }}</td>
                                             <td>{{ $appointment->date }}</td>
                                             <td>{{ $appointment->time }}</td>
-                                            <td>{{ $appointment->status }}</td>
                                             <td>
                                                 <div class="form-button-action">
                                                     <a href="{{ route('appointments.edit',$appointment->id)}}" data-toggle="tooltip" title="" class="btn btn-link btn-primary" data-original-title="Edit Task">
@@ -124,6 +122,7 @@
         </div>
     </div>
 </div>
+@include('sweetalert::alert')
 @push('custom_scripts')
 <script type="text/javascript">
     $(document).ready(function () {

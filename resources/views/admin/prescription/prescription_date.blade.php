@@ -15,7 +15,7 @@
                         <i class="flaticon-right-arrow"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="#">Appoinments</a>
+                        <a href="#"></a>
                     </li>
                 </ul>
             </div>
@@ -32,15 +32,11 @@
                     </div>
                 @endif
 
-                <div class="col-md-12">
+                <div class="col-md-9">
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex align-items-center">
-                                <h4 class="card-title">Add Appoinment</h4>
-                            <a class="btn btn-primary btn-round ml-auto" href="{{ route('doctor.create') }}">
-                                    <i class="fa fa-plus"></i>
-                                    Add New
-                                </a>
+                                {{-- <h4 class="card-title">{{ $prescriptionDates->patient->name }}</h4> --}}
                             </div>
                         </div>
                         <div class="card-body">
@@ -50,9 +46,7 @@
                                         <tr>
                                             <th style="width:1%">SN</th>
                                             <th>Patient Name</th>
-                                            <th>Doctor Name</th>
                                             <th>Date</th>
-                                            <th>Time</th>
                                             <th class="no-sort" style="width:7%">Action</th>
                                         </tr>
                                     </thead>
@@ -60,34 +54,22 @@
                                         <tr>
                                             <th>SN</th>
                                             <th>Patient Name</th>
-                                            <th>Doctor Name</th>
                                             <th>Date</th>
-                                            <th>Time</th>
                                             <th>Status</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
                                         @php $x=1;@endphp
-                                        @foreach($presscriptionDates as $presscriptionDate)
+                                        @foreach($prescriptionDates as $prescriptionDate)
                                         <tr>
                                             <td>{{ $x++ }}</td>
-
-                                            <td>{{ $presscriptionDate->date }}</td>
-
-                                        <td><a href="{{ route('prescriptionCreate',$presscriptionDate->id)}}">Show</a>
-                                                {{-- <div class="form-button-action">
-                                                <a href="" data-toggle="tooltip" title="" class="btn btn-link btn-primary" data-original-title="Edit Task">
-                                                        <i class="fa fa-edit"></i>
-                                                    </a>
-
-                                                    <a href="{{ route('appointments.destroy',$appointment->id)}}" data-toggle="tooltip" title="" class="btn btn-link btn-danger delete" data-original-title="Remove">
-                                                        <i class="fa fa-times"></i>
-                                                    </a>
-                                                </div> --}}
-                                            </td>
+                                            <td>{{ $prescriptionDate->patient->name }}</td>
+                                            <td>{{ \Carbon\Carbon::parse($prescriptionDate->date)->format('d/m/Y')}}</td>
+                                            <td><a href="{{ route('prescriptionShow',$prescriptionDate->date)}}">Show</a></td>
                                         </tr>
                                         @endforeach
                                     </tbody>
+                                <input type="hidden" name="pDate" value="{{$prescriptionDate->date}}">
                                 </table>
                             </div>
                         </div>
@@ -132,37 +114,9 @@
         $('#add-row').DataTable({
             "pageLength": 5,
         });
-
-        var action = '<td> <div class="form-button-action"> <button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task"> <i class="fa fa-edit"></i> </button> <button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove"> <i class="fa fa-times"></i> </button> </div> </td>';
-
-        $('#addRowButton').click(function() {
-            $('#add-row').dataTable().fnAddData([
-                $("#addName").val(),
-                $("#addPosition").val(),
-                $("#addOffice").val(),
-                action
-                ]);
-            $('#addRowModal').modal('hide');
-
-        });
     });
 </script>
-<script>
-    $('.delete').on('click', function (event) {
-        event.preventDefault();
-        const url = $(this).attr('href');
-        swal({
-            title: 'Are you sure?',
-            text: 'This record and it`s details will be permanantly deleted!',
-            icon: 'warning',
-            buttons: ["Cancel", "Yes!"],
-        }).then(function(value) {
-            if (value) {
-                window.location.href = url;
-            }
-        });
-    });
-</script>
+
 @endpush
 @endsection
 

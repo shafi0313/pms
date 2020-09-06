@@ -109,22 +109,20 @@
 					</div>
 				</div>
 			</div>
-			<div class="custom-toggle">
+			{{-- <div class="custom-toggle">
 				<i class="flaticon-settings"></i>
-			</div>
+			</div> --}}
 		</div>
 		<!-- End Custom template -->
 	</div>
 </div>
 
 @include('admin.layout.footer')
-{{-- <script>
-    window.date_format = "{{ pms('js_date_format') }}";
-</script> --}}
+@include('sweetalert::alert')
 
 @stack('custom_scripts')
 
-@include('sweetalert::alert')
+
 </body>
 </html>
 

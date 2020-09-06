@@ -38,11 +38,11 @@
 <!-- Google Maps Plugin -->
 <script src="{{ asset('backend/assets/js/plugin/gmaps/gmaps.js') }}"></script>
 
-<!-- Sweet Alert -->
-<script src="{{ asset('backend/assets/js/plugin/sweetalert/sweetalert.min.js') }}"></script>
-
 <!-- Azzara JS -->
 <script src="{{ asset('backend/assets/js/ready.min.js') }}"></script>
+
+<!-- Sweet Alert -->
+<script src="{{ asset('backend/assets/js/plugin/sweetalert/sweetalert.min.js') }}"></script>
 
 
 <script src="{{ asset('backend/assets/datepicker/js/bootstrap-datepicker.min.js') }}"></script>

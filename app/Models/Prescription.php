@@ -18,8 +18,18 @@ class Prescription extends Model
         return $this->belongsTo(Patient::class,'patient_id');
     }
 
-    // public function doctorForPres()
-    // {
-    //     return $this->belongsTo(User::class,'doctor_id')
-    // }
+    public function medicines()
+    {
+        return $this->belongsTo(Medicine::class, 'medicine_id');
+    }
+
+    public function Specialist()
+    {
+        return $this->belongsTo(DoctorSpecialist::class,'doctor_id');
+    }
+
+    public function prescriptionInfo()
+    {
+        return $this->belongsTo(PrescriptionInfo::class,'apnmt_id','apnmt_id');
+    }
 }

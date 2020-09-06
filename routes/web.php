@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Prescription;
+use App\Models\PrescriptionInfo;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -13,10 +15,10 @@ use RealRashid\SweetAlert\Facades\Alert;
 | contains the "web" middleware group. Now create something great!
 |
 */
-// Route::get('t', function () {
-// //   return  Appointment::all();
-//   return  Appointment::with('patientForApp')->get();
-// });
+Route::get('t', function () {
+//   return  Appointment::all();
+  return  Prescription::with('nextMeet')->get();
+});
 
 Route::middleware(['auth','admin'])->prefix('admin')->namespace('Backend')->group(function(){
     Route::get('/dashboard','DashboardController@index')->name('admin.dashboard');
@@ -47,7 +49,8 @@ Route::middleware(['auth','admin'])->prefix('admin')->namespace('Backend')->grou
     Route::resource('prescription', 'PrescriptionController');
 
 
-    Route::get('presscription/date/{id}', 'PrescriptionController@presscriptionDate')->name('presscriptionDate');
+    Route::get('presscription/date/{patient_id}', 'PrescriptionController@prescriptionDates')->name('prescriptionDates');
+    Route::get('presscription/prescription/show/{date}', 'PrescriptionController@prescriptionShow')->name('prescriptionShow');
 
     Route::get('autocomplete', 'PrescriptionController@autocomplete')->name('autocomplete');
     Route::get('searchajax', ['as'=>'searchajax','uses'=>'PrescriptionController@searchResponse']);

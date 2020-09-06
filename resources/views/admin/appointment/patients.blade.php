@@ -28,17 +28,6 @@
             </div>
             <div class="divider1"></div>
             <div class="row">
-
-                @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
-
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
@@ -57,12 +46,12 @@
                                         <tr>
                                             <th style="width:1%">SN</th>
                                             <th>Name</th>
-                                            <th>Email</th>
                                             <th>Age</th>
+                                            <th>Gender</th>
+                                            <th>Phone</th>
                                             <th>Address</th>
-                                            <th>Spesialist</th>
-                                            <th>Photo</th>
-                                            <th style="width:7%">Action</th>
+                                            <th>Medical History</th>
+                                            <th class="no-sort" style="width:7%">Action</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
@@ -71,10 +60,10 @@
                                             <th>Name</th>
                                             <th>Age</th>
                                             <th>Gender</th>
-                                            <th>Phone date</th>
+                                            <th>Phone</th>
                                             <th>Address</th>
                                             <th>Medical History</th>
-                                            <th>Take App</th>
+                                            <th>Action</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
@@ -88,7 +77,7 @@
                                             <td>{{ $patient->phone }}</td>
                                             <td>{{ $patient->address }}</td>
                                             <td>{{ $patient->mdical_history }}</td>
-                                            <td><a href="{{ route('appointment.select.patient',$patient->id)}}">SSS</a></td>
+                                            <td><a href="{{ route('appointment.select.patient',$patient->id)}}">Show</a></td>
                                         </tr>
                                         @endforeach
                                     </tbody>
@@ -113,7 +102,7 @@
             initComplete: function () {
                 this.api().columns().every( function () {
                     var column = this;
-                    var select = $('<select class="form-control"><option value=""></option></select>')
+                    var select = $('<select class="form-control form-control-sm"><option value=""></option></select>')
                     .appendTo( $(column.footer()).empty() )
                     .on( 'change', function () {
                         var val = $.fn.dataTable.util.escapeRegex(

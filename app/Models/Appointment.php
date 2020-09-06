@@ -2,8 +2,6 @@
 // namespace App;
 namespace App\Models;
 
-
-use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 class Appointment extends Model
@@ -20,6 +18,6 @@ class Appointment extends Model
         return $this->belongsTo(Patient::class,'patient_id');
     }
 
-    
+
 
 }
