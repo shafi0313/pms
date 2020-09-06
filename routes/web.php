@@ -38,7 +38,7 @@ Route::middleware(['auth','admin'])->prefix('admin')->namespace('Backend')->grou
 
     Route::resource('/appointments', 'AppointmentController');
     Route::get('/appointment/patients', 'AppointmentController@patientList')->name('appointment.patient');
-    Route::get('/appointment/patients/{id}', 'AppointmentController@patientSelect')->name('appointment.select.patient');
+    Route::get('/appointment/create/{id}', 'AppointmentController@create')->name('appointmentCreate');
     Route::get('/appointment/show', 'AppointmentController@appointment')->name('appointment.show');
     Route::get('/patients/get/sub', 'AppointmentController@subCat')->name('subcat');
     Route::get('/appointments/destroy/{id}', 'AppointmentController@destroy')->name('appointments.destroy');

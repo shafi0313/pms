@@ -3,10 +3,11 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+
+use App\Models\Patient;
 use App\Models\Appointment;
 use App\Models\DoctorSpecialist;
 use Illuminate\Http\Request;
-use App\Models\Patient;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -20,7 +21,7 @@ class PatientController extends Controller
      */
     public function index()
     {
-        $patients = Patient::all();
+        $patients = Patient::orderBy('id','DESC')->get();
         return view('admin.patient.index', compact('patients'));
     }
 

@@ -93,7 +93,7 @@
                         <ul class="nav nav-collapse">
                             <li>
                                 <a href="{{ route('medicine.index') }}">
-                                    <span class="sub-item">Medicine List</span>
+                                    <span class="sub-item">Show Medicine</span>
                                 </a>
                             </li>
                             <li>
@@ -115,7 +115,7 @@
                         <ul class="nav nav-collapse">
                             <li>
                                 <a href="{{ route('patients.index') }}">
-                                    <span class="sub-item">Patients List</span>
+                                    <span class="sub-item">Show Patients</span>
                                 </a>
                             </li>
                             <li>
@@ -135,13 +135,13 @@
                     <div class="collapse" id="appointment">
                         <ul class="nav nav-collapse">
                             <li>
-                                <a href="{{ route('appointment.patient') }}">
-                                    <span class="sub-item">Add Appointment</span>
+                                <a href="{{ route('appointments.index') }}">
+                                    <span class="sub-item">Show Appointment</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="{{ route('appointment.show') }}">
-                                    <span class="sub-item">Show Appointment</span>
+                                <a href="{{ route('appointment.patient') }}">
+                                    <span class="sub-item">Add Appointment</span>
                                 </a>
                             </li>
                         </ul>
@@ -165,7 +165,7 @@
 							</li>
 							<li>
                                 <a href="{{ route('prescription.appointment') }}">
-									<span class="sub-item">Create prescription</span>
+									<span class="sub-item">Add prescription</span>
 								</a>
 							</li>
 						</ul>

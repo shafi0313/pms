@@ -1,51 +1,27 @@
 @extends('admin.layout.master')
-@section('title', 'Dashboard')
+@section('title', 'Patient')
 @section('content')
 <div class="main-panel">
     <div class="content">
         <div class="page-inner">
             <div class="page-header">
-                <h4 class="page-title">Doctord</h4>
+                <h4 class="page-title">Patient</h4>
                 <ul class="breadcrumbs">
                     <li class="nav-home">
-                    <a href="{{ route('admin.dashboard')}}">
-                            <i class="flaticon-home"></i>
-                        </a>
-                    </li>
-                    <li class="separator">
-                        <i class="flaticon-right-arrow"></i>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#">Tables</a>
-                    </li>
-                    <li class="separator">
-                        <i class="flaticon-right-arrow"></i>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#">Datatables</a>
+                        <a href="{{ route('admin.dashboard')}}"><i class="flaticon-home"></i></a>
                     </li>
                 </ul>
             </div>
             <div class="divider1"></div>
             <div class="row">
-
-                @if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex align-items-center">
-                                <h4 class="card-title">Add Row</h4>
+                                <h4 class="card-title">Patients Table</h4>
                             <a class="btn btn-primary btn-round ml-auto" href="{{ route('patients.create') }}">
                                     <i class="fa fa-plus"></i>
-                                    Add Row
+                                    Add Patient
                                 </a>
                             </div>
                         </div>
@@ -56,11 +32,13 @@
                                         <tr>
                                             <th style="width:6%">SN</th>
                                             <th>Name</th>
-                                            <th>Email</th>
                                             <th>Age</th>
+                                            <th>Gender</th>
+                                            <th>Phone</th>
+                                            <th>Email</th>
+                                            <th>Mdical History</th>
                                             <th>Address</th>
-                                            <th>Spesialist</th>
-                                            <th>Photo</th>
+                                            <th>Date</th>
                                             <th class="no-sort" style="width:7%">Action</th>
                                         </tr>
                                     </thead>
@@ -68,10 +46,13 @@
                                         <tr>
                                             <th>SN</th>
                                             <th>Name</th>
-                                            <th>Office</th>
                                             <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th>
+                                            <th>Gender</th>
+                                            <th>Phone</th>
+                                            <th>Email</th>
+                                            <th>Mdical History</th>
+                                            <th>Address</th>
+                                            <th>Date</th>
                                             <th>Action</th>
                                         </tr>
                                     </tfoot>
@@ -81,11 +62,13 @@
                                         <tr>
                                             <td>{{ $x++ }}</td>
                                             <td>{{ $patient->name }}</td>
-                                            <td>{{ $patient->email }}</td>
                                             <td>{{ $patient->age }}</td>
+                                            <td>{{ $patient->gender }}</td>
+                                            <td>{{ $patient->phone }}</td>
+                                            <td>{{ $patient->email }}</td>
+                                            <td>{{ $patient->mdical_history }}</td>
                                             <td>{{ $patient->address }}</td>
-                                            <td>{{ $patient->doctor_specialist }}</td>
-                                            <td>{{ $patient->photo }}</td>
+                                            <td>{{ \Carbon\Carbon::parse($patient->created_at)->format('d/m/Y') }}</td>
                                             <td>
                                                 <div class="form-button-action">
                                                     <a href="{{ route('doctor.edit',$patient->id)}}" data-toggle="tooltip" title="" class="btn btn-link btn-primary" data-original-title="Edit Task">
@@ -110,7 +93,6 @@
 </div>
 
 @push('custom_scripts')
-
 <script >
     $(document).ready(function() {
         $('#basic-datatables').DataTable({
@@ -143,19 +125,6 @@
         // Add Row
         $('#add-row').DataTable({
             "pageLength": 5,
-        });
-
-        var action = '<td> <div class="form-button-action"> <button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary btn-lg" data-original-title="Edit Task"> <i class="fa fa-edit"></i> </button> <button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove"> <i class="fa fa-times"></i> </button> </div> </td>';
-
-        $('#addRowButton').click(function() {
-            $('#add-row').dataTable().fnAddData([
-                $("#addName").val(),
-                $("#addPosition").val(),
-                $("#addOffice").val(),
-                action
-                ]);
-            $('#addRowModal').modal('hide');
-
         });
     });
 </script>

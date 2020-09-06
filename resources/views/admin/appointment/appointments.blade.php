@@ -1,5 +1,5 @@
 @extends('admin.layout.master')
-@section('title', 'Dashboard')
+@section('title', 'Appoinments')
 @section('content')
 <div class="main-panel">
     <div class="content">
@@ -7,16 +7,10 @@
             <div class="page-header">
                 <ul class="breadcrumbs">
                     <li class="nav-home">
-                    <a href="{{ route('admin.dashboard')}}">
-                            <i class="flaticon-home"></i>
-                        </a>
+                        <a href="{{ route('admin.dashboard')}}"><i class="flaticon-home"></i></a>
                     </li>
-                    <li class="separator">
-                        <i class="flaticon-right-arrow"></i>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#">Appoinments</a>
-                    </li>
+                    <li class="separator"><i class="flaticon-right-arrow"></i></li>
+                    <li class="nav-item"><a href="#">Appoinments</a></li>
                 </ul>
             </div>
             <div class="divider1"></div>
@@ -25,11 +19,11 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex align-items-center">
-                                <h4 class="card-title">Add Appoinment</h4>
-                            <a class="btn btn-primary btn-round ml-auto" href="{{ route('doctor.create') }}">
+                                <h4 class="card-title">Appoinments Table</h4>
+                            {{-- <a class="btn btn-primary btn-round ml-auto" href="{{ route('appoinment.create') }}">
                                     <i class="fa fa-plus"></i>
                                     Add New
-                                </a>
+                                </a> --}}
                             </div>
                         </div>
                         <div class="card-body">

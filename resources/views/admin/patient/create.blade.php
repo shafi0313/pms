@@ -1,5 +1,5 @@
 @extends('admin.layout.master')
-@section('title', 'Dashboard')
+@section('title', 'Patient')
 @section('content')
 
 <div class="main-panel">
@@ -9,17 +9,12 @@
                 <h4 class="page-title">Patient</h4>
                 <ul class="breadcrumbs">
                     <li class="nav-home">
-                    <a href="{{ route('admin.dashboard')}}">
-                            <i class="flaticon-home"></i>
-                        </a>
+                        <a href="{{ route('admin.dashboard')}}"><i class="flaticon-home"></i></a>
                     </li>
-                    <li class="separator">
-                        <i class="flaticon-right-arrow"></i>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="{{ route('patients.create')}}">Add Patient</a>
-                    </li>
+                    <li class="separator"><i class="flaticon-right-arrow"></i></li>
+                    <li class="nav-item"><a href="{{ route('patients.index')}}">Show Patient</a></li>
+                    <li class="separator"><i class="flaticon-right-arrow"></i></li>
+                    <li class="nav-item active">Create Patient</li>
                 </ul>
             </div>
             <div class="divider1"></div>

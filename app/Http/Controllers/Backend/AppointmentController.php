@@ -13,28 +13,15 @@ use RealRashid\SweetAlert\Facades\Alert;
 
 class AppointmentController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function patientList()
     {
-        $patients = Patient::all();
+        $patients = Patient::orderBy('id', 'DESC')->get();
         return view('admin.appointment.patients', compact('patients'));
-    }
-
-    public function patientSelect($id)
-    {
-        $patient = Patient::findOrFail($id);
-        $appointments = Appointment::all();
-        $doctorSpecialists = DoctorSpecialist::where('specialist_id',0)->get();
-        return view('admin.appointment.index', compact(['patient','appointments','doctorSpecialists']));
     }
 
     public function appointment()
     {
-        $appointments = Appointment::with(['doctor','patient'])->get();
+        $appointments = Appointment::orderBy('id','DESC')->with(['doctor','patient'])->get();
         return view('admin.appointment.appointments', compact('appointments'));
     }
 
@@ -48,18 +35,28 @@ class AppointmentController extends Controller
         }
         return json_encode(['subcategories' => $subcategories,'subCat'=>$subCat]);
     }
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $appointments = Appointment::orderBy('id', 'DESC')->get();
+        return view('admin.appointment.index', compact('appointments'));
+    }
 
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        //
+        $patient = Patient::findOrFail($id);
+        $doctorSpecialists = DoctorSpecialist::where('specialist_id',0)->get();
+        return view('admin.appointment.create', compact(['patient','doctorSpecialists']));
     }
-
-
 
     /**
      * Store a newly created resource in storage.
