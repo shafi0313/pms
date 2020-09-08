@@ -84,25 +84,10 @@
                 </li>
 
                 <li class="nav-item">
-                    <a data-toggle="collapse" href="#medicine">
+                    <a href="{{ route('medicine.index') }}">
                         <i class="fas fa-pills"></i>
                         <p>Medicine</p>
-                        <span class="caret"></span>
                     </a>
-                    <div class="collapse" id="medicine">
-                        <ul class="nav nav-collapse">
-                            <li>
-                                <a href="{{ route('medicine.index') }}">
-                                    <span class="sub-item">Show Medicine</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ route('medicine.create') }}">
-                                    <span class="sub-item">Add Medicine</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
                 </li>
 
                 <li class="nav-item">
