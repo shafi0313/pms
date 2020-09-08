@@ -157,8 +157,21 @@
 					</div>
                 </li>
 
+                <li class="nav-item">
+                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        <i class="fas fa-sign-out-alt"></i>
+                        {{ __('Logout') }}
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                </li>
 
-				<li class="nav-item">
+
+          ?
+
+
+				{{-- <li class="nav-item">
 					<a data-toggle="collapse" href="#submenu">
 						<i class="fas fa-bars"></i>
 						<p>Menu Levels</p>
@@ -208,7 +221,7 @@
 							</li>
 						</ul>
 					</div>
-				</li>
+				</li> --}}
 			</ul>
 		</div>
 	</div>

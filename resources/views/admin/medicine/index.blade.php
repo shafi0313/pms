@@ -1,5 +1,5 @@
 @extends('admin.layout.master')
-@section('title', 'Dashboard')
+@section('title', 'Medicine')
 @section('content')
 <div class="main-panel">
     <div class="content">
