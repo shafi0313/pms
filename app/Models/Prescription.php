@@ -25,7 +25,7 @@ class Prescription extends Model
 
     public function Specialist()
     {
-        return $this->belongsTo(DoctorSpecialist::class,'doctor_id');
+        return $this->belongsTo(DoctorSpecialist::class,'doctor_id','doctor_id');
     }
 
     public function prescriptionInfo()

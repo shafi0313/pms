@@ -45,6 +45,6 @@ class User extends Authenticatable
 
     public function specialist()
     {
-        return $this->hasOne('App\Models\DoctorSpecialist','doctor_id');
+        return $this->hasOne('App\Models\DoctorSpecialist','id','doctor_specialist');
     }
 }

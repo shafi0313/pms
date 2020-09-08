@@ -49,7 +49,7 @@ class AdminUser extends Controller
             'email' => strtolower($request->input('email')),
             'age' => $request->input('age'),
             'address' => $request->input('address'),
-            'role' => $request->input('role'),
+            'role' => 1,
             'doctor_specialist' => $request->input('doctor_specialist'),
             'password' => bcrypt($request->input('password')),
         ];

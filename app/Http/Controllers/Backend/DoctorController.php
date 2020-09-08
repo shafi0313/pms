@@ -30,9 +30,9 @@ class DoctorController extends Controller
      */
     public function create()
     {
-        $dortorId = DB::table('users')->select('id')->latest('id')->first();
+        // $dortorId = DB::table('users')->select('id')->latest('id')->first();
         $doctorSpecialists = DoctorSpecialist::where('specialist_id',0)->get();
-        return view('admin.doctor.create', compact(['doctorSpecialists','dortorId']));
+        return view('admin.doctor.create', compact(['doctorSpecialists']));
     }
 
     /**
@@ -67,21 +67,17 @@ class DoctorController extends Controller
             'password' => bcrypt($request->input('password')),
         ];
 
-        $doctorId = $request->get('doctorId') + 1;
-
         $doctorSpecialists = [
             'specialist' => $request->input('name'),
-            'doctor_id' => $doctorId,
             'specialist_id' => $request->input('doctor_specialist'),
         ];
 
-        // dd($data);
-
-
 
         try {
-            User::create($data);
+            $user = User::create($data);
+            $doctorSpecialists['doctor_id'] = $user->id;
             DoctorSpecialist::create($doctorSpecialists);
+
             Alert::success('Data Inserted', 'Data Successfully Inserted');
             return redirect()->route('doctor.index');
         } catch(\Exception $ex) {

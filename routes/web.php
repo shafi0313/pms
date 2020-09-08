@@ -1,10 +1,7 @@
 <?php
 
-use App\Models\Prescription;
-use App\Models\PrescriptionInfo;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use RealRashid\SweetAlert\Facades\Alert;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,10 +12,10 @@ use RealRashid\SweetAlert\Facades\Alert;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('t', function () {
-//   return  Appointment::all();
-  return  Prescription::with('nextMeet')->get();
-});
+// Route::get('t', function () {
+// //   return  Appointment::all();
+//   return  Prescription::with('Specialist')->get();
+// });
 
 Route::middleware(['auth','admin'])->prefix('admin')->namespace('Backend')->group(function(){
     Route::get('/dashboard','DashboardController@index')->name('admin.dashboard');
@@ -58,7 +55,7 @@ Route::middleware(['auth','admin'])->prefix('admin')->namespace('Backend')->grou
 });
 
 Route::get('/', function () {
-    Alert::success('Success Title', 'Success Message');
+    // Alert::success('Success Title', 'Success Message');
     return view('welcome');
 });
 
