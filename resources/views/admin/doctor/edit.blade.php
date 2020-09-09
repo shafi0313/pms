@@ -1,11 +1,12 @@
 @extends('admin.layout.master')
-@section('title', 'Dashboard')
+@section('title', 'Doctors')
 @section('content')
+<?php $p = 'doctor'; ?>
 <div class="main-panel">
     <div class="content">
         <div class="page-inner">
             <div class="page-header">
-                <h4 class="page-title">Doctord</h4>
+                <h4 class="page-title">Doctors</h4>
                 <ul class="breadcrumbs">
                     <li class="nav-home">
                     <a href="{{ route('admin.dashboard')}}">

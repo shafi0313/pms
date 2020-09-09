@@ -1,7 +1,7 @@
 @extends('admin.layout.master')
 @section('title', 'Dashboard')
 @section('content')
-
+<?php $p = 'da'; ?>
 <div class="main-panel">
     <div class="content">
         <div class="page-inner">
@@ -65,7 +65,7 @@
                     </div>
                 </div>
                 @endrole
-                
+
                 <div class="col-sm-6 col-md-3">
                     <div class="card card-stats card-round">
                         <div class="card-body">

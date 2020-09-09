@@ -57,9 +57,13 @@
 
 .breadcrumbs {
     border-left: none !important;
-    margin-left: 25px !important;
+    margin-left: 15px !important;
     padding-left: 0 !important;
+}
 
+.breadcrumbs a:hover {
+    font-weight: 600;
+    color: #4D7CFE;
 }
 
 /* Data table  */

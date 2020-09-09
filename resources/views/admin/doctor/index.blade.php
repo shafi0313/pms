@@ -1,36 +1,20 @@
 @extends('admin.layout.master')
-@section('title', 'Dashboard')
+@section('title', 'Doctors')
 @section('content')
+<?php $p = 'doctor'; ?>
 <div class="main-panel">
     <div class="content">
         <div class="page-inner">
             <div class="page-header">
                 <ul class="breadcrumbs">
                     <li class="nav-home">
-                        <a href="{{ route('admin.dashboard')}}" title="Dashboard">
-                            <i class="flaticon-home"></i>
-                        </a>
-                    </li>
-                    <li class="separator">
-                        <i class="flaticon-right-arrow"></i>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#">Doctors</a>
-                    </li>
+                        <a href="{{ route('admin.dashboard')}}" title="Dashboard"><i class="flaticon-home"></i></a></li>
+                    <li class="separator"><i class="flaticon-right-arrow"></i></li>
+                    <li class="nav-item"><a href="#">Doctors</a></li>
                 </ul>
             </div>
             <div class="divider1"></div>
             <div class="row">
-
-                @if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-                @endif
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">

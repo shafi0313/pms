@@ -1,23 +1,16 @@
 @extends('admin.layout.master')
 @section('title', 'Doctor Specialist')
 @section('content')
-
+<?php $p = 'ds'; ?>
 <div class="main-panel">
     <div class="content">
         <div class="page-inner">
             <div class="page-header">
                 <ul class="breadcrumbs">
                     <li class="nav-home">
-                    <a href="{{ route('admin.dashboard')}}">
-                            <i class="flaticon-home"></i>
-                        </a>
-                    </li>
+                    <a href="{{ route('admin.dashboard')}}"><i class="flaticon-home"></i></a></li>
                     <li class="separator"><i class="flaticon-right-arrow"></i></li>
-                    <li class="nav-item">
-                        <a href="{{ route('specialist.index') }}">Doctor Specialist</a>
-                    </li>
-                    <li class="separator"><i class="flaticon-right-arrow"></i></li>
-                </ul>
+                    <li class="nav-item active">Doctor Specialist</ul>
             </div>
             <div class="divider1"></div>
             <div class="row">
@@ -25,7 +18,7 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex align-items-center">
-                                <h4 class="card-title">Add New</h4>
+                                <h4 class="card-title">Doctor Specialist Table</h4>
                                 <a class="btn btn-primary btn-round ml-auto" href="javascript:void(0)" id="createSpecialist"><i class="fa fa-plus"></i> Add New</a>
                             </div>
                         </div>

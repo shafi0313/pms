@@ -1,6 +1,7 @@
 @extends('admin.layout.master')
-@section('title', 'Dashboard')
+@section('title', 'Prescription')
 @section('content')
+<?php $p = 'prescription'; ?>
 <style>
     .icon i {
         font-size: 40px;

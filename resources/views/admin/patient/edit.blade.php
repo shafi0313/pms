@@ -1,6 +1,7 @@
 @extends('admin.layout.master')
 @section('title', 'Dashboard')
 @section('content')
+<?php $p = 'patients'; ?>
 <div class="main-panel">
     <div class="content">
         <div class="page-inner">

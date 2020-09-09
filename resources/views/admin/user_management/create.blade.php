@@ -1,6 +1,7 @@
 @extends('admin.layout.master')
 @section('title', 'User')
 @section('content')
+<?php $p = 'user'; ?>
 <div class="main-panel">
     <div class="content">
         <div class="page-inner">

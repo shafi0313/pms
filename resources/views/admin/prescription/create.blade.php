@@ -1,7 +1,7 @@
 @extends('admin.layout.master')
-@section('title', 'Dashboard')
+@section('title', 'Prescription')
 @section('content')
-
+<?php $p = 'prescription'; ?>
 <div class="main-panel">
     <div class="content">
         <div class="page-inner">

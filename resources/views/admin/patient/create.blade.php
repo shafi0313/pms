@@ -1,7 +1,7 @@
 @extends('admin.layout.master')
 @section('title', 'Patient')
 @section('content')
-
+<?php $p = 'patients'; ?>
 <div class="main-panel">
     <div class="content">
         <div class="page-inner">

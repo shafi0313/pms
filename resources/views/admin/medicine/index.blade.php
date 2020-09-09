@@ -1,6 +1,7 @@
 @extends('admin.layout.master')
 @section('title', 'Medicine')
 @section('content')
+<?php $p = 'medicine'; ?>
 <div class="main-panel">
     <div class="content">
         <div class="page-inner">
@@ -19,7 +20,7 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex align-items-center">
-                                <h4 class="card-title">Add New</h4>
+                                <h4 class="card-title">Medicine Table</h4>
                                 <a class="btn btn-primary btn-round ml-auto" href="javascript:void(0)" id="createCategory"><i class="fa fa-plus"></i> Add New</a>
                             </div>
                         </div>

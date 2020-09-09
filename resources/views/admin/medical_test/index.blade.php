@@ -1,16 +1,15 @@
 @extends('admin.layout.master')
-@section('title', 'Medicine')
+@section('title', 'Medical Test')
 @section('content')
+<?php $p = 'medical_test'; ?>
 <div class="main-panel">
     <div class="content">
         <div class="page-inner">
             <div class="page-header">
                 <ul class="breadcrumbs">
-                    <li class="nav-home">
-                        <a href="{{ route('admin.dashboard')}}"><i class="flaticon-home"></i></a>
-                    </li>
+                    <li class="nav-home"><a href="{{ route('admin.dashboard')}}"><i class="flaticon-home"></i></a></li>
                     <li class="separator"><i class="flaticon-right-arrow"></i></li>
-                    <li class="nav-item active">Medicine</li>
+                    <li class="nav-item active">Medical Test</li>
                 </ul>
             </div>
             <div class="divider1"></div>
@@ -19,7 +18,7 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex align-items-center">
-                                <h4 class="card-title">Add New</h4>
+                                <h4 class="card-title">Medical Test Table</h4>
                                 <a class="btn btn-primary btn-round ml-auto" href="javascript:void(0)" id="createCategory"><i class="fa fa-plus"></i> Add New</a>
                             </div>
                         </div>
@@ -66,15 +65,6 @@
                             <label for="amount" class="control-label">Amount</label>
                             <input type="number" class="form-control" id="amount" name="amount" placeholder="Amount">
                         </div>
-
-                        {{-- <div class="form-group col-6">
-                            <label for="type" class="control-label">Type</label>
-                            <select name="type" id="" class="form-control">
-                                <option value="Tablet">Tablet</option>
-                                <option value="Syrup">Syrup</option>
-                                <option value="Injection">Injection</option>
-                            </select>
-                        </div> --}}
 
                         <div class="form-group col-12">
                             <label for="info" class="control-label">Details</label>

@@ -40,7 +40,7 @@
             </div> --}}
 
 			<ul class="nav">
-				<li class="nav-item active">
+				<li class="nav-item {{$p=='da'?'active':''}}">
                     <a href="{{ route('admin.dashboard') }}">
 						<i class="fas fa-home"></i>
 						<p>Dashboard</p>
@@ -55,29 +55,7 @@
 					<h4 class="text-section">Components</h4>
                 </li>
 
-                <li class="nav-item">
-					<a data-toggle="collapse" href="#specialist">
-						<i class="fas fa-user-md"></i>
-						<p>Doctor</p>
-						<span class="caret"></span>
-					</a>
-					<div class="collapse" id="specialist">
-						<ul class="nav nav-collapse">
-							<li>
-                            <a href="{{ route('doctor.index') }}">
-									<span class="sub-item">Show Doctor</span>
-								</a>
-							</li>
-							<li>
-								<a href="{{ route('doctor.create') }}">
-									<span class="sub-item">Add Doctor</span>
-								</a>
-							</li>
-						</ul>
-					</div>
-                </li>
-
-                <li class="nav-item">
+                <li class="nav-item {{$p=='user'?'active':''}}">
 					<a data-toggle="collapse" href="#user">
 						<i class="fas fa-users-cog"></i>
 						<p>User Management</p>
@@ -99,6 +77,28 @@
 					</div>
                 </li>
 
+                <li class="nav-item {{$p=='doctor'?'active':''}}">
+					<a data-toggle="collapse" href="#doctor">
+						<i class="fas fa-user-md"></i>
+						<p>Doctor</p>
+						<span class="caret"></span>
+					</a>
+					<div class="collapse" id="doctor">
+						<ul class="nav nav-collapse">
+							<li>
+                            <a href="{{ route('doctor.index') }}">
+									<span class="sub-item">Show Doctor</span>
+								</a>
+							</li>
+							<li>
+								<a href="{{ route('doctor.create') }}">
+									<span class="sub-item">Add Doctor</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+                </li>
+
 				{{-- <li class="nav-item">
                 <a href="{{ route('admin.user') }}">
                         <i class="fas fa-users-cog"></i>
@@ -106,28 +106,28 @@
 					</a>
                 </li> --}}
 
-                <li class="nav-item">
+                <li class="nav-item {{$p=='ds'?'active':''}}">
                     <a href="{{ route('specialist.index') }}">
                         <i class="fas fa-notes-medical"></i>
                         <p>Doctor Specialist</p>
                     </a>
                 </li>
 
-                <li class="nav-item">
+                <li class="nav-item {{$p=='medicine'?'active':''}}">
                     <a href="{{ route('medicine.index') }}">
                         <i class="fas fa-pills"></i>
                         <p>Medicine</p>
                     </a>
                 </li>
 
-                <li class="nav-item">
+                <li class="nav-item {{$p=='medical_test'?'active':''}}">
                     <a href="{{ route('medical_test.index') }}">
                         <i class="fas fa-microscope"></i>
                         <p>Test Category</p>
                     </a>
                 </li>
 
-                <li class="nav-item">
+                <li class="nav-item {{$p=='patients'?'active':''}}">
                     <a data-toggle="collapse" href="#patients">
                         <i class="fas fa-user"></i>
                         <p>Patients</p>
@@ -148,7 +148,7 @@
                         </ul>
                     </div>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item {{$p=='appoinments'?'active':''}}">
                     <a data-toggle="collapse" href="#appointment">
                         <i class="far fa-calendar-check"></i>
                         <p>Appointments</p>
@@ -170,9 +170,7 @@
                     </div>
                 </li>
 
-
-
-				<li class="nav-item">
+				<li class="nav-item {{$p=='prescription'?'active':''}}">
 					<a data-toggle="collapse" href="#prescription">
 						<i class="fas fa-pen-square"></i>
 						<p>Prescription</p>
