@@ -5,47 +5,24 @@
     <div class="content">
         <div class="page-inner">
             <div class="page-header">
-                <h4 class="page-title">User Manegement</h4>
+                <h4 class="page-title">Admin User Manegement</h4>
                 <ul class="breadcrumbs">
-                    <li class="nav-home">
-                    <a href="{{ route('admin.dashboard')}}">
-                            <i class="flaticon-home"></i>
-                        </a>
-                    </li>
-                    <li class="separator">
-                        <i class="flaticon-right-arrow"></i>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#">Tables</a>
-                    </li>
-                    <li class="separator">
-                        <i class="flaticon-right-arrow"></i>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#">Datatables</a>
-                    </li>
+                    <li class="nav-home"><a href="{{ route('admin.dashboard')}}"><i class="flaticon-home"></i></a></li>
+                    <li class="separator"><i class="flaticon-right-arrow"></i></li>
+                    <li class="nav-item">Admin User Table</li>
                 </ul>
             </div>
             <div class="divider1"></div>
             <div class="row">
-                @if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex align-items-center">
-                                <h4 class="card-title">Add Row</h4>
-                                <button class="btn btn-primary btn-round ml-auto" data-toggle="modal" data-target="#userModal">
+                                <h4 class="card-title">Admin User Table</h4>
+                            <a class="btn btn-primary btn-round ml-auto" href="{{route('users.create')}}">
                                     <i class="fa fa-plus"></i>
-                                    Add Row
-                                </button>
+                                    Add
+                                </a>
                             </div>
                         </div>
                         <div class="card-body">
@@ -93,9 +70,10 @@
                                                     <button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-primary" data-original-title="Edit Task">
                                                         <i class="fa fa-edit"></i>
                                                     </button>
-                                                    <button type="button" data-toggle="tooltip" title="" class="btn btn-link btn-danger" data-original-title="Remove">
+
+                                                    <a href="admin/users/destroy/{{$user->id}}" data-toggle="tooltip" title="" class="btn btn-link btn-danger delete" data-original-title="Remove">
                                                         <i class="fa fa-times"></i>
-                                                    </button>
+                                                    </a>
                                                 </div>
                                             </td>
                                         </tr>
@@ -211,7 +189,7 @@
 </form>
 
 
-
+@include('sweetalert::alert')
 @push('custom_scripts')
 
 <script>
@@ -304,6 +282,23 @@ readUser();
                 ]);
             $('#addRowModal').modal('hide');
 
+        });
+    });
+</script>
+
+<script>
+    $('.delete').on('click', function (event) {
+        event.preventDefault();
+        const url = $(this).attr('href');
+        swal({
+            title: 'Are you sure?',
+            text: 'This record and it`s details will be permanantly deleted!',
+            icon: 'warning',
+            buttons: ["Cancel", "Yes!"],
+        }).then(function(value) {
+            if (value) {
+                window.location.href = url;
+            }
         });
     });
 </script>

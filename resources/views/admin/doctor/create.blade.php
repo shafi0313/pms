@@ -117,7 +117,7 @@
                                     <button type="submit" class="btn btn-success">Submit</button>
                                     <button type="reset" class="btn btn-danger">Reset</button>
                                 </div>
-                                
+
                             </form>
                         </div>
                     </div>
@@ -126,7 +126,7 @@
         </div>
     </div>
 </div>
-
+@include('sweetalert::alert')
 @push('custom_scripts')
 @endpush
 @endsection

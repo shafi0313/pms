@@ -55,8 +55,8 @@
 			<!-- Logo Header -->
 			<div class="logo-header">
 
-                <a href="{{ route('admin.dashboard') }}" class="logo">
-					<img src="{{ asset('backend/assets/img/logoazzara.svg') }}" alt="navbar brand" class="navbar-brand">
+                <a href="{{ route('admin.dashboard') }}" class="logo"> <h2 class="display:4 text-light mt-3">PMS</h2>
+					{{-- <img src="{{ asset('backend/assets/img/logoazzara.svg') }}" alt="navbar brand" class="navbar-brand"> --}}
 				</a>
 				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon">
@@ -118,6 +118,7 @@
 </div>
 
 @include('admin.layout.footer')
+
 @include('sweetalert::alert')
 
 @stack('custom_scripts')

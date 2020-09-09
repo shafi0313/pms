@@ -15,9 +15,8 @@ class CreateMedicalTestsTable extends Migration
     {
         Schema::create('medical_tests', function (Blueprint $table) {
             $table->id();
-            $table->string('category')->default(0);
-            $table->integer('parent_id')->comment('0=parent');
-            $table->string('info')->nullable();
+            $table->string('name');
+            $table->text('info')->nullable();
             $table->decimal('amount',8,2)->nullable();
             $table->timestamps();
         });

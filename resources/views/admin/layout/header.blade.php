@@ -1,5 +1,4 @@
 <nav class="navbar navbar-header navbar-expand-lg">
-
     <div class="container-fluid">
         <div class="collapse" id="search-nav">
             <form class="navbar-left navbar-form nav-search mr-md-3">

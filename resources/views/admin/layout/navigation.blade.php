@@ -64,29 +64,66 @@
 					<div class="collapse" id="specialist">
 						<ul class="nav nav-collapse">
 							<li>
-                            <a href="{{ route('specialist.index') }}">
-									<span class="sub-item">Doctor Specialist</span>
+                            <a href="{{ route('doctor.index') }}">
+									<span class="sub-item">Show Doctor</span>
 								</a>
 							</li>
 							<li>
-								<a href="{{ route('doctor.index') }}">
-									<span class="sub-item">Doctor</span>
+								<a href="{{ route('doctor.create') }}">
+									<span class="sub-item">Add Doctor</span>
 								</a>
 							</li>
 						</ul>
 					</div>
-				</li>
-				<li class="nav-item">
+                </li>
+
+                <li class="nav-item">
+					<a data-toggle="collapse" href="#user">
+						<i class="fas fa-users-cog"></i>
+						<p>User Management</p>
+						<span class="caret"></span>
+					</a>
+					<div class="collapse" id="user">
+						<ul class="nav nav-collapse">
+							<li>
+                                <a href="{{ route('users.index') }}">
+									<span class="sub-item">Show User</span>
+								</a>
+							</li>
+							<li>
+								<a href="{{ route('users.create') }}">
+									<span class="sub-item">Add User</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+                </li>
+
+				{{-- <li class="nav-item">
                 <a href="{{ route('admin.user') }}">
                         <i class="fas fa-users-cog"></i>
 						<p>Users</p>
 					</a>
+                </li> --}}
+
+                <li class="nav-item">
+                    <a href="{{ route('specialist.index') }}">
+                        <i class="fas fa-notes-medical"></i>
+                        <p>Doctor Specialist</p>
+                    </a>
                 </li>
 
                 <li class="nav-item">
                     <a href="{{ route('medicine.index') }}">
                         <i class="fas fa-pills"></i>
                         <p>Medicine</p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{{ route('medical_test.index') }}">
+                        <i class="fas fa-microscope"></i>
+                        <p>Test Category</p>
                     </a>
                 </li>
 
@@ -160,16 +197,12 @@
                 <li class="nav-item">
                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                         <i class="fas fa-sign-out-alt"></i>
-                        {{ __('Logout') }}
+                        <p>Logout</p>
                     </a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         @csrf
                     </form>
                 </li>
-
-
-          ?
-
 
 				{{-- <li class="nav-item">
 					<a data-toggle="collapse" href="#submenu">

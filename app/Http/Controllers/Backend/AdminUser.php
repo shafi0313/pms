@@ -27,7 +27,7 @@ class AdminUser extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.user_management.create');
     }
 
     /**
@@ -40,7 +40,9 @@ class AdminUser extends Controller
     {
         $this->validate($request, [
             'name' => 'required',
-            'email' => 'required|email|unique:admins,email',
+            'is_' => 'required',
+            'age' => 'required|integer',
+            'email' => 'required|email|unique:users,email',
             'password' => 'required|min:1|max:15|confirmed',
         ]);
 
@@ -50,7 +52,8 @@ class AdminUser extends Controller
             'age' => $request->input('age'),
             'address' => $request->input('address'),
             'role' => 1,
-            'doctor_specialist' => $request->input('doctor_specialist'),
+            'is_' => $request->input('is_'),
+            'gender' => $request->input('gender'),
             'password' => bcrypt($request->input('password')),
         ];
 
@@ -59,7 +62,7 @@ class AdminUser extends Controller
         try {
             User::create($data);
             Alert::success('User Inserted', 'User Successfully Inserted');
-            return redirect()->back();
+            return redirect()->route('users.index');
         } catch(\Exception $ex) {
             Alert::error('DataInsert', $ex->getMessage());
             return redirect()->back();
@@ -108,6 +111,7 @@ class AdminUser extends Controller
      */
     public function destroy($id)
     {
-        //
+        User::find($id)->delete();
+        return Redirect()->back();
     }
 }

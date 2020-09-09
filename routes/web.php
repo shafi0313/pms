@@ -24,7 +24,8 @@ Route::middleware(['auth','admin'])->prefix('admin')->namespace('Backend')->grou
     Route::resource('/doctor', 'DoctorController');
     Route::get('admin/doctor/destroy/{id}', 'DoctorController@destroy');
 
-    Route::get('/users', 'AdminUser@index')->name('admin.user');
+    Route::resource('/users', 'AdminUser');
+    Route::get('/users/destroy/{id}', 'AdminUser@destroy')->name('users.destroy');
 
     Route::resource('/medicine', 'MedicineController');
     Route::get('/medicine/destroy/{id}', 'MedicineController@destroy')->name('medicine.destroy');
@@ -45,6 +46,7 @@ Route::middleware(['auth','admin'])->prefix('admin')->namespace('Backend')->grou
     Route::post('prescription/{id}', 'PrescriptionController@store')->name('prescriptionCreate');
     Route::resource('prescription', 'PrescriptionController');
 
+    Route::resource('/medical_test','MedicalTestController');
 
     Route::get('presscription/date/{patient_id}', 'PrescriptionController@prescriptionDates')->name('prescriptionDates');
     Route::get('presscription/prescription/show/{date}', 'PrescriptionController@prescriptionShow')->name('prescriptionShow');
