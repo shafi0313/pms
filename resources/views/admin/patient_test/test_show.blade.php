@@ -1,7 +1,7 @@
 @extends('admin.layout.master')
-@section('title', 'Prescription')
+@section('title', 'Patient Test')
 @section('content')
-<?php $p = 'prescription'; ?>
+<?php $p = 'patient_test'; ?>
 <style>
     .icon i {
         font-size: 40px;
@@ -67,28 +67,30 @@
             <div class="container">
                 <div class="row doctor_info">
                     <div class="col-md-12 text-center">
-                        <h1>{{$prescriptionInfo->doctor->name}}</h1>
-                        {{ $prescriptionInfo->Specialist->specialist }}
+                        <h1>{{$testInfo->doctor->name}}</h1>
+                        {{-- {{ $testInfo->Specialist->specialist }} --}}
                     </div>
                 </div>
 
                 <div class="row pres_patient">
                     <div class="col-sm-6">
-                        <p>Name: {{$prescriptionInfo->patient->name}}</p>
+                        <p>Name: {{$testInfo->patient->name}}</p>
                     </div>
                     <div class="col-sm-3 text-right">
-                        <p>Age: {{$prescriptionInfo->patient->age}}</p>
+                        <p>Age: {{$testInfo->patient->age}}</p>
                     </div>
                     <div class="col-sm-3 text-right">
-                        <p>Data: {{ \Carbon\Carbon::parse($prescriptionInfo->date)->format('d/m/Y') }}</p>
+                        <p>Data: {{ \Carbon\Carbon::parse($testInfo->date)->format('d/m/Y') }}</p>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-3">
                     <table>
+                        @php $x=1; @endphp
                         @forelse($patient_tests as $patient_test)
                         <tr>
+                            <td>{{ $x++ }}</td>
                             <td>{{ $patient_test->medicalTest->name }}</td>
                         </tr>
                         @empty
@@ -97,7 +99,7 @@
 
                 </div>
 
-                <div class="col-md-8">
+                {{-- <div class="col-md-8">
                     <div class="icon">
                         <i class="fas fa-prescription"></i>
                     </div>
@@ -113,21 +115,19 @@
                         <tr>Medicine Not Found</tr>
 
                         @endforelse
-
-
+                        <input type="hidden" name="doctorId" value="{{$prescriptionShow->doctor_id}}">
                     </table>
-                </div>
+                </div> --}}
             </div>
-            <div class="row justify-content-end">
+            {{-- <div class="row justify-content-end">
                 <div class="col-md-8">
-                    <p class="advice">Advice: {{ $prescriptionInfo->prescriptionInfo->advice }}</p>
+                    <p class="advice">Advice: {{ $testInfo->testInfo->advice }}</p>
                 </div>
             </div>
 
-                <p class="text-center text-danger next_meet">Next meet: {{ $prescriptionInfo->prescriptionInfo->next_meet }}</p>
+                <p class="text-center text-danger next_meet">Next meet: {{ $testInfo->testInfo->next_meet }}</p>
 
-            </div>
-
+            </div> --}}
         </section>
         </div>
     </div>

@@ -1,7 +1,7 @@
 @extends('admin.layout.master')
-@section('title', 'Prescription')
+@section('title', 'Patient Test')
 @section('content')
-<?php $p = 'prescription'; ?>
+<?php $p = 'patient_test'; ?>
 <div class="main-panel">
     <div class="content">
         <div class="page-inner">
@@ -76,7 +76,7 @@
                                             <td>{{ $appointment->doctor->name }}</td>
                                             <td>{{ \Carbon\Carbon::parse($appointment->date)->format('d/m/Y') }}</td>
                                             <td>{{ $appointment->time }}</td>
-                                        <td><a href="{{ route('prescriptionCreate',$appointment->id)}}">Show</a>
+                                            <td><a href="{{ route('patientTestCreate',$appointment->id)}}">Show</a>
                                                 {{-- <div class="form-button-action">
                                                 <a href="" data-toggle="tooltip" title="" class="btn btn-link btn-primary" data-original-title="Edit Task">
                                                         <i class="fa fa-edit"></i>

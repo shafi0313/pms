@@ -11,6 +11,7 @@ use App\Models\Prescription;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use App\Models\PatientTest;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class PrescriptionController extends Controller
@@ -33,14 +34,18 @@ class PrescriptionController extends Controller
         return view('admin.prescription.prescription_date', compact('prescriptionDates'));
     }
 
-    public function prescriptionShow(Request $request, $date)
+    public function prescriptionShow(Request $request, $date, $apnmt_id)
     {
+        // return $appId = $request->get('appointmentId');
 
         // $prscriptionInfos = PrescriptionInfo::FindOrFail();
         // $prescriptionInfos = PrescriptionInfo::all();
+
+        // $doctor = User::all();
+        $patient_tests = PatientTest::where('apnmt_id', $apnmt_id)->where('date', $date)->get();
         $prescriptionInfo = Prescription::where('doctor_id',auth()->user()->id)->first();
         $prescriptionShows = Prescription::where('date', $date)->get();
-        return view('admin.prescription.prescription_show', compact(['prescriptionShows','prescriptionInfo']));
+        return view('admin.prescription.prescription_show', compact(['prescriptionShows','prescriptionInfo','patient_tests']));
     }
 
     public function prescriptionCreate($id)
@@ -51,7 +56,7 @@ class PrescriptionController extends Controller
 
     public function appointmentShow()
     {
-        $appointments = Appointment::where('status',0)->where('doctor_id',auth()->user()->id)->get();
+        $appointments = Appointment::where('p_status',0)->where('doctor_id',auth()->user()->id)->get();
         return view('admin.Prescription.appointments', compact('appointments'));
     }
     /**
@@ -73,11 +78,16 @@ class PrescriptionController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request, [
+            'next_meet' => 'required',
+            'days' => 'required',
+            'eating_time' => 'required',
+        ]);
         // $s = 123;
         // return $ss =  str_split($s,1);
 
         $appId = $request->get('appointmentId');
-        $appointments ['status'] = 1;
+        $appointments ['p_status'] = 1;
 
         foreach($request->medicine_id as $key => $v){
             $data=[
@@ -103,7 +113,7 @@ class PrescriptionController extends Controller
             PrescriptionInfo::create($prescriptionInfo);
             Appointment::where('id',$appId)->update($appointments);
             Alert::success('Prescription Updeated', 'Prescription Successfully Updeated');
-            return redirect()->back();
+            return redirect()->route('prescription.appointment');
         } catch(\Exception $ex){
             Alert::error('DataInsert', $ex->getMessage());
             return redirect()->back();

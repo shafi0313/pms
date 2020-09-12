@@ -1,7 +1,7 @@
 @extends('admin.layout.master')
-@section('title', 'Prescription')
+@section('title', 'Patient Test')
 @section('content')
-<?php $p = 'prescription'; ?>
+<?php $p = 'patient_test'; ?>
 <div class="main-panel">
     <div class="content">
         <div class="page-inner">
@@ -69,14 +69,14 @@
                                     </tfoot>
                                     <tbody>
                                         @php $x=1;@endphp
-                                        @forelse($appointments as $appointment)
+                                        @foreach($appointments as $appointment)
                                         <tr>
                                             <td>{{ $x++ }}</td>
                                             <td>{{ $appointment->patient->name }}</td>
                                             <td>{{ $appointment->doctor->name }}</td>
                                             <td>{{ \Carbon\Carbon::parse($appointment->date)->format('d/m/Y') }}</td>
                                             <td>{{ $appointment->time }}</td>
-                                        <td><a href="{{ route('prescriptionCreate',$appointment->id)}}">Show</a>
+                                            <td><a href="{{ route('patientTestDate', $appointment->patient_id)}}">Show</a>
                                                 {{-- <div class="form-button-action">
                                                 <a href="" data-toggle="tooltip" title="" class="btn btn-link btn-primary" data-original-title="Edit Task">
                                                         <i class="fa fa-edit"></i>
@@ -88,14 +88,8 @@
                                                 </div> --}}
                                             </td>
                                         </tr>
-                                        @empty
-                                        <tr>
-                                            <td colspan="8" align="center">
-                                                <h1 class="display-5 text-danger">Table Empty</h1>
-                                            </td>
-                                        </tr>
-                                        @endforelse
-
+                                        @endforeach
+                                        {{-- <input type="hidden" name="createdAt" value="{{ \Carbon\Carbon::parse($appointments->created_at)->format('d/m/Y') }}"> --}}
                                     </tbody>
                                 </table>
                             </div>
@@ -106,7 +100,7 @@
         </div>
     </div>
 </div>
-@include('sweetalert::alert')
+
 @push('custom_scripts')
 
 <script >

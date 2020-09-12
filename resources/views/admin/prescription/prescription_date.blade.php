@@ -66,11 +66,12 @@
                                             <td>{{ $x++ }}</td>
                                             <td>{{ $prescriptionDate->patient->name }}</td>
                                             <td>{{ \Carbon\Carbon::parse($prescriptionDate->date)->format('d/m/Y')}}</td>
-                                            <td><a href="{{ route('prescriptionShow',$prescriptionDate->date)}}">Show</a></td>
+                                            <td><a href="{{ route('prescriptionShow',[$prescriptionDate->date, $prescriptionDate->apnmt_id])}}">Show</a></td>
                                         </tr>
                                         @endforeach
                                     </tbody>
-                                <input type="hidden" name="pDate" value="{{$prescriptionDate->date}}">
+                                    {{-- <input type="text" name="appointmentId" value="{{$prescriptionDate->apnmt_id}}"> --}}
+                                {{-- <input type="hidden" name="pDate" value="{{$prescriptionDate->date}}"> --}}
                                 </table>
                             </div>
                         </div>

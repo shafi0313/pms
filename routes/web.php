@@ -1,5 +1,8 @@
 <?php
 
+use App\User;
+use App\Models\PatientTest;
+use App\Models\Prescription;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 /*
@@ -12,10 +15,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-// Route::get('t', function () {
-// //   return  Appointment::all();
-//   return  Prescription::with('Specialist')->get();
-// });
+Route::get('t', function () {
+//   return  Appointment::all();
+//   return  PatientTest::all();
+  return  PatientTest::with('doctor')->get();
+});
 
 Route::middleware(['auth','admin'])->prefix('admin')->namespace('Backend')->group(function(){
     Route::get('/dashboard','DashboardController@index')->name('admin.dashboard');
@@ -34,6 +38,9 @@ Route::middleware(['auth','admin'])->prefix('admin')->namespace('Backend')->grou
     Route::get('/patients/get/sub', 'PatientController@subCat')->name('subcat');
     Route::get('/patients/destroy/{id}', 'PatientController@destroy')->name('patients.destroy');
 
+    Route::resource('/medical_test','MedicalTestController');
+
+
     Route::resource('/appointments', 'AppointmentController');
     Route::get('/appointment/patients', 'AppointmentController@patientList')->name('appointment.patient');
     Route::get('/appointment/create/{id}', 'AppointmentController@create')->name('appointmentCreate');
@@ -41,15 +48,25 @@ Route::middleware(['auth','admin'])->prefix('admin')->namespace('Backend')->grou
     Route::get('/patients/get/sub', 'AppointmentController@subCat')->name('subcat');
     Route::get('/appointments/destroy/{id}', 'AppointmentController@destroy')->name('appointments.destroy');
 
+
+    Route::resource('patient_test', 'PatientTestController');
+    Route::get('patient_test_appointment', 'PatientTestController@appointmentShow')->name('patient_test.appointment');
+    Route::get('patient/{id}', 'PatientTestController@patientTestCreate')->name('patientTestCreate');
+    Route::get('patient_tests/date/{patient_id}', 'PatientTestController@testDate')->name('patientTestDate');
+    Route::get('patient/prescription/show/{date}', 'PatientTestController@testShow')->name('patientTestShow');
+    // Route::get('autocomplete', 'PatientTestController@autocomplete')->name('patientautocomplete');
+    // Route::get('search','PatientTestController@search')->name('medicaltests');
+
+    Route::get('autocomplete', 'PatientTestController@autocomplete')->name('autocomplete');
+    Route::get('patientsearch', ['as'=>'patientsearch','uses'=>'PatientTestController@patientsearch']);
+
+
+    Route::resource('prescription', 'PrescriptionController');
     Route::get('prescription/appointment', 'PrescriptionController@appointmentShow')->name('prescription.appointment');
     Route::get('prescription/{id}', 'PrescriptionController@prescriptionCreate')->name('prescriptionCreate');
     Route::post('prescription/{id}', 'PrescriptionController@store')->name('prescriptionCreate');
-    Route::resource('prescription', 'PrescriptionController');
-
-    Route::resource('/medical_test','MedicalTestController');
-
     Route::get('presscription/date/{patient_id}', 'PrescriptionController@prescriptionDates')->name('prescriptionDates');
-    Route::get('presscription/prescription/show/{date}', 'PrescriptionController@prescriptionShow')->name('prescriptionShow');
+    Route::get('presscription/prescription/show/{date}/{apnmt_id}', 'PrescriptionController@prescriptionShow')->name('prescriptionShow');
 
     Route::get('autocomplete', 'PrescriptionController@autocomplete')->name('autocomplete');
     Route::get('searchajax', ['as'=>'searchajax','uses'=>'PrescriptionController@searchResponse']);

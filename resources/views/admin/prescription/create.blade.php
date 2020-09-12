@@ -105,7 +105,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="next_meet">Next Meet</label>
-                                    <textarea name="next_meet" class="form-control" cols="30" rows="2"></textarea>
+                                    <textarea name="next_meet" class="form-control" cols="30" rows="2" required></textarea>
                                 </div>
 
                                 <button class="btn btn-primary col-md-offset-6" type="submit">Submit</button>
@@ -185,7 +185,7 @@
             </div>
         </div>
     </div>
-
+    @include('sweetalert::alert')
     @push('custom_scripts')
 <script>
     $(document).ready(function () {

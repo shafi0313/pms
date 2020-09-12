@@ -32,4 +32,10 @@ class Prescription extends Model
     {
         return $this->belongsTo(PrescriptionInfo::class,'apnmt_id','apnmt_id');
     }
+
+    // public function patient_test()
+    // {
+    //     return $this->belongsTo(PatientTest::class,'id')->using(MedicalTest::class,'test_id');
+    //     // $this->belongsTo(PatientTest::class,)
+    // }
 }

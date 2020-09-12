@@ -148,6 +148,7 @@
                         </ul>
                     </div>
                 </li>
+
                 <li class="nav-item {{$p=='appoinments'?'active':''}}">
                     <a data-toggle="collapse" href="#appointment">
                         <i class="far fa-calendar-check"></i>
@@ -168,6 +169,28 @@
                             </li>
                         </ul>
                     </div>
+                </li>
+
+                <li class="nav-item {{$p=='patient_test'?'active':''}}">
+					<a data-toggle="collapse" href="#patient_test">
+						<i class="fas fa-pen-square"></i>
+						<p>Patient Test</p>
+						<span class="caret"></span>
+					</a>
+					<div class="collapse" id="patient_test">
+						<ul class="nav nav-collapse">
+                            <li>
+                                <a href="{{ route('patient_test.index') }}">
+									<span class="sub-item">Show Test</span>
+								</a>
+							</li>
+							<li>
+                                <a href="{{ route('patient_test.appointment') }}">
+									<span class="sub-item">Add Patient Test</span>
+								</a>
+							</li>
+						</ul>
+					</div>
                 </li>
 
 				<li class="nav-item {{$p=='prescription'?'active':''}}">

@@ -1,11 +1,12 @@
 @extends('admin.layout.master')
-@section('title', 'Prescription')
+@section('title', 'Patient Test')
 @section('content')
-<?php $p = 'prescription'; ?>
+<?php $p = 'patient_test'; ?>
 <div class="main-panel">
     <div class="content">
         <div class="page-inner">
             <div class="page-header">
+                <h4 class="page-title">Doctord</h4>
                 <ul class="breadcrumbs">
                     <li class="nav-home">
                     <a href="{{ route('admin.dashboard')}}">
@@ -16,7 +17,13 @@
                         <i class="flaticon-right-arrow"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="#">Appoinments</a>
+                        <a href="#">Appoinment</a>
+                    </li>
+                    <li class="separator">
+                        <i class="flaticon-right-arrow"></i>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">All Patients</a>
                     </li>
                 </ul>
             </div>
@@ -50,52 +57,41 @@
                                     <thead>
                                         <tr>
                                             <th style="width:1%">SN</th>
-                                            <th>Patient Name</th>
-                                            <th>Doctor Name</th>
-                                            <th>Date</th>
-                                            <th>Time</th>
-                                            <th class="no-sort" style="width:7%">Action</th>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>Age</th>
+                                            <th>Address</th>
+                                            <th>Spesialist</th>
+                                            <th>Photo</th>
+                                            <th style="width:7%">Action</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
                                             <th>SN</th>
-                                            <th>Patient Name</th>
-                                            <th>Doctor Name</th>
-                                            <th>Date</th>
-                                            <th>Time</th>
-                                            <th>Status</th>
+                                            <th>Name</th>
+                                            <th>Age</th>
+                                            <th>Gender</th>
+                                            <th>Phone date</th>
+                                            <th>Address</th>
+                                            <th>Medical History</th>
+                                            <th>Take App</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
                                         @php $x=1;@endphp
-                                        @forelse($appointments as $appointment)
+                                        @foreach($patients as $patient)
                                         <tr>
                                             <td>{{ $x++ }}</td>
-                                            <td>{{ $appointment->patient->name }}</td>
-                                            <td>{{ $appointment->doctor->name }}</td>
-                                            <td>{{ \Carbon\Carbon::parse($appointment->date)->format('d/m/Y') }}</td>
-                                            <td>{{ $appointment->time }}</td>
-                                        <td><a href="{{ route('prescriptionCreate',$appointment->id)}}">Show</a>
-                                                {{-- <div class="form-button-action">
-                                                <a href="" data-toggle="tooltip" title="" class="btn btn-link btn-primary" data-original-title="Edit Task">
-                                                        <i class="fa fa-edit"></i>
-                                                    </a>
-
-                                                    <a href="{{ route('appointments.destroy',$appointment->id)}}" data-toggle="tooltip" title="" class="btn btn-link btn-danger delete" data-original-title="Remove">
-                                                        <i class="fa fa-times"></i>
-                                                    </a>
-                                                </div> --}}
-                                            </td>
+                                            <td>{{ $patient->name }}</td>
+                                            <td>{{ $patient->age }}</td>
+                                            <td>{{ $patient->gender }}</td>
+                                            <td>{{ $patient->phone }}</td>
+                                            <td>{{ $patient->address }}</td>
+                                            <td>{{ $patient->mdical_history }}</td>
+                                            <td><a href="{{ route('appointment.select.patient',$patient->id)}}">SSS</a></td>
                                         </tr>
-                                        @empty
-                                        <tr>
-                                            <td colspan="8" align="center">
-                                                <h1 class="display-5 text-danger">Table Empty</h1>
-                                            </td>
-                                        </tr>
-                                        @endforelse
-
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
@@ -106,7 +102,7 @@
         </div>
     </div>
 </div>
-@include('sweetalert::alert')
+
 @push('custom_scripts')
 
 <script >

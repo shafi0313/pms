@@ -1,7 +1,7 @@
 @extends('admin.layout.master')
-@section('title', 'Prescription')
+@section('title', 'Patient Test')
 @section('content')
-<?php $p = 'prescription'; ?>
+<?php $p = 'patient_test'; ?>
 <div class="main-panel">
     <div class="content">
         <div class="page-inner">
@@ -16,7 +16,7 @@
                         <i class="flaticon-right-arrow"></i>
                     </li>
                     <li class="nav-item">
-                        <a href="#">Appoinments</a>
+                        <a href="#"></a>
                     </li>
                 </ul>
             </div>
@@ -33,15 +33,11 @@
                     </div>
                 @endif
 
-                <div class="col-md-12">
+                <div class="col-md-9">
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex align-items-center">
-                                <h4 class="card-title">Add Appoinment</h4>
-                            <a class="btn btn-primary btn-round ml-auto" href="{{ route('doctor.create') }}">
-                                    <i class="fa fa-plus"></i>
-                                    Add New
-                                </a>
+                                {{-- <h4 class="card-title">{{ $prescriptionDates->patient->name }}</h4> --}}
                             </div>
                         </div>
                         <div class="card-body">
@@ -51,9 +47,7 @@
                                         <tr>
                                             <th style="width:1%">SN</th>
                                             <th>Patient Name</th>
-                                            <th>Doctor Name</th>
                                             <th>Date</th>
-                                            <th>Time</th>
                                             <th class="no-sort" style="width:7%">Action</th>
                                         </tr>
                                     </thead>
@@ -61,42 +55,22 @@
                                         <tr>
                                             <th>SN</th>
                                             <th>Patient Name</th>
-                                            <th>Doctor Name</th>
                                             <th>Date</th>
-                                            <th>Time</th>
                                             <th>Status</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
                                         @php $x=1;@endphp
-                                        @forelse($appointments as $appointment)
+                                        @foreach($prescriptionDates as $prescriptionDate)
                                         <tr>
                                             <td>{{ $x++ }}</td>
-                                            <td>{{ $appointment->patient->name }}</td>
-                                            <td>{{ $appointment->doctor->name }}</td>
-                                            <td>{{ \Carbon\Carbon::parse($appointment->date)->format('d/m/Y') }}</td>
-                                            <td>{{ $appointment->time }}</td>
-                                        <td><a href="{{ route('prescriptionCreate',$appointment->id)}}">Show</a>
-                                                {{-- <div class="form-button-action">
-                                                <a href="" data-toggle="tooltip" title="" class="btn btn-link btn-primary" data-original-title="Edit Task">
-                                                        <i class="fa fa-edit"></i>
-                                                    </a>
-
-                                                    <a href="{{ route('appointments.destroy',$appointment->id)}}" data-toggle="tooltip" title="" class="btn btn-link btn-danger delete" data-original-title="Remove">
-                                                        <i class="fa fa-times"></i>
-                                                    </a>
-                                                </div> --}}
-                                            </td>
+                                            <td>{{ $prescriptionDate->patient->name }}</td>
+                                            <td>{{ \Carbon\Carbon::parse($prescriptionDate->date)->format('d/m/Y')}}</td>
+                                            <td><a href="{{ route('patientTestShow',$prescriptionDate->date)}}">Show</a></td>
                                         </tr>
-                                        @empty
-                                        <tr>
-                                            <td colspan="8" align="center">
-                                                <h1 class="display-5 text-danger">Table Empty</h1>
-                                            </td>
-                                        </tr>
-                                        @endforelse
-
+                                        @endforeach
                                     </tbody>
+                                <input type="hidden" name="pDate" value="{{$prescriptionDate->date}}">
                                 </table>
                             </div>
                         </div>
@@ -106,9 +80,8 @@
         </div>
     </div>
 </div>
-@include('sweetalert::alert')
-@push('custom_scripts')
 
+@push('custom_scripts')
 <script >
     $(document).ready(function() {
         $('#basic-datatables').DataTable({
@@ -144,22 +117,7 @@
         });
     });
 </script>
-<script>
-    $('.delete').on('click', function (event) {
-        event.preventDefault();
-        const url = $(this).attr('href');
-        swal({
-            title: 'Are you sure?',
-            text: 'This record and it`s details will be permanantly deleted!',
-            icon: 'warning',
-            buttons: ["Cancel", "Yes!"],
-        }).then(function(value) {
-            if (value) {
-                window.location.href = url;
-            }
-        });
-    });
-</script>
+
 @endpush
 @endsection
 
