@@ -99,6 +99,36 @@
 					</div>
                 </li>
 
+                <li class="nav-item {{$p=='tools'?'active':''}}">
+					<a data-toggle="collapse" href="#tools">
+						<i class="fas fa-toolbox"></i>
+						<p>Tools</p>
+						<span class="caret"></span>
+					</a>
+					<div class="collapse" id="tools">
+						<ul class="nav nav-collapse">
+							<li>
+                                <a href="{{ route('specialist.index') }}">
+                                    <i class="fas fa-notes-medical"></i>
+                                    <p>Doctor Specialist</p>
+                                </a>
+							</li>
+							<li>
+								<a href="{{ route('medicine.index') }}">
+                                    <i class="fas fa-pills"></i>
+                                    <p>Medicine</p>
+                                </a>
+                            </li>
+                            <li>
+								<a href="{{ route('medical_test.index') }}">
+                                    <i class="fas fa-microscope"></i>
+                                    <p>Test Category</p>
+                                </a>
+							</li>
+						</ul>
+					</div>
+                </li>
+
 				{{-- <li class="nav-item">
                 <a href="{{ route('admin.user') }}">
                         <i class="fas fa-users-cog"></i>
@@ -106,7 +136,7 @@
 					</a>
                 </li> --}}
 
-                <li class="nav-item {{$p=='ds'?'active':''}}">
+                {{-- <li class="nav-item {{$p=='ds'?'active':''}}">
                     <a href="{{ route('specialist.index') }}">
                         <i class="fas fa-notes-medical"></i>
                         <p>Doctor Specialist</p>
@@ -125,11 +155,11 @@
                         <i class="fas fa-microscope"></i>
                         <p>Test Category</p>
                     </a>
-                </li>
+                </li> --}}
 
                 <li class="nav-item {{$p=='patients'?'active':''}}">
                     <a data-toggle="collapse" href="#patients">
-                        <i class="fas fa-user"></i>
+                        <i class="fas fa-procedures"></i>
                         <p>Patients</p>
                         <span class="caret"></span>
                     </a>
@@ -173,7 +203,7 @@
 
                 <li class="nav-item {{$p=='patient_test'?'active':''}}">
 					<a data-toggle="collapse" href="#patient_test">
-						<i class="fas fa-pen-square"></i>
+						<i class="fas fa-vials"></i>
 						<p>Patient Test</p>
 						<span class="caret"></span>
 					</a>
@@ -195,7 +225,7 @@
 
 				<li class="nav-item {{$p=='prescription'?'active':''}}">
 					<a data-toggle="collapse" href="#prescription">
-						<i class="fas fa-pen-square"></i>
+						<i class="fas fa-file-prescription"></i>
 						<p>Prescription</p>
 						<span class="caret"></span>
 					</a>

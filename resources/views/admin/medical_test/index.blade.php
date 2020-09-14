@@ -1,7 +1,8 @@
 @extends('admin.layout.master')
 @section('title', 'Medical Test')
 @section('content')
-<?php $p = 'medical_test'; ?>
+<?php //$p = 'medical_test'; ?>
+<?php $p = 'tools'; ?>
 <div class="main-panel">
     <div class="content">
         <div class="page-inner">

@@ -1,7 +1,8 @@
 @extends('admin.layout.master')
 @section('title', 'Doctor Specialist')
 @section('content')
-<?php $p = 'ds'; ?>
+<?php //$p = 'ds'; ?>
+<?php $p = 'tools'; ?>
 <div class="main-panel">
     <div class="content">
         <div class="page-inner">
