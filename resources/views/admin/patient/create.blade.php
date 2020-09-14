@@ -8,9 +8,7 @@
             <div class="page-header">
                 <h4 class="page-title">Patient</h4>
                 <ul class="breadcrumbs">
-                    <li class="nav-home">
-                        <a href="{{ route('admin.dashboard')}}"><i class="flaticon-home"></i></a>
-                    </li>
+                    <li class="nav-home"><a href="{{ route('admin.dashboard')}}"><i class="flaticon-home"></i></a></li>
                     <li class="separator"><i class="flaticon-right-arrow"></i></li>
                     <li class="nav-item"><a href="{{ route('patients.index')}}">Show Patient</a></li>
                     <li class="separator"><i class="flaticon-right-arrow"></i></li>
@@ -69,18 +67,24 @@
                                     </div>
                                     <div class="form-group col-sm-12">
                                         <label for="address">Patient Address</label>
-                                        <textarea class="form-control" id="address" name="address" rows="2"></textarea>
+                                        <textarea class="form-control" id="address" name="address" rows="2" {{old('address')}}></textarea>
                                     </div>
                                     <div class="form-group col-sm-12">
                                         <label for="medical_history">Medical History</label>
-                                        <textarea class="form-control" id="medical_history" name="medical_history" rows="2"></textarea>
+                                        <textarea class="form-control" id="medical_history" name="medical_history" rows="2" {{old('medical_history')}}></textarea>
                                     </div>
                                 </div>
 
-                                <h1 id="app_sow">If You can take an apointment to clock hear</h1>
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" id="app_sow" name="ifapnmt" type="checkbox" value="1">
+                                        <span class="form-check-sign">Click here if you want to take an apartment</span>
+                                    </label>
+                                </div>
+
                                 <div class="row app" style="display: none">
                                     <div class="form-group col-sm-6">
-										<label for="">Example select</label>
+										<label for="">Select Specialist</label>
                                         <select class="form-control" id="doctorSpecialist">
                                             <option>Select Specialist</option>
                                             @foreach($doctorSpecialists as $specialistt)
@@ -94,19 +98,17 @@
                                     </div>
                                     <div class="form-group col-sm-6">
                                         <label for="">Appointment Date</label>
-                                        <input type="txte" name="date" class="form-control date-picker datepicker" Placeholder="DD/MM/YYYY" required>
+                                        <input type="txte" name="date" class="form-control date-picker datepicker" Placeholder="DD/MM/YYYY" {{old('date')}}>
                                     </div>
                                     <div class="form-group col-sm-6">
                                         <label for="">Appointment Time</label>
-                                        <input type="text" name="time" class="form-control" Placeholder="HH:MM" >
+                                        <input type="text" name="time" class="form-control" {{old('time')}} Placeholder="HH:MM" >
                                     </div>
                                 </div>
                                 <div class="mr-auto card-action">
                                     <button type="submit" class="btn btn-success">Submit</button>
                                     <button type="reset" class="btn btn-danger">Reset</button>
                                 </div>
-
-
                             </form>
                         </div>
                     {{-- Page Content End --}}
@@ -120,7 +122,7 @@
 @push('custom_scripts')
 <script>
     $('#app_sow').click(function() {
-        $('.app').toggle("slide");
+        $('.app').slideToggle("slide");
     });
 </script>
 <script type="text/javascript">

@@ -20,7 +20,7 @@
                         <div class="card-header">
                             <div class="d-flex align-items-center">
                                 <h4 class="card-title">Patients Table</h4>
-                            <a class="btn btn-primary btn-round ml-auto" href="{{ route('patients.create') }}">
+                                <a class="btn btn-primary btn-round ml-auto" href="{{ route('patients.create') }}">
                                     <i class="fa fa-plus"></i>
                                     Add Patient
                                 </a>
@@ -92,7 +92,7 @@
         </div>
     </div>
 </div>
-
+@include('sweetalert::alert')
 @push('custom_scripts')
 <script >
     $(document).ready(function() {

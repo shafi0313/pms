@@ -56,6 +56,7 @@ class PatientController extends Controller
      */
     public function store(Request $request)
     {
+        $ifapnmt = $request->get('ifapnmt');
         $this->validate($request, [
             'name' => 'required',
             'age' => 'required|numeric',
@@ -75,18 +76,29 @@ class PatientController extends Controller
             'mdical_history' => $request->input('mdical_history'),
         ];
 
-        $appointments = [
-            'doctor_id' => $request->input('doctor_name'),
-            'date' => Carbon::createFromFormat('m/d/Y', $request->date)->format('Y-m-d'),
-            'time' => $request->input('time'),
-        ];
+        if($ifapnmt==1)
+        {
+            $this->validate($request, [
+                'doctor_name' => 'required',
+                'date' => 'required',
+                'time' => 'required',
+            ]);
+            $appointments = [
+                'doctor_id' => $request->input('doctor_name'),
+                'date' => Carbon::createFromFormat('m/d/Y', $request->date)->format('Y-m-d'),
+                'time' => $request->input('time'),
+            ];
+        }
 
         try {
             $patient =  Patient::create($patient);
-            $appointments['patient_id'] = $patient->id;
-            Appointment::create($appointments);
+            if($ifapnmt==1)
+            {
+                $appointments['patient_id'] = $patient->id;
+                Appointment::create($appointments);
+            }
             Alert::success('Patient Inserted', 'Patient Successfully Inserted');
-            return redirect()->route('appointment.show');
+            return redirect()->route('patients.index');
         } catch(\Exception $ex) {
             Alert::error('DataInsert', $ex->getMessage());
             return redirect()->back();
