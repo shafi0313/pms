@@ -81,7 +81,7 @@
                                 <div class="row app" style="display: none">
                                     <div class="form-group col-sm-6">
 										<label for="">Example select</label>
-                                        <select class="form-control" id="doctor">
+                                        <select class="form-control" id="doctorSpecialist">
                                             <option>Select Specialist</option>
                                             @foreach($doctorSpecialists as $specialistt)
                                             <option value="{{$specialistt->id}}">{{$specialistt->specialist}}</option>
@@ -90,7 +90,7 @@
                                     </div>
                                     <div class="form-group col-md-6">
 										<label for="doctor">Select Doctor</label>
-                                        <select class="form-control" name="doctor_name" id="subs" required></select>
+                                        <select class="form-control" name="doctor_name" id="subs" ></select>
                                     </div>
                                     <div class="form-group col-sm-6">
                                         <label for="">Appointment Date</label>
@@ -98,7 +98,7 @@
                                     </div>
                                     <div class="form-group col-sm-6">
                                         <label for="">Appointment Time</label>
-                                        <input type="text" name="time" class="form-control" Placeholder="HH:MM" required>
+                                        <input type="text" name="time" class="form-control" Placeholder="HH:MM" >
                                     </div>
                                 </div>
                                 <div class="mr-auto card-action">
@@ -124,11 +124,10 @@
     });
 </script>
 <script type="text/javascript">
-    $(document).ready(function () {
-        $('#doctor').on('change',function(e) {
-         var cat_id = $("#doctor").val();
+        $('#doctorSpecialist').on('change',function(e) {
+         var cat_id = $("#doctorSpecialist").val();
          $.ajax({
-               url:'{{ route("subcat") }}',
+               url:'{{ route("patients.doctorSpecialist") }}',
                type:"get",
                data: {
                    cat_id: cat_id
@@ -140,7 +139,6 @@
                }
            })
         });
-    });
 </script>
 @endpush
 

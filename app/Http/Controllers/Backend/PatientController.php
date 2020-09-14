@@ -38,6 +38,7 @@ class PatientController extends Controller
 
     public function subCat(Request $request)
     {
+
         $p_id = $request->cat_id;
         $subcategories = DoctorSpecialist::where('specialist_id',$p_id)->get();
         $subCat = '';

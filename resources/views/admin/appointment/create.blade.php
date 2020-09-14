@@ -31,7 +31,7 @@
                                 <div class="row">
                                     <div class="form-group col-md-6">
 										<label for="doctor">Select Specialist</label>
-                                        <select class="form-control" id="doctor" required>
+                                        <select class="form-control" id="doctorSpecialist" required>
                                             <option></option>
                                             @foreach($doctorSpecialists as $specialistt)
                                             <option value="{{$specialistt->id}}">{{$specialistt->specialist}}</option>
@@ -71,10 +71,10 @@
 @push('custom_scripts')
 <script type="text/javascript">
     $(document).ready(function () {
-        $('#doctor').on('change',function(e) {
-         var cat_id = $("#doctor").val();
+        $('#doctorSpecialist').on('change',function(e) {
+         var cat_id = $("#doctorSpecialist").val();
          $.ajax({
-               url:'{{ route("subcat") }}',
+               url:'{{ route("appointment.doctorSpecialist") }}',
                type:"get",
                data: {
                    cat_id: cat_id
