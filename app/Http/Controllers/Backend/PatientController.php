@@ -43,7 +43,7 @@ class PatientController extends Controller
         $subcategories = DoctorSpecialist::where('specialist_id',$p_id)->get();
         $subCat = '';
         foreach($subcategories as $sub){
-            $subCat .= '<option value="'.$sub->id.'">'.$sub->specialist.'</option>';
+            $subCat .= '<option value="'.$sub->doctor_id.'">'.$sub->specialist.'</option>';
         }
         return json_encode(['subcategories' => $subcategories,'subCat'=>$subCat]);
     }
