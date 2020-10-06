@@ -62,11 +62,11 @@ Route::middleware(['auth','admin'])->prefix('admin')->namespace('Backend')->grou
 
 
     Route::resource('prescription', 'PrescriptionController');
-    Route::get('prescription/appointment', 'PrescriptionController@appointmentShow')->name('prescription.appointment');
-    Route::get('prescription/{id}', 'PrescriptionController@prescriptionCreate')->name('prescriptionCreate');
-    Route::post('prescription/{id}', 'PrescriptionController@store')->name('prescriptionCreate');
-    Route::get('presscription/date/{patient_id}', 'PrescriptionController@prescriptionDates')->name('prescriptionDates');
-    Route::get('presscription/prescription/show/{date}/{apnmt_id}', 'PrescriptionController@prescriptionShow')->name('prescriptionShow');
+    Route::get('prescriptions/appointment', 'PrescriptionController@appointmentShow')->name('prescription.appointment');
+    Route::get('prescriptions/{id}', 'PrescriptionController@prescriptionCreate')->name('prescriptionCreate');
+    Route::post('prescriptions/{id}', 'PrescriptionController@store')->name('prescriptionCreate');
+    Route::get('presscriptions/date/{patient_id}', 'PrescriptionController@prescriptionDates')->name('prescriptionDates');
+    Route::get('presscriptions/prescription/show/{date}/{apnmt_id}', 'PrescriptionController@prescriptionShow')->name('prescriptionShow');
 
     Route::get('autocomplete', 'PrescriptionController@autocomplete')->name('autocomplete');
     Route::get('searchajax', ['as'=>'searchajax','uses'=>'PrescriptionController@searchResponse']);
