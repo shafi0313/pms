@@ -23,6 +23,7 @@ Route::get('t', function () {
 
 Route::middleware(['auth','admin'])->prefix('admin')->namespace('Backend')->group(function(){
     Route::get('/dashboard','DashboardController@index')->name('admin.dashboard');
+    Route::get('/visitor_info','DashboardController@VisitorInfo')->name('VisitorInfo');
 
     Route::resource('/specialist', 'DoctorSpecialistController');
     Route::resource('/doctor', 'DoctorController');

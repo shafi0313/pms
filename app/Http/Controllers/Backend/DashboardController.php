@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
 
 use App\Http\Controllers\Controller;
+use App\Models\VisitorInfo;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 use Spatie\Permission\Models\Permission;
@@ -37,5 +38,11 @@ class DashboardController extends Controller
         $appointments = Appointment::count();
         $doctorAppnmt = Appointment::where('doctor_id',$userId)->count();
         return view('admin.dashboard',compact(['patients','doctors','appointments','doctorAppnmt']));
+    }
+
+    public function VisitorInfo()
+    {
+        $visitors = VisitorInfo::all();
+        return view('admin.visitor_info.index', compact('visitors'));
     }
 }
