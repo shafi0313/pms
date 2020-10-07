@@ -74,6 +74,9 @@ Route::middleware(['auth','admin'])->prefix('admin')->namespace('Backend')->grou
 });
 
 Route::get('/', function () {
+    // $ip = geoip()->getClientIP();
+    // $geoInfo = geoip()->getLocation($ip);
+    // dd($geoInfo);
     // Alert::success('Success Title', 'Success Message');
     return view('welcome');
 });
