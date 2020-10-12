@@ -37,6 +37,9 @@
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
+                        {{-- @if($errors->has('email'))
+                            <span class="text-danger">{{$errors->first('email')}}</span>
+                        @endif --}}
                     </div>
                     <div class="form-group">
                         <label for="password" class="placeholder"><b>{{ __('Password') }}</b></label>
