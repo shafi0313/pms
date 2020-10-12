@@ -1,0 +1,501 @@
+name,mg,type,medicine_group,company,price,info,created_at,updated_at
+Optimox E/D,,,,Aristo Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Optimox E/O,,,,Aristo Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Optimox XG E/D,,,,Aristo Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Besiflox E/D,,,,Aristo Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Fusithal V/D,,,,Aristo Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Ovel E/D,,,,Aristo Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Ovel Ts E/D,,,,Aristo Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Lomeflox E/D,,,,Aristo Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+T-Mycin E/D,,,,Aristo Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+T-Mycin E/O,,,,Aristo Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+AZ E/D,,,,Aristo Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Aprocin E/D,,,,Aristo Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Aprocin E/O,,,,Aristo Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Drylief E/D,,,,Aristo Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Systear E/D,,,,Aristo Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Hypomer Gel,,,,Aristo Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Neotear E/D,,,,Aristo Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Optifusion E/D,,,,Aristo Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Hyloron E/D,,,,Aristo Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Protear E/D,,,,Aristo Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Cyporin E/D,,,,Aristo Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Liftear E/D,,,,Aristo Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Caftadin E/D,,,,Aristo Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Bepotas E/D,,,,Aristo Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Epinast E/D,,,,Aristo Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Olpadin E/D,,,,Aristo Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Olpadin Ds E/D,,,,Aristo Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Olpadin 7 E/D,,,,Aristo Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Stafen E/D,,,,Aristo Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Nazin E/D,,,,Aristo Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Neopred E/D,,,,Aristo Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Lotepred E/D,,,,Aristo Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Lotepred Gel,,,,Aristo Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Cortisol E/D,,,,Aristo Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+AFM E/D,,,,Aristo Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Sonexa E/D,,,,Aristo Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Sonexa E/O,,,,Aristo Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Avatan E/D,,,,Aristo Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Taflan E/D,,,,Aristo Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Brinzopt E/D,,,,Aristo Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Zoladin E/D,,,,Aristo Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Cozopt E/D,,,,Aristo Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Combipres E/D,,,,Aristo Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Nevan E/D,,,,Aristo Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Nevan Ts E/D,,,,Aristo Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Xirom E/D,,,,Aristo Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Xoviral Eye Gel,,,,Aristo Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Acyvir E/O,,,,Aristo Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Fludin E/D,,,,Aristo Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+N-Mycin E/D,,,,Aristo Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Aristen E/O,,,,Aristo Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Dexamox E/D,,,,Aristo Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Sonexa-C E/D,,,,Aristo Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Lotepred Plus E/D,,,,Aristo Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+T-Mycin Plus E/D,,,,Aristo Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+T-Mycin Plus E/O,,,,Aristo Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Gatison E/D,,,,Aristo Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Eye & Ear Drop,,,,Aristo Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+AFM-T E/D,,,,Aristo Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+AFM-Plus E/D,,,,Aristo Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+I-Gold Cap.,,,,Aristo Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Phacovit E/D,,,,Aristo Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Tropicam E/D,,,,Aristo Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Tropicam E/D,,,,Aristo Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Trophen E/D,,,,Aristo Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Matropin E/D,,,,Aristo Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Procain E/D,,,,Aristo Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+NCL E/D,,,,Aristo Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Moxibac E/D,,,,Popular Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Moxibac XG E/D,,,,Popular Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Besibac E/D,,,,Popular Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Levobac E/D,,,,Popular Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Levobac Ts E/D,,,,Popular Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Lomebac E/D,,,,Popular Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Tobrabac E/O,,,,Popular Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Zibac E/D,,,,Popular Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Civox E/D,,,,Popular Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Aquafresh E/D,,,,Popular Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Autotear E/D,,,,Popular Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Artear E/D,,,,Popular Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Aleadin E/D,,,,Popular Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Ocastin E/D,,,,Popular Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Patadin E/D,,,,Popular Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Patadin Ds E/D,,,,Popular Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Patadin Max E/D,,,,Popular Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Zadit E/D,,,,Popular Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Dipred E/D,,,,Popular Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Lotenol E/D,,,,Popular Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Lotenol gel,,,,Popular Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Ocasol E/D,,,,Popular Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Fluromet E/D,,,,Popular Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Orbidex E/D,,,,Popular Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Orbidex E/O,,,,Popular Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Benozol E/D,,,,Popular Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Benozol BR E/D,,,,Popular Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Brimopres E/D,,,,Popular Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Optafenac E/D,,,,Popular Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Optafenac Ts E/D,,,,Popular Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Bfenac E/D,,,,Popular Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Herpigel E/G,,,,Popular Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Natapro E/D,,,,Popular Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Moxidexe E/D,,,,Popular Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Orbidex C E/D,,,,Popular Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Lotenol T E/D,,,,Popular Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Tobrabac E/D,,,,Popular Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Tobrabac E/O,,,,Popular Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Gatibac E/D,,,,Popular Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Orbidex G,,,,Popular Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Fluromet E/D,,,,Popular Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Optavit Cap.,,,,Popular Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Vitafol E/D,,,,Popular Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Tropidil E/D,,,,Popular Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Tropidil plus E/D,,,,Popular Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+P-Caire E/D,,,,Popular Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Nsol 5 E/D,,,,Popular Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Moxigen E/D,,,,General Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Moxigen E/O,,,,General Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Moxigen X/G,,,,General Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Besigen,,,,General Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Genolev E/D,,,,General Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Genolev Ts E/D,,,,General Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Loniegen E/D,,,,General Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Gentob E/D,,,,General Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Gentob E/O,,,,General Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Tearfresh Liquigel E/D,,,,General Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Glytear P E/D,,,,General Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Genagel,,,,General Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Teargen E/D,,,,General Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Eradra E/D,,,,General Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Genacaft E/D,,,,General Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Bepogen E/D,,,,General Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Ologen E/D,,,,General Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Ologen Ds E/D,,,,General Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Ologen Max E/D,,,,General Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Ocutifen E/D,,,,General Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Diflupred E/D,,,,General Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Loteflam E/D,,,,General Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Predflam E/D,,,,General Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Flurolon E/D,,,,General Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Dexagen E/D,,,,General Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Dexagen E/O,,,,General Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Travazen 'z' E/D,,,,General Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Genazopt E/D,,,,General Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Genazopt 'T' E/D,,,,General Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Genazopt plus E/D,,,,General Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Combat E/D,,,,General Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Nepagen E/D,,,,General Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Nepagen-TS E/D,,,,General Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Acunac E/D,,,,General Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Genclovir E/G,,,,General Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Cuvir E/O,,,,General Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Natagen E/D,,,,General Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Moxigen-D E/D,,,,General Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Dexagen-C E/D,,,,General Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Loteflam-T E/D,,,,General Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Dexagen T E/D,,,,General Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Dexagen-G E/D,,,,General Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Dexagen E&E/D,,,,General Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Lutin plus Cap,,,,General Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Vitalens E/D,,,,General Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Troplgen E/D,,,,General Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Troplgen-plus E/D,,,,General Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Floromax E/D,,,,The IBN SINA Pharmaceutical Industry Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Florobex E/D,,,,The IBN SINA Pharmaceutical Industry Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Levosina E/D,,,,The IBN SINA Pharmaceutical Industry Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Levosina Ts E/D,,,,The IBN SINA Pharmaceutical Industry Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Lyflox E/D,,,,The IBN SINA Pharmaceutical Industry Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Tomycin E/D,,,,The IBN SINA Pharmaceutical Industry Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Tomycin E/O,,,,The IBN SINA Pharmaceutical Industry Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Romycin E/D,,,,The IBN SINA Pharmaceutical Industry Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Bactin E/D,,,,The IBN SINA Pharmaceutical Industry Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Bactin E/O,,,,The IBN SINA Pharmaceutical Industry Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Sinafresh E/D,,,,The IBN SINA Pharmaceutical Industry Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Polygel,,,,The IBN SINA Pharmaceutical Industry Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Glamer,,,,The IBN SINA Pharmaceutical Industry Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+G-fresh E/D,,,,The IBN SINA Pharmaceutical Industry Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Optear E/D,,,,The IBN SINA Pharmaceutical Industry Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Cyclorin E/D,,,,The IBN SINA Pharmaceutical Industry Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Betasil E/D,,,,The IBN SINA Pharmaceutical Industry Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Patalon E/D,,,,The IBN SINA Pharmaceutical Industry Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Patalon-Ds E/D,,,,The IBN SINA Pharmaceutical Industry Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Ketof E/D,,,,The IBN SINA Pharmaceutical Industry Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Loterex E/D,,,,The IBN SINA Pharmaceutical Industry Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Isolon E/D,,,,The IBN SINA Pharmaceutical Industry Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Eylon E/D,,,,The IBN SINA Pharmaceutical Industry Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Dexon E/D,,,,The IBN SINA Pharmaceutical Industry Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Dexon E/D,,,,The IBN SINA Pharmaceutical Industry Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Avost E/D,,,,The IBN SINA Pharmaceutical Industry Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Azopres E/D,,,,The IBN SINA Pharmaceutical Industry Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Azopt E/D,,,,The IBN SINA Pharmaceutical Industry Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Bimolate E/D,,,,The IBN SINA Pharmaceutical Industry Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+NEP-TS E/D,,,,The IBN SINA Pharmaceutical Industry Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Bromofen E/D,,,,The IBN SINA Pharmaceutical Industry Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Zirgan E/G,,,,The IBN SINA Pharmaceutical Industry Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Clovir E/O,,,,The IBN SINA Pharmaceutical Industry Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Netoph E/D,,,,The IBN SINA Pharmaceutical Industry Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Fungin E/O,,,,The IBN SINA Pharmaceutical Industry Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Dexon E/D,,,,The IBN SINA Pharmaceutical Industry Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Loterex-T E/D,,,,The IBN SINA Pharmaceutical Industry Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Dexon-G E/D,,,,The IBN SINA Pharmaceutical Industry Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Gatsina E/D,,,,The IBN SINA Pharmaceutical Industry Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Dexon E/D,,,,The IBN SINA Pharmaceutical Industry Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Eyelon E/D,,,,The IBN SINA Pharmaceutical Industry Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Optagold-Cap,,,,The IBN SINA Pharmaceutical Industry Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Ractovit E/D,,,,The IBN SINA Pharmaceutical Industry Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Inventi E/D,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Maxlo E/D,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Ciprocin E/D,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Lubgel E/D,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Lubtear E/D,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Alacot E/D,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Alacot Ds E/D,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Alacot Max E/D,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Alarid E/D,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Trabolar E/D,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Locular E/D,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Bimator E/D,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Locular Plus E/D,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Ocubrom E/D,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Inventi- D E/D,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Eyevi-Cap,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Ace plus Cap.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Ace Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Ace Syrup,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Ace Power Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Alarid Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Alatrol Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Alice Tm Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Alice Tm  Lotion,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Almex Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Ambrisan Tm Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Ambrox P/D,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Amistar Tm IM/IV InJ.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Anadol Cap.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Anclog Plus Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Anclog  Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Anema Tm,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Angilock Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Angilock Plus Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Angivent MR Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Anleptic CR Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Antazol N/D,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Antazol Plus N/spray,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Antista Syrup,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Anzitor Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+B-50 Forte Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+B-50 Forte Syrup,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Betameson-CL Tm Cream,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Betameson-N Cream,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Betameson Tm Cream,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Bicozin-I Syrup,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Bicozin Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Bilista Tm Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Bisocam Tm 2.5/5 Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Bisocor 2.5 Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Bisocor Tm Plus Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Burna Cream ,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Calbo 500 Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Calbo Jr. Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Calbo-C Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Calbo-D Vita Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Calbo-D Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Calboplex Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Calboral-D Tm Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Calboral-DX Tm Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Camlodin 5 Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Camlodin Plus Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Camlopril 5/10 Cap.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Camlosart Tm 5/20  Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Candex  Suspension,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Carbizol Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Carva Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Ceevit Forte,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Ceevit ,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Cef-3 Cap.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Cefotil  Syrup,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Cefotil  Plus 250mg Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Ceftron Inj. 1gm,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Cerevas Tm Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Cinaron Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Cinaron Plus Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Ciprocin E/E/D,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Climycin 300 Cap.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Clofenac  Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Clofenac  Plus Inj. ,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Comet Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Comprid Tm Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Contifil Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Contilex Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Cotrim Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+D-balance Tm,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Deflacort Tm 6,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Dermasol-N Cream,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Dermasol Cream,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Dexonex Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Dibenol Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Diltizem SR 90 Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Entacyd Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Entacyd PlusTab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Epitra Tm Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Eromycin Ped. ,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Eromycin Lotion,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Evit Licap,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Famotack Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Fexo Suspension,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Filfresh Tab,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Filwel Gold Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Filwel Kids Syrup,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Filwel Silver Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Filwel Tm Teen hr Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Filwel Tm Teen hm Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Flexi Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Flugal 50 Cap.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Flurizin 5 Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Fungidal HC Cream,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Fusid  Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Fusid Plus Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Gabastar Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Gelora Oral Gel,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Inflagic Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Imotil Cap.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Itra Cap.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Iventi Tablet,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Ketoral Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Kop SR Cap.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Laxyl Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Lebac Tm Ped. Drops,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Levostar Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Loratin Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Maganta Plus Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Maxcef Tm Inj.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Melixol Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Methicol  Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Mexlo Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Migranil Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Motigut  Ped. Drops,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Moxacil Syrup,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Moxaclave  Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Multivit Plus Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Nebanol Cream,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Nebanol Plus Ointment,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Neuro-B Tab/Inj.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Neurolin Cap.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Nexum Cap.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Nidipine SR 20 Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Nomi Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Oculant Tm E/D,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Osmolax Solution,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Perkidopa Tm Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Perkinil Tab/Inj.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Phylopen Syr.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Promtil Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Rex Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Rupatrol Tm Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Scabex Cream,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Seclo Cap.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Secrin Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Secrin M Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Sedil Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Sedno Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Solo Nasal Drops,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Tazid Inj.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Tebast Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Tetrax Cap.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Thyrin 25/50 Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Topicort Cream,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Torax Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Tory Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Trevox Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Trupan Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Tryptin Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Tusca Plus Syr.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Virux Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Virux Syr.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Vori Tab,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Zanthin Cap.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Zimax Tab.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Zox Syr.,,,,Square Pharmaceuticals Ltd.,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Nutrum Eye Cap.,,,,Acme Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Ketifen Tab.,,,,Acme Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Ben A,,,,Acme Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Losart Tab.,,,,Acme Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Rhinozol N/D,,,,Acme Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Lipitor Tab.,,,,Acme Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+V-Plex Tab.,,,,Acme Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Z- Max 500 Tab.,,,,Acme Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+A Cal Tab.,,,,Acme Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Amlopin Tab.,,,,Acme Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Amloten Tab.,,,,Acme Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+A-fenac Tab.,,,,Acme Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Gliclid Tab.,,,,Acme Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Erocin 500 Tab.,,,,Acme Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Lifil-E Cap.,,,,Acme Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Alanil 120 Tab.,,,,Acme Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Apitac 100 Tab.,,,,Acme Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Fluconal Tab.,,,,Acme Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Fluzin Tab.,,,,Acme Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Cubimox Tab.,,,,Acme Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Maxima Cap.,,,,Acme Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Levopa Tab.,,,,Acme Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Rupastin Tab.,,,,Acme Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+PPI Cap.,,,,Acme Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+A-Tatra Cap.,,,,Acme Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Winop Tab.,,,,Acme Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Leo Tab.,,,,Acme Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Azin 500 Tab.,,,,Acme Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Nidozox Tab.,,,,Acme Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Acemox ,,,,Acme Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+A-Cal-D,,,,Acme Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Aclox,,,,Acme Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+A-fenac-K,,,,Acme Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Baby Zinc,,,,Acme Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+A-flox Inj./ Cap.,,,,Acme Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Ferocit 200 Tab.,,,,Acme Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Glypes E/D,,,,Acme Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Indo-A ,,,,Acme Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Profen Tab.,,,,Acme Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Napro-A Tab.,,,,Acme Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Napro-A Plus Tab.,,,,Acme Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Norflu Tab.,,,,Acme Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Rabizol Tab.,,,,Acme Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Ranidin Tab.,,,,Acme Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Ranidin Tab.,,,,Acme Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Ranidin Syr.,,,,Acme Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Ranidin Inj.,,,,Acme Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+A-B1 Tab.,,,,Acme Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Lifil-A Cap.,,,,Acme Pharma,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Moxquin E/D,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Besiven E/D,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Levoxin E/D,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Lomequin E/D,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Beuflox E/D,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Freshfil E/D,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Filtear E/D,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Lubric E/D,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Lubric Extra,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Sporium E/D,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Alcafta E/D,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Betastin E/D,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Lopadin DS E/D,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+LOpadin Max E/D,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Lotepred-DS E/D,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Cortan E/D,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Metalone E/D,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Metadaxan E/D,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Travast E/D,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Brimodin E/D,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Travast Plus E/D,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Timopress E/D,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Zolaren E/D,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Zolaren Plus E/D,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Brimondin Plus E/D,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Xibrofen E/D,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Lotepred Plus E/D,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Gatiflox E/D,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Metalone Plus E/D,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Azecol Eye Cap.,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Dilate E/D,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Dilate Plus E/D,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Visitear E/D,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Reset Tab.,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Reset ER Tab.,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Osartil 25 Tab.,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Tisinor Tab.,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Calcicar 500 Tab.,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Calvimax-D Tab.,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Amlotab Tab.,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Fixocard Tab.,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Cefaclav Tab.,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Vinsetine Tab.,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Nobesit Tab.,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Joinix Plus Tab.,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+DeflazitTab.,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Inovit E Cap.,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Reservix Tab.,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Nispore  Cap.,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Cortan Tab.,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Mixquin Tab.,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Mecolagin Tab.,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Levoxin Tab.,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Omidon Tab.,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Vitabion Tab.,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Esonix Tab.,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Rupex Tab.,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Etorac Tab.,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Oricox Tab.,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Simplovir Tab.,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Azta Cap.,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Tridosil Tab.,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Intaflam Tab.,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Amlosartan Tab.,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Florium Tab.,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Nispore  E/D,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Joinix Tab.,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Seasnix Tab.,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Montair Tab.,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Myolax Tab.,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Sardopa Tab.,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Topirva Tab.,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
+Magfin Oral Emulsion,,,,Incepta Pharmaceuticals,0,,2020-10-07 00:00:00,2020-10-07 00:00:00
