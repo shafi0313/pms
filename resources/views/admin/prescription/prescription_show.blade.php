@@ -68,7 +68,7 @@
                 <div class="row doctor_info">
                     <div class="col-md-12 text-center">
                         <h1>{{$prescriptionInfo->doctor->name}}</h1>
-                        {{ $prescriptionInfo->Specialist->specialist }}
+                        {{-- {{ $prescriptionInfo->Specialist->specialist }} --}}
                     </div>
                 </div>
 

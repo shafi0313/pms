@@ -7,25 +7,11 @@
         <div class="page-inner">
             <div class="page-header">
                 <ul class="breadcrumbs">
-                    <li class="nav-home">
-                        <a href="{{ route('admin.dashboard')}}">
-                            <i class="flaticon-home"></i>
-                        </a>
-                    </li>
-                    <li class="separator">
-                        <i class="flaticon-right-arrow"></i>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="{{ route('medicine.index')}}">Medicine List</a>
-                    </li>
-                    <li class="separator">
-                        <i class="flaticon-right-arrow"></i>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="{{ route('medicine.create')}}">Add Medicine</a>
-                    </li>
+                    <li class="nav-home"><a href="{{ route('admin.dashboard')}}"><i class="flaticon-home"></i></a></li>
+                    <li class="separator"><i class="flaticon-right-arrow"></i></li>
+                    <li class="nav-item"><a href="{{ route('medicine.index')}}">Medicine List</a></li>
+                    <li class="separator"><i class="flaticon-right-arrow"></i></li>
+                    <li class="nav-item"><a href="{{ route('medicine.create')}}">Add Medicine</a></li>
                 </ul>
             </div>
             <div class="divider1"></div>
@@ -53,6 +39,9 @@
                                 <div class="row doctor_info">
                                     <div class="col-md-12 text-center">
                                         <h1>{{$appointments->doctor->name}}</h1>
+                                        @foreach ($appointments->specialistCat as $item)
+                                            <li>{{$item->degree}}</li>
+                                        @endforeach
                                     </div>
                                 </div>
                             </div>

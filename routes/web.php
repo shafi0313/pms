@@ -1,8 +1,10 @@
 <?php
 
+use App\Models\Appointment;
 use App\User;
 use App\Models\PatientTest;
 use App\Models\Prescription;
+use App\Models\SpecialistSubCat;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 /*
@@ -17,15 +19,16 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('t', function () {
 //   return  Appointment::all();
-//   return  PatientTest::all();
-  return  PatientTest::with('doctor')->get();
+//   return  SpecialistSubCat::all();
+  return  Appointment::with('specialistCat')->get();
 });
 
 Route::middleware(['auth','admin'])->prefix('admin')->namespace('Backend')->group(function(){
     Route::get('/dashboard','DashboardController@index')->name('admin.dashboard');
     Route::get('/visitor_info','DashboardController@VisitorInfo')->name('VisitorInfo');
 
-    Route::resource('/specialist', 'DoctorSpecialistController');
+    // Route::resource('/specialist', 'DoctorSpecialistController');
+    Route::resource('/specialist', 'SpecialistCatController');
     Route::resource('/doctor', 'DoctorController');
     Route::get('admin/doctor/destroy/{id}', 'DoctorController@destroy');
 

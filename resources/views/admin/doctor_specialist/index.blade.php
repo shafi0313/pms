@@ -30,7 +30,7 @@
                                         <tr>
                                             <th style="width: 6%">No</th>
                                             <th>Specialist</th>
-                                            <th>Details</th>
+                                            {{-- <th>Details</th> --}}
                                             <th style="text-align:center;width:80px" >Action</th>
                                         </tr>
                                     </thead>
@@ -63,12 +63,12 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
+                    {{-- <div class="form-group">
                         <label class="col-sm-2 control-label">Details</label>
                         <div class="col-sm-12">
                             <textarea id="details" name="details" required="" placeholder="Enter Details" class="form-control"></textarea>
                         </div>
-                    </div>
+                    </div> --}}
 
                     <div class="col-sm-offset-2 col-sm-10">
                      <button type="submit" class="btn btn-primary" id="saveBtn" value="create">Save changes
@@ -96,7 +96,7 @@
         columns: [
             {data: 'DT_RowIndex', name: 'DT_RowIndex'},
             {data: 'specialist', name: 'specialist'},
-            {data: 'details', name: 'details'},
+            // {data: 'details', name: 'details'},
             {data: 'action', name: 'action', orderable: false, searchable: false},
         ]
     });
@@ -117,7 +117,7 @@
           $('#ajaxModel').modal('show');
           $('#id').val(data.id);
           $('#specialist').val(data.specialist);
-          $('#details').val(data.details);
+        //   $('#details').val(data.details);
       })
    });
 

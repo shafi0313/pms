@@ -18,6 +18,8 @@ class Appointment extends Model
         return $this->belongsTo(Patient::class,'patient_id');
     }
 
-
-
+    public function specialistCat()
+    {
+        return $this->hasMany(SpecialistSubCat::class,'doctor_id','doctor_id');
+    }
 }

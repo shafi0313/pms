@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Models\DoctorSpecialist;
-use App\Http\Controllers\Controller;
 use App\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use App\Models\SpecialistCat;
+use App\Models\DoctorSpecialist;
+use App\Models\SpecialistSubCat;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Redirect;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -31,8 +34,8 @@ class DoctorController extends Controller
     public function create()
     {
         // $dortorId = DB::table('users')->select('id')->latest('id')->first();
-        $doctorSpecialists = DoctorSpecialist::where('specialist_id',0)->get();
-        return view('admin.doctor.create', compact(['doctorSpecialists']));
+        $specialistCat = SpecialistCat::all();
+        return view('admin.doctor.create', compact(['specialistCat']));
     }
 
     /**
@@ -43,6 +46,7 @@ class DoctorController extends Controller
      */
     public function store(Request $request)
     {
+
         $this->validate($request, [
             'name' => 'required',
             'doctor_specialist' => 'required',
@@ -52,7 +56,7 @@ class DoctorController extends Controller
             'email' => 'required|email|unique:users,email',
             'password' => 'required|max:15|confirmed',
         ]);
-
+        $specialist_id = $request->input('doctor_specialist');
         $data = [
             'name' => $request->input('name'),
             'email' => strtolower($request->input('email')),
@@ -63,27 +67,49 @@ class DoctorController extends Controller
             'gender' => $request->input('gender'),
             'role' => '1',
             'is_' => '3',
-            'doctor_specialist' => $request->input('doctor_specialist'),
+            'doctor_specialist' => $specialist_id,
             'password' => bcrypt($request->input('password')),
         ];
 
-        $doctorSpecialists = [
-            'specialist' => $request->input('name'),
-            'specialist_id' => $request->input('doctor_specialist'),
-        ];
+
+        // $doctorSpecialists = [
+        //     'specialist' => $request->input('name'),
+        //     'specialist_id' => $request->input('doctor_specialist'),
+        // ];
 
 
-        try {
-            $user = User::create($data);
-            $doctorSpecialists['doctor_id'] = $user->id;
-            DoctorSpecialist::create($doctorSpecialists);
 
-            Alert::success('Data Inserted', 'Data Successfully Inserted');
-            return redirect()->route('doctor.index');
-        } catch(\Exception $ex) {
-            Alert::error('DataInsert', $ex->getMessage());
-            return redirect()->back();
-        }
+        $user = User::create($data);
+        $doctor_id = $user->id;
+
+            // $doctorSpecialists['doctor_id'] = $user->id;
+            // DoctorSpecialist::create($doctorSpecialists);
+
+            foreach($request->degree as $key => $v){
+                $s=[
+                    'degree' => $request->degree[$key],
+                    'doctor_id' => $doctor_id,
+                    'specialist_cat_id' => $specialist_id,
+                ];
+                // print_r($s);
+                $specialistSubCat = SpecialistSubCat::create($s);
+
+            }
+
+        // try {
+
+
+
+
+
+
+
+        //     Alert::success('Data Inserted', 'Data Successfully Inserted');
+        //     return redirect()->route('doctor.index');
+        // } catch(\Exception $ex) {
+        //     Alert::error('DataInsert', $ex->getMessage());
+        //     return redirect()->back();
+        // }
     }
 
     /**
