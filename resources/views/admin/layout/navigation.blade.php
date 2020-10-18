@@ -124,6 +124,12 @@
                                     <i class="fas fa-microscope"></i>
                                     <p>Test Category</p>
                                 </a>
+                            </li>
+                            <li>
+								<a href="{{ route('doctor_chamber.index') }}">
+                                    <i class="fas fa-microscope"></i>
+                                    <p>Doctor Chamber</p>
+                                </a>
 							</li>
 						</ul>
 					</div>

@@ -43,8 +43,8 @@ class User extends Authenticatable
     //     return $this->hasOne(MyRole::class,'id');
     // }
 
-    public function specialist()
+    public function doctorDegree()
     {
-        return $this->hasOne('App\Models\DoctorSpecialist','id','doctor_specialist');
+        return $this->belongsTo('App\Models\SpecialistCat','doctor_specialist');
     }
 }

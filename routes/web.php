@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('t', function () {
 //   return  Appointment::all();
 //   return  SpecialistSubCat::all();
-  return  Appointment::with('specialistCat')->get();
+  return  User::with('doctorDegree')->get();
 });
 
 Route::middleware(['auth','admin'])->prefix('admin')->namespace('Backend')->group(function(){
@@ -43,6 +43,9 @@ Route::middleware(['auth','admin'])->prefix('admin')->namespace('Backend')->grou
     Route::get('/patients/destroy/{id}', 'PatientController@destroy')->name('patients.destroy');
 
     Route::resource('/medical_test','MedicalTestController');
+
+
+    Route::resource('/doctor_chamber','DoctorChamberController');
 
 
     Route::resource('/appointments', 'AppointmentController');

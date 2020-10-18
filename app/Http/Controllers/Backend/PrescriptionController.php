@@ -50,8 +50,9 @@ class PrescriptionController extends Controller
 
     public function prescriptionCreate($id)
     {
+        $doctorDeg = User::where('id',auth()->user()->id)->get();
         $appointments = Appointment::find($id);
-        return view('admin.Prescription.create', compact('appointments'));
+        return view('admin.prescription.create', compact(['appointments','doctorDeg']));
     }
 
     public function appointmentShow()

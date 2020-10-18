@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Models\DoctorSpecialist;
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\User;
 use DataTables;
-class DoctorSpecialistController extends Controller
+use Illuminate\Http\Request;
+use App\Models\DoctorChamber;
+use App\Http\Controllers\Controller;
+
+class DoctorChamberController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +18,7 @@ class DoctorSpecialistController extends Controller
     public function index(Request $request)
     {
         if ($request->ajax()) {
-            $data = DoctorSpecialist::where('specialist_id',0)->latest()->get();
+            $data = DoctorChamber::latest()->get();
             return Datatables::of($data)
                     ->addIndexColumn()
                     ->addColumn('action', function($row){
@@ -27,7 +29,8 @@ class DoctorSpecialistController extends Controller
                     ->rawColumns(['action'])
                     ->make(true);
         }
-        return view('admin.doctor_specialist.index');
+        $doctors = User::where('is_',3)->get();
+        return view('admin.doctor_chamber.index', compact('doctors'));
     }
 
     /**
@@ -37,7 +40,8 @@ class DoctorSpecialistController extends Controller
      */
     public function create()
     {
-        //
+        $doctors = User::where('status',3)->get();
+        return view('admin.doctor_chamber.index', compact('doctors'));
     }
 
     /**
@@ -49,12 +53,16 @@ class DoctorSpecialistController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'specialist' => 'required',
+            'name' => 'required',
+            'address' => 'required',
+            'phone' => 'required',
         ]);
-        DoctorSpecialist::updateOrCreate(['id' => $request->id],
+        DoctorChamber::updateOrCreate(['id' => $request->id],
                 [
-                'specialist' => $request->specialist,
-                'details' => $request->details
+                'name' => $request->name,
+                'address' => $request->address,
+                'phone' => $request->phone,
+                'doctor_id' => $request->doctor_id,
                 ]);
         return response()->json(['success'=>'Book saved successfully.']);
     }
@@ -78,7 +86,7 @@ class DoctorSpecialistController extends Controller
      */
     public function edit($id)
     {
-        $doctor_specialist = DoctorSpecialist::find($id);
+        $doctor_specialist = DoctorChamber::find($id);
         return response()->json($doctor_specialist);
     }
 
@@ -98,7 +106,7 @@ class DoctorSpecialistController extends Controller
      */
     public function destroy($id)
     {
-        DoctorSpecialist::find($id)->delete();
+        DoctorChamber::find($id)->delete();
 
         return response()->json(['success'=>'Book deleted successfully.']);
     }

@@ -40,11 +40,18 @@
                                     <div class="col-md-12 text-center">
                                         <h1>{{$appointments->doctor->name}}</h1>
                                         @foreach ($appointments->specialistCat as $item)
-                                            <li>{{$item->degree}}</li>
+                                            <li style="list-style: none;font-size:15px">{{$item->degree}}</li>
                                         @endforeach
+                                        @foreach ($doctorDeg as $degree)
+                                            <h2
+                                            Sona>{{$degree->doctorDegree->specialist}}</h2>
+                                        @endforeach
+
                                     </div>
                                 </div>
                             </div>
+
+
 
                             <div class="container">
                                 <div class="row pres_patient">
@@ -60,7 +67,6 @@
                                 </div>
                             </div>
 
-
                             <form action="{{ route('prescription.store') }}" method="post">
                                 @csrf
                                 <input type="hidden" name="appointmentId" value="{{$appointments->id}}">
@@ -73,7 +79,7 @@
                                         <th>Note</th>
                                     </tr>
                                     <tr>
-                                        <td><input type='checkbox' class='chkbox' /></td>
+                                        <td><input type='checkbox' class='chkbox'/></td>
                                         <input class="form-control autocomplete_txt" type="hidden" data-type="medicinesId" id="medicine_id_1" name="medicine_id[]" />
                                         <td><input class="form-control autocomplete_txt" type="text" data-type="medicinesName" id="medicine_name_1" /></td>
                                         <td><input type="text" name="eating_time[]" placeholder="0+0+0" class="form-control" /> </td>
@@ -312,8 +318,6 @@
                 $('#medicine_name_' + elementId).val(data.name);
             }
         });
-
-
     });
 </script>
 @endpush
