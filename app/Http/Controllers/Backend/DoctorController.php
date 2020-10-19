@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\User;
 use Carbon\Carbon;
+use App\Models\DoctorTime;
 use Illuminate\Http\Request;
 use App\Models\SpecialistCat;
 use App\Models\DoctorSpecialist;
@@ -71,7 +72,6 @@ class DoctorController extends Controller
             'password' => bcrypt($request->input('password')),
         ];
 
-
         // $doctorSpecialists = [
         //     'specialist' => $request->input('name'),
         //     'specialist_id' => $request->input('doctor_specialist'),
@@ -79,8 +79,17 @@ class DoctorController extends Controller
 
 
 
-        $user = User::create($data);
-        $doctor_id = $user->id;
+        // if($user!='')
+        // {
+        //     Alert::success('Data Inserted', 'Data Successfully Inserted');
+        //     return redirect()->route('doctor.index');
+        // }else{
+        //     Alert::error('DataInsert', 'Data Successfully Inserted');
+        //     return redirect()->back();
+        // }
+        try {
+            $user = User::create($data);
+            $doctor_id = $user->id;
 
             // $doctorSpecialists['doctor_id'] = $user->id;
             // DoctorSpecialist::create($doctorSpecialists);
@@ -91,25 +100,24 @@ class DoctorController extends Controller
                     'doctor_id' => $doctor_id,
                     'specialist_cat_id' => $specialist_id,
                 ];
-                // print_r($s);
-                $specialistSubCat = SpecialistSubCat::create($s);
-
+                SpecialistSubCat::create($s);
             }
 
-        // try {
+            foreach($request->time as $key => $v){
+                $doctorTime=[
+                    'doctor_id' => $doctor_id,
+                    'time' => $request->time[$key],
+                ];
+                // print_r($s);
+                DoctorTime::create($doctorTime);
+            }
 
-
-
-
-
-
-
-        //     Alert::success('Data Inserted', 'Data Successfully Inserted');
-        //     return redirect()->route('doctor.index');
-        // } catch(\Exception $ex) {
-        //     Alert::error('DataInsert', $ex->getMessage());
-        //     return redirect()->back();
-        // }
+            Alert::success('Data Inserted', 'Data Successfully Inserted');
+            return redirect()->route('doctor.index');
+        } catch(\Exception $ex) {
+            Alert::error('DataInsert', $ex->getMessage());
+            return redirect()->back();
+        }
     }
 
     /**

@@ -114,35 +114,29 @@
 
                                             </table>
                                         </div>
+                                    </div>
 
-                                </div>
-                                <br>
-                                <br>
-                                <div class="mr-auto card-action">
-                                    <button type="submit" class="btn btn-success">Submit</button>
-                                    <button type="reset" class="btn btn-danger">Reset</button>
-                                </div>
+                                    <div class="form-group col-sm-12">
+                                        <label for="patient_mobile_no" class="col-sm-3 control-label">Time: </label>
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered" id="medicine_field">
+                                                <tr>
+                                                    <td><input type="text" name="time[]"placeholder="Ex: From seven to eight in the morning" class="form-control name_list" /></td>
+                                                    <td><button type="button" name="med_add" id="med_add" class="btn btn-success">Add More</button></td>
+                                                    {{-- <input type="hidden" name="specialist_cat_id[]" value="{{$specialistCat->id}}"> --}}
+                                                </tr>
 
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <br>
+                                    <div class="mr-auto card-action">
+                                        <button type="submit" class="btn btn-success">Submit</button>
+                                        <button type="reset" class="btn btn-danger">Reset</button>
+                                    </div>
+                                </div>
                             </form>
-
-
-                            {{-- <form action="{{ route('prescription.store') }}" method="post" id="degree">
-                            @csrf
-                            <div class="form-group">
-                                <label for="patient_mobile_no" class="col-sm-3 control-label">Degree: </label>
-                                <div class="table-responsive">
-                                    <table class="table table-bordered" id="invest_field">
-                                        <tr>
-                                            <td><input type="text" name="degree[]"placeholder="Enter Doctor Degree" class="form-control name_list" /></td>
-                                            <td><button type="button" name="invest_add" id="invest_add" class="btn btn-success">Add More</button></td>
-                                            <input type="hidden" name="specialist_cat_id[]" value="{{$specialistCat->id}}">
-                                        </tr>
-
-                                    </table>
-                                </div>
-                            </div>
-                            <button class="btn btn-primary col-md-offset-6" type="submit">Submit</button>
-                        </form> --}}
 
                         {{-- Page Content End --}}
                         </div>
@@ -156,19 +150,19 @@
 @push('custom_scripts')
 <script>
     $(document).ready(function () {
-        // var j = 1;
-        // var medicine = '<tr id="row1' + j + '">';
-        // medicine += '<td><input class="form-control autocomplete_txt" type="text" data-id="medicineId" id="medicine_id_' + j + '" name="medicine_id[]"/> </td>';
-        // medicine += '<td><button type="button" name="remove" id="' + j + '" class="btn btn-danger btn_remove">X</button></td></tr>';
+        var j = 1;
+        var medicine = '<tr id="row1' + j + '">';
+        medicine += '<td><input type="text" name="time[]"placeholder="Ex: From seven to eight in the morning" class="form-control name_list" /></td>';
+        medicine += '<td><button type="button" name="remove" id="' + j + '" class="btn btn-danger btn_remove">X</button></td></tr>';
 
-        // $('#med_add').click(function () {
-        //     j++;
-        //     $('#medicine_field').append(medicine);
-        // });
-        // $(document).on('click', '.btn_remove', function () {
-        //     var button_id = $(this).attr("id");
-        //     $('#row1' + button_id + '').remove();
-        // });
+        $('#med_add').click(function () {
+            j++;
+            $('#medicine_field').append(medicine);
+        });
+        $(document).on('click', '.btn_remove', function () {
+            var button_id = $(this).attr("id");
+            $('#row1' + button_id + '').remove();
+        });
 
         var z = 1;
         $('#invest_add').click(function () {

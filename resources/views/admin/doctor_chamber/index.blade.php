@@ -11,7 +11,7 @@
                     <li class="nav-home">
                     <a href="{{ route('admin.dashboard')}}"><i class="flaticon-home"></i></a></li>
                     <li class="separator"><i class="flaticon-right-arrow"></i></li>
-                    <li class="nav-item active">Doctor Specialist</ul>
+                    <li class="nav-item active">Doctor Chamber</ul>
             </div>
             <div class="divider1"></div>
             <div class="row">
@@ -19,7 +19,7 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex align-items-center">
-                                <h4 class="card-title">Doctor Specialist Table</h4>
+                                <h4 class="card-title">Doctor Chamber Table</h4>
                                 <a class="btn btn-primary btn-round ml-auto" href="javascript:void(0)" id="createSpecialist"><i class="fa fa-plus"></i> Add New</a>
                             </div>
                         </div>
@@ -58,15 +58,14 @@
                 <form id="specialistForm" name="specialistForm" class="form-horizontal">
                     <input type="hidden" name="id" id="id">
                     <div class="form-group">
-                        <label for="sel1">Select list:</label>
+                        <label for="sel1">Select Doctor:</label>
                         <select class="form-control" id="doctor_id" name="doctor_id">
                             <option selected value disabled>Select Doctor</option>
                             @foreach ($doctors as $doctor)
                                 <option value="{{$doctor->id}}">{{$doctor->name}}</option>
                             @endforeach
-
                         </select>
-                      </div>
+                    </div>
                     <div class="form-group">
                         <label for="name" class="col-sm-2 control-label">Chamber Name</label>
                         <div class="col-sm-12">
@@ -250,22 +249,22 @@
     });
 </script>
 <script>
-toastr.options = {
-    "closeButton": false,
-    "debug": false,
-    "newestOnTop": false,
-    "progressBar": true,
-    "positionClass": "toast-top-right",
-    "preventDuplicates": false,
-    "showDuration": "300",
-    "hideDuration": "1000",
-    "timeOut": "5000",
-    "extendedTimeOut": "1000",
-    "showEasing": "swing",
-    "hideEasing": "linear",
-    "showMethod": "fadeIn",
-    "hideMethod": "fadeOut"
-}
+    toastr.options = {
+        "closeButton": false,
+        "debug": false,
+        "newestOnTop": false,
+        "progressBar": true,
+        "positionClass": "toast-top-right",
+        "preventDuplicates": false,
+        "showDuration": "300",
+        "hideDuration": "1000",
+        "timeOut": "5000",
+        "extendedTimeOut": "1000",
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        "showMethod": "fadeIn",
+        "hideMethod": "fadeOut"
+    }
 </script>
 @endpush
 
