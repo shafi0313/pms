@@ -53,6 +53,7 @@ Route::middleware(['auth','admin'])->prefix('admin')->namespace('Backend')->grou
     Route::get('/appointment/create/{id}', 'AppointmentController@create')->name('appointmentCreate');
     Route::get('/appointment/show', 'AppointmentController@appointment')->name('appointment.show');
     Route::get('/appointment/get/sub', 'AppointmentController@subCat')->name('appointment.doctorSpecialist');
+    Route::get('/appointment/get/doctor_time', 'AppointmentController@doctorTime')->name('appointment.doctorTime');
     Route::get('/appointments/destroy/{id}', 'AppointmentController@destroy')->name('appointments.destroy');
 
 

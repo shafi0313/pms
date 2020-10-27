@@ -8,6 +8,7 @@ use App\Models\DoctorSpecialist;
 use DataTables;
 use Illuminate\Support\Carbon;
 use App\Http\Controllers\Controller;
+use App\Models\DoctorTime;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -30,10 +31,25 @@ class AppointmentController extends Controller
         $p_id = $request->cat_id;
         $subcategories = DoctorSpecialist::where('specialist_id',$p_id)->get();
         $subCat = '';
+        $subCat .= '<option value="0">Select</option>';
         foreach($subcategories as $sub){
             $subCat .= '<option value="'.$sub->doctor_id.'">'.$sub->specialist.'</option>';
         }
+
         return json_encode(['subcategories' => $subcategories,'subCat'=>$subCat]);
+    }
+
+    public function doctorTime(Request $request)
+    {
+        $doctor_id = $request->doctor_id;
+        $doctorTimes = DoctorTime::where('doctor_id',$doctor_id)->get();
+        $doctorTime = '';
+        $doctorTime .= '<option value="0">Select</option>';
+        foreach($doctorTimes as $sub){
+            $doctorTime .= '<option value="'.$sub->time.'">'.$sub->time.'</option>';
+        }
+
+        return json_encode(['doctorTimes' => $doctorTimes,'doctorTime'=>$doctorTime]);
     }
     /**
      * Display a listing of the resource.

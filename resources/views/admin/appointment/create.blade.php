@@ -42,14 +42,22 @@
 										<label for="doctor">Select Doctor</label>
                                         <select class="form-control" name="doctor_name" id="subs" required></select>
                                     </div>
+
+
+                                    <div class="form-group col-md-6">
+										<label for="doctor">Appointment Time</label>
+                                        <select class="form-control" name="time" id="doctorTime" required></select>
+                                    </div>
+
+
                                     <div class="form-group col-sm-6">
                                         <label for="">Appointment Date</label>
                                         <input type="txte" name="date" class="form-control date-picker datepicker" Placeholder="DD/MM/YYYY" required>
                                     </div>
-                                    <div class="form-group col-sm-6">
+                                    {{-- <div class="form-group col-sm-6">
                                         <label for="">Appointment Time</label>
                                         <input type="text" name="time" class="form-control" Placeholder="HH:MM" required>
-                                    </div>
+                                    </div> --}}
                                 </div>
                                 <input type="hidden" name="patientId" value="{{$patient->id}}">
                                 <div align="center">
@@ -83,11 +91,28 @@
                    res = $.parseJSON(res);
                    console.log(res.subCat)
                     $('#subs').html(res.subCat);
-               }
+               },
            })
         });
 
+        $('#subs').on('change',function(e) {
+            var doctor_id = $("#subs").val();
+            // alert(doctor_id);
+            $.ajax({
+                url:'{{ route("appointment.doctorTime") }}',
+                type:"get",
+                data: {
+                        doctor_id: doctor_id
+                    },
+                success:function (res) {
+                    res = $.parseJSON(res);
+                    console.log(res.doctorTime)
+                        $('#doctorTime').html(res.doctorTime);
+                },
+            })
+        });
     });
+
 </script>
 
 {{-- Delete  --}}

@@ -61,7 +61,7 @@
                                             <td>{{ $user->email }}</td>
                                             <td>{{ $user->age }}</td>
                                             <td>{{ $user->address }}</td>
-                                            <td>{{ $user->specialist->specialist }}</td>
+                                            <td>{{ $user->doctorDegreeza->specialist }}</td>
                                             {{-- <td>
                                                 <?php
                                                     //if(isset($user->specialist->specialist)){
