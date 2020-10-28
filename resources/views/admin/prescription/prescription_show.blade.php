@@ -69,6 +69,14 @@
                     <div class="col-md-12 text-center">
                         <h1>{{$prescriptionInfo->doctor->name}}</h1>
                         {{-- {{ $prescriptionInfo->Specialist->specialist }} --}}
+
+                        {{-- <h1>{{$appointments->doctor->name}}</h1> --}}
+                        @foreach ($prescriptionInfo->specialistCat as $item)
+                            <li style="list-style: none;font-size:15px">{{$item->degree}}</li>
+                        @endforeach
+                        @foreach ($doctorDeg as $degree)
+                            <h2>{{$degree->doctorDegree->specialist}}</h2>
+                        @endforeach
                     </div>
                 </div>
 

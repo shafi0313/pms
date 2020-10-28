@@ -29,6 +29,7 @@ class DashboardController extends Controller
         // $role = Role::create(['name' => 'counter']);
         // $permission = Permission::create(['name' => 'counteradd']);
         // auth()->user()->givePermissionTo('admin');
+
         // auth()->user()->assignRole('admin');
 
         // return User::role('doctor')->get();
@@ -36,6 +37,8 @@ class DashboardController extends Controller
         $doctors = User::where('is_',3)->count();
         $patients = Patient::count();
         $appointments = Appointment::count();
+
+        // $doctorPatients = Patient::where('doctor_id',$userId)->count();
         $doctorAppnmt = Appointment::where('doctor_id',$userId)->count();
         return view('admin.dashboard',compact(['patients','doctors','appointments','doctorAppnmt']));
     }

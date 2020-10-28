@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -57,10 +58,25 @@ class AdminUser extends Controller
             'password' => bcrypt($request->input('password')),
         ];
 
+
+
         // dd($data);
 
+        // $role = Role::findById($request->input('is_'));
+        // $permission = Permission::findById($request->input('is_'));
+        // $role->givePermissionTo($permission);
+
+
+
         try {
-            User::create($data);
+            $user = User::create($data);
+            $user_id = $user->id;
+            $permission = [
+                'role_id' => $request->input('is_'),
+                'model_type' => "App\User",
+                'model_id' =>  $user_id,
+            ];
+            DB::table('model_has_roles')->insert($permission);
             Alert::success('User Inserted', 'User Successfully Inserted');
             return redirect()->route('users.index');
         } catch(\Exception $ex) {

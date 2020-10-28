@@ -54,8 +54,84 @@
 					</span>
 					<h4 class="text-section">Components</h4>
                 </li>
+            @role('admin')
+                <li class="nav-item">
+					<a data-toggle="collapse" href="#submenu">
+						<i class="fas fa-users-cog"></i>
+						<p>Admin</p>
+						<span class="caret"></span>
+					</a>
+					<div class="collapse" id="submenu">
+						<ul class="nav nav-collapse">
+							<li>
+								<a data-toggle="collapse" href="#subnav1">
+									<span class="sub-item">User Management</span>
+									<span class="caret"></span>
+								</a>
+								<div class="collapse" id="subnav1">
+									<ul class="nav nav-collapse subnav">
+										<li>
+											<a href="{{ route('users.index') }}">
+												<span class="sub-item">Show User</span>
+											</a>
+										</li>
+										<li>
+											<a href="{{ route('users.create') }}">
+												<span class="sub-item">Add User</span>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li>
+								<a data-toggle="collapse" href="#subnav2">
+									<span class="sub-item">User Permission</span>
+									<span class="caret"></span>
+								</a>
+								<div class="collapse" id="subnav2">
+									<ul class="nav nav-collapse subnav">
+										<li>
+											<a href="#">
+												<span class="sub-item">Level 2</span>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+							{{-- <li>
+								<a href="#">
+									<span class="sub-item">Level 1</span>
+								</a>
+							</li> --}}
+						</ul>
+					</div>
+                </li>
+            @endrole
 
-                <li class="nav-item {{$p=='user'?'active':''}}">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                {{-- <li class="nav-item {{$p=='user'?'active':''}}">
 					<a data-toggle="collapse" href="#user">
 						<i class="fas fa-users-cog"></i>
 						<p>User Management</p>
@@ -75,7 +151,7 @@
 							</li>
 						</ul>
 					</div>
-                </li>
+                </li> --}}
 
                 <li class="nav-item {{$p=='doctor'?'active':''}}">
 					<a data-toggle="collapse" href="#doctor">

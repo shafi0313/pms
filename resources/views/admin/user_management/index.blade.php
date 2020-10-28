@@ -61,7 +61,7 @@
                                             <td>{{ $x++ }}</td>
                                             <td>{{ $user->name }}</td>
                                             <td>{{ $user->email }}</td>
-                                            <td>{{($user->role == 1) ? 'Admin':'Counter'}}</td>
+                                            <td>{{($user->is_ == 1) ? 'Admin':(($user->is_ == 2) ? 'Counter' : 'Doctor')}}</td>
                                             <td>{{ $user->age }}</td>
                                             <td>{{ $user->address }}</td>
                                             <td>{{ $user->photo }}</td>

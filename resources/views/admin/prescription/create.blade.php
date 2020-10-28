@@ -43,8 +43,7 @@
                                             <li style="list-style: none;font-size:15px">{{$item->degree}}</li>
                                         @endforeach
                                         @foreach ($doctorDeg as $degree)
-                                            <h2
-                                            Sona>{{$degree->doctorDegree->specialist}}</h2>
+                                            <h2>{{$degree->doctorDegree->specialist}}</h2>
                                         @endforeach
 
                                     </div>

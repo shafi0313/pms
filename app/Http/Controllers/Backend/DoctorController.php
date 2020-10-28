@@ -90,9 +90,12 @@ class DoctorController extends Controller
         try {
             $user = User::create($data);
             $doctor_id = $user->id;
-
-            // $doctorSpecialists['doctor_id'] = $user->id;
-            // DoctorSpecialist::create($doctorSpecialists);
+            $permission = [
+                'role_id' => 3,
+                'model_type' => "App\User",
+                'model_id' =>  $doctor_id,
+            ];
+            DB::table('model_has_roles')->insert($permission);
 
             foreach($request->degree as $key => $v){
                 $s=[

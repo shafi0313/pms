@@ -42,10 +42,13 @@ class PrescriptionController extends Controller
         // $prescriptionInfos = PrescriptionInfo::all();
 
         // $doctor = User::all();
+
+        $appointments = Appointment::where('id',auth()->user()->id);
         $patient_tests = PatientTest::where('apnmt_id', $apnmt_id)->where('date', $date)->get();
         $prescriptionInfo = Prescription::where('doctor_id',auth()->user()->id)->first();
+        $doctorDeg = User::where('id',auth()->user()->id)->get();
         $prescriptionShows = Prescription::where('date', $date)->get();
-        return view('admin.prescription.prescription_show', compact(['prescriptionShows','prescriptionInfo','patient_tests']));
+        return view('admin.prescription.prescription_show', compact(['prescriptionShows','prescriptionInfo','patient_tests','doctorDeg']));
     }
 
     public function prescriptionCreate($id)

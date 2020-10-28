@@ -24,6 +24,7 @@
             <div class="row">
 
                 {{-- {{Auth::admin()->name}} --}}
+                @role('admin|counter')
                 <div class="col-sm-6 col-md-3">
                     <div class="card card-stats card-round">
                         <div class="card-body ">
@@ -44,7 +45,6 @@
                     </div>
                 </div>
 
-                @role('admin')
                 <div class="col-sm-6 col-md-3">
                     <div class="card card-stats card-round">
                         <div class="card-body">
@@ -64,7 +64,6 @@
                         </div>
                     </div>
                 </div>
-                @endrole
 
                 <div class="col-sm-6 col-md-3">
                     <div class="card card-stats card-round">
@@ -85,6 +84,7 @@
                         </div>
                     </div>
                 </div>
+                @endrole
 
                 @role('doctor')
                 <div class="col-sm-6 col-md-3">
@@ -106,9 +106,10 @@
                         </div>
                     </div>
                 </div>
+
                 @endrole
 
-                <div class="col-sm-6 col-md-3">
+                {{-- <div class="col-sm-6 col-md-3">
                     <div class="card card-stats card-round">
                         <div class="card-body">
                             <div class="row align-items-center">
@@ -126,7 +127,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>
