@@ -4,8 +4,6 @@ namespace App\Http\Controllers\Backend;
 
 use App\User;
 use Carbon\Carbon;
-use App\Models\Medicine;
-// use Barryvdh\DomPDF\PDF;
 use App\Models\Appointment;
 use App\Models\PatientTest;
 use App\Models\Prescription;

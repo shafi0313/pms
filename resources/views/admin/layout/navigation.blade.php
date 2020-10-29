@@ -304,7 +304,7 @@
 							</li>
 							<li>
                                 <a href="{{ route('prescription.appointment') }}">
-									<span class="sub-item">Add prescription</span>
+									<span class="sub-item">Appointments</span>
 								</a>
 							</li>
 						</ul>
