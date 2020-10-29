@@ -89,7 +89,7 @@
         $('#doctor').on('change',function(e) {
          var cat_id = $("#doctor").val();
          $.ajax({
-               url:'{{ route("subcat") }}',
+               url:'{{ route("appointment.doctorSpecialist") }}',
                type:"get",
                data: {
                    cat_id: cat_id

@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Models\Appointment;
-use App\Models\Patient;
-use App\Models\DoctorSpecialist;
+use App\User;
 use DataTables;
+use App\Models\Patient;
+use App\Models\DoctorTime;
+use App\Models\Appointment;
+use Illuminate\Http\Request;
+use App\Models\SpecialistCat;
 use Illuminate\Support\Carbon;
 use App\Http\Controllers\Controller;
-use App\Models\DoctorTime;
-use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class AppointmentController extends Controller
@@ -29,11 +30,11 @@ class AppointmentController extends Controller
     public function subCat(Request $request)
     {
         $p_id = $request->cat_id;
-        $subcategories = DoctorSpecialist::where('specialist_id',$p_id)->get();
+        $subcategories = User::where('doctor_specialist',$p_id)->get();
         $subCat = '';
         $subCat .= '<option value="0">Select</option>';
         foreach($subcategories as $sub){
-            $subCat .= '<option value="'.$sub->doctor_id.'">'.$sub->specialist.'</option>';
+            $subCat .= '<option value="'.$sub->id.'">'.$sub->name.'</option>';
         }
 
         return json_encode(['subcategories' => $subcategories,'subCat'=>$subCat]);
@@ -70,7 +71,7 @@ class AppointmentController extends Controller
     public function create($id)
     {
         $patient = Patient::findOrFail($id);
-        $doctorSpecialists = DoctorSpecialist::where('specialist_id',0)->get();
+        $doctorSpecialists = SpecialistCat::all();
         return view('admin.appointment.create', compact(['patient','doctorSpecialists']));
     }
 

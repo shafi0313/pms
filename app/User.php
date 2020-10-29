@@ -38,13 +38,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    // public function myrole()
-    // {
-    //     return $this->hasOne(MyRole::class,'id');
-    // }
 
     public function doctorDegree()
     {
-        return $this->belongsTo('App\Models\SpecialistCat','doctor_specialist');
+        return $this->belongsTo('App\Models\SpecialistCat','doctor_specialist','id');
     }
 }

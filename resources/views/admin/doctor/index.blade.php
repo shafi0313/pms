@@ -61,16 +61,16 @@
                                             <td>{{ $user->email }}</td>
                                             <td>{{ $user->age }}</td>
                                             <td>{{ $user->address }}</td>
-                                            <td>{{ $user->doctorDegreeza->specialist }}</td>
-                                            {{-- <td>
+                                            {{-- <td>{{ $user->doctorDegree->specialist}}</td> --}}
+                                            <td>
                                                 <?php
-                                                    //if(isset($user->specialist->specialist)){
-                                                       // echo $user->specialist->specialist;
-                                                    //}else{
-                                                        //echo "Em";
-                                                    //}
+                                                    if(isset($user->doctorDegree->specialist)){
+                                                        echo $user->doctorDegree->specialist;
+                                                    }else{
+                                                        echo "Null";
+                                                    }
                                                 ?>
-                                            </td> --}}
+                                            </td>
                                             <td>{{ $user->photo }}</td>
                                             <td>
                                                 <div class="form-button-action">

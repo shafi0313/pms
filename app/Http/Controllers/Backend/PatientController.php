@@ -2,14 +2,17 @@
 
 namespace App\Http\Controllers\Backend;
 
-use App\Http\Controllers\Controller;
+use App\User;
 
 use App\Models\Patient;
+use App\Models\DoctorTime;
 use App\Models\Appointment;
-use App\Models\DoctorSpecialist;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
+use App\Models\DoctorSpecialist;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
+use App\Models\SpecialistCat;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class PatientController extends Controller
@@ -32,20 +35,34 @@ class PatientController extends Controller
      */
     public function create(Request $request)
     {
-       $doctorSpecialists = DoctorSpecialist::where('specialist_id',0)->get();
+       $doctorSpecialists = SpecialistCat::all();
         return view('admin.patient.create', compact(['doctorSpecialists']));
     }
 
     public function subCat(Request $request)
     {
-
         $p_id = $request->cat_id;
-        $subcategories = DoctorSpecialist::where('specialist_id',$p_id)->get();
+        $subcategories = User::where('doctor_specialist',$p_id)->get();
         $subCat = '';
+        $subCat .= '<option value="0">Select</option>';
         foreach($subcategories as $sub){
-            $subCat .= '<option value="'.$sub->doctor_id.'">'.$sub->specialist.'</option>';
+            $subCat .= '<option value="'.$sub->id.'">'.$sub->name.'</option>';
         }
+
         return json_encode(['subcategories' => $subcategories,'subCat'=>$subCat]);
+    }
+
+    public function doctorTime(Request $request)
+    {
+        $doctor_id = $request->doctor_id;
+        $doctorTimes = DoctorTime::where('doctor_id',$doctor_id)->get();
+        $doctorTime = '';
+        $doctorTime .= '<option value="0">Select</option>';
+        foreach($doctorTimes as $sub){
+            $doctorTime .= '<option value="'.$sub->time.'">'.$sub->time.'</option>';
+        }
+
+        return json_encode(['doctorTimes' => $doctorTimes,'doctorTime'=>$doctorTime]);
     }
 
     /**
@@ -60,7 +77,7 @@ class PatientController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'age' => 'required|numeric',
-            'email' => 'email|unique:patients,email',
+            // 'email' => 'email|unique:patients,email',
             'phone' => 'required|numeric',
             'address' => 'required',
         ]);

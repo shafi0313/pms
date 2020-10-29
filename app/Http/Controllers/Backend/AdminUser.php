@@ -17,7 +17,7 @@ class AdminUser extends Controller
      */
     public function index()
     {
-        $users = User::where('role',1)->orWhere('role',2)->get();
+        $users = User::where('is_',1)->orWhere('is_',2)->get();
         return view('admin.user_management.index', compact('users'));
     }
 

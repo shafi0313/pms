@@ -9,4 +9,9 @@ class SpecialistCat extends Model
 {
     use HasFactory;
     protected $guarded = [];
+
+    public function doctorDegree()
+    {
+        return $this->belongsTo('App\User','id','doctor_specialist');
+    }
 }

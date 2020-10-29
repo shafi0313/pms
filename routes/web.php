@@ -4,6 +4,7 @@ use App\Models\Appointment;
 use App\User;
 use App\Models\PatientTest;
 use App\Models\Prescription;
+use App\Models\SpecialistCat;
 use App\Models\SpecialistSubCat;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -40,7 +41,8 @@ Route::middleware(['auth','admin'])->prefix('admin')->namespace('Backend')->grou
 
     Route::resource('/patients', 'PatientController');
     Route::get('/patients/get/sub', 'PatientController@subCat')->name('patients.doctorSpecialist');
-    Route::get('/patients/destroy/{id}', 'PatientController@destroy')->name('patients.destroy');
+    Route::get('/patients/get/doctor_time', 'PatientController@doctorTime')->name('patients.doctorTime');
+    Route::get('/appointment/destroy/{id}', 'PatientController@destroy')->name('patients.destroy');
 
     Route::resource('/medical_test','MedicalTestController');
 

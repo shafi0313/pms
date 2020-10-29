@@ -1,0 +1,8 @@
+User: admin@gmail.com
+pass: 1
+
+Doctor:
+User: shahab@gmail.com
+pass: 1
+User: malik@gmail.com
+pass: 1

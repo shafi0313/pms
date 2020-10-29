@@ -79,7 +79,7 @@ class PrescriptionController extends Controller
     public function appointmentShow()
     {
         $appointments = Appointment::where('p_status',0)->where('doctor_id',auth()->user()->id)->get();
-        return view('admin.Prescription.appointments', compact('appointments'));
+        return view('admin.prescription.appointments', compact('appointments'));
     }
     /**
      * Show the form for creating a new resource.

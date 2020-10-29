@@ -34,7 +34,6 @@ class DoctorController extends Controller
      */
     public function create()
     {
-        // $dortorId = DB::table('users')->select('id')->latest('id')->first();
         $specialistCat = SpecialistCat::all();
         return view('admin.doctor.create', compact(['specialistCat']));
     }

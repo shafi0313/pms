@@ -54,8 +54,9 @@
 					</span>
 					<h4 class="text-section">Components</h4>
                 </li>
+
             @role('admin')
-                <li class="nav-item">
+                <li class="nav-item {{$p=='user'?'active':''}}">
 					<a data-toggle="collapse" href="#submenu">
 						<i class="fas fa-users-cog"></i>
 						<p>Admin</p>
@@ -112,25 +113,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 {{-- <li class="nav-item {{$p=='user'?'active':''}}">
 					<a data-toggle="collapse" href="#user">
 						<i class="fas fa-users-cog"></i>
@@ -153,6 +135,7 @@
 					</div>
                 </li> --}}
 
+                @role('admin|counter')
                 <li class="nav-item {{$p=='doctor'?'active':''}}">
 					<a data-toggle="collapse" href="#doctor">
 						<i class="fas fa-user-md"></i>
@@ -174,6 +157,7 @@
 						</ul>
 					</div>
                 </li>
+                @endrole
 
                 <li class="nav-item {{$p=='tools'?'active':''}}">
 					<a data-toggle="collapse" href="#tools">
@@ -327,12 +311,14 @@
 					</div>
                 </li>
 
+                @role('admin|counter')
                 <li class="nav-item {{$p=='visitor'?'active':''}}">
                     <a class="dropdown-item" href="{{ route('VisitorInfo') }}" >
                         <i class="fas fa-user-secret"></i>
                         <p>Visitor Info</p>
                     </a>
                 </li>
+                @endrole
 
                 <li class="nav-item">
                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
