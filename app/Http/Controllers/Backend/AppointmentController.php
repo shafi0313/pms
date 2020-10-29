@@ -59,7 +59,7 @@ class AppointmentController extends Controller
      */
     public function index()
     {
-        $appointments = Appointment::orderBy('id', 'DESC')->get();
+        $appointments = Appointment::where('doctor_id',auth()->user()->id)->orderBy('id', 'DESC')->get();
         return view('admin.appointment.index', compact('appointments'));
     }
 

@@ -35,6 +35,7 @@
                                             <th>Doctor Name</th>
                                             <th>Date</th>
                                             <th>Time</th>
+                                            <th>Status</th>
                                             <th class="no-sort" style="width:7%">Action</th>
                                         </tr>
                                     </thead>
@@ -45,6 +46,7 @@
                                             <th>Doctor Name</th>
                                             <th>Date</th>
                                             <th>Time</th>
+                                            <th>Status</th>
                                             <th>Action</th>
                                         </tr>
                                     </tfoot>
@@ -57,6 +59,15 @@
                                             <td>{{ $appointment->doctor->name }}</td>
                                             <td>{{ $appointment->date }}</td>
                                             <td>{{ $appointment->time }}</td>
+                                            <td>
+                                                @if($appointment->p_status == 1)
+                                                {{"Seen"}}
+                                                @elseif($appointment->a_status == 0)
+                                                {{"Not seen"}}
+                                                @elseif($appointment->a_status == 1)
+                                                {{"Rejected"}}
+                                                @endif
+                                            </td>
                                             <td>
                                                 <div class="form-button-action">
                                                     <a href="{{ route('appointments.edit',$appointment->id)}}" data-toggle="tooltip" title="" class="btn btn-link btn-primary" data-original-title="Edit Task">

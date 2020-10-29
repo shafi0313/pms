@@ -8,40 +8,19 @@
             <div class="page-header">
                 <ul class="breadcrumbs">
                     <li class="nav-home">
-                    <a href="{{ route('admin.dashboard')}}">
-                            <i class="flaticon-home"></i>
-                        </a>
-                    </li>
-                    <li class="separator">
-                        <i class="flaticon-right-arrow"></i>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#">Appoinments</a>
-                    </li>
+                    <a href="{{ route('admin.dashboard')}}"><i class="flaticon-home"></i></a></li>
+                    <li class="separator"><i class="flaticon-right-arrow"></i></li>
+                    <li class="nav-item active">Appoinments</li>
                 </ul>
             </div>
             <div class="divider1"></div>
             <div class="row">
-
-                @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
-
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex align-items-center">
-                                <h4 class="card-title">Add Appoinment</h4>
-                            <a class="btn btn-primary btn-round ml-auto" href="{{ route('doctor.create') }}">
-                                    <i class="fa fa-plus"></i>
-                                    Add New
-                                </a>
+                                <h4 class="card-title">Appoinments</h4>
+                                <a class="btn btn-primary btn-round ml-auto" href="{{ route('doctor.create') }}"><i class="fa fa-plus"></i>Add New</a>
                             </div>
                         </div>
                         <div class="card-body">
@@ -49,12 +28,12 @@
                                 <table id="multi-filter-select" class="display table table-striped table-hover" >
                                     <thead>
                                         <tr>
-                                            <th style="width:1%">SN</th>
+                                            <th style="width:5%">SN</th>
                                             <th>Patient Name</th>
                                             <th>Doctor Name</th>
                                             <th>Date</th>
                                             <th>Time</th>
-                                            <th class="no-sort" style="width:7%">Action</th>
+                                            <th class="no-sort text-center" style="width:10%">Action</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
@@ -71,21 +50,18 @@
                                         @php $x=1;@endphp
                                         @forelse($appointments as $appointment)
                                         <tr>
-                                            <td>{{ $x++ }}</td>
+                                            <td class="text-center">{{ $x++ }}</td>
                                             <td>{{ $appointment->patient->name }}</td>
                                             <td>{{ $appointment->doctor->name }}</td>
                                             <td>{{ \Carbon\Carbon::parse($appointment->date)->format('d/m/Y') }}</td>
                                             <td>{{ $appointment->time }}</td>
-                                        <td><a href="{{ route('prescriptionCreate',$appointment->id)}}">Show</a>
-                                                {{-- <div class="form-button-action">
-                                                <a href="" data-toggle="tooltip" title="" class="btn btn-link btn-primary" data-original-title="Edit Task">
-                                                        <i class="fa fa-edit"></i>
-                                                    </a>
-
-                                                    <a href="{{ route('appointments.destroy',$appointment->id)}}" data-toggle="tooltip" title="" class="btn btn-link btn-danger delete" data-original-title="Remove">
-                                                        <i class="fa fa-times"></i>
-                                                    </a>
-                                                </div> --}}
+                                            <td class="d-flex">
+                                                <form action="{{route('prescription.appointmentReject',$appointment->id)}}" method="POST">
+                                                    @csrf
+                                                    <input type="hidden" value="1" name="a_status">
+                                                    <button class="btn btn-danger btn-sm" style="font-size: 17px;padding:0 10px;" type="submit" onclick="return confirm('Are you sure?')"><i class="far fa-times-circle" ></i></button>
+                                                </form> <span style="margin: 0 5px">||</span>
+                                                <a class="btn btn-primary btn-sm" style="font-size: 17px;padding:0 10px;" href="{{ route('prescriptionCreate',$appointment->id)}}"><i class="fas fa-prescription"></i></a>
                                             </td>
                                         </tr>
                                         @empty

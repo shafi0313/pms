@@ -73,6 +73,7 @@ Route::middleware(['auth','admin'])->prefix('admin')->namespace('Backend')->grou
 
     Route::resource('prescription', 'PrescriptionController');
     Route::get('prescriptions/appointment', 'PrescriptionController@appointmentShow')->name('prescription.appointment');
+    Route::post('prescriptions/appointment/{id}', 'PrescriptionController@appointmentReject')->name('prescription.appointmentReject');
     Route::get('prescriptions/{id}', 'PrescriptionController@prescriptionCreate')->name('prescriptionCreate');
     Route::post('prescriptions/{id}', 'PrescriptionController@store')->name('prescriptionCreate');
     Route::get('presscriptions/date/{patient_id}', 'PrescriptionController@prescriptionDates')->name('prescriptionDates');
@@ -80,6 +81,8 @@ Route::middleware(['auth','admin'])->prefix('admin')->namespace('Backend')->grou
     Route::get('presscriptions/prescription/showpdf/{date}/{apnmt_id}', 'PrescriptionController@prescriptionShowPdf')->name('prescriptionShowPdf');
 
     Route::get('presscriptions/prescription/showpdfdownload/{date}/{apnmt_id}', 'PrescriptionController@prescriptionPdfDownload')->name('prescriptionPdfDownload');
+
+    // Route::post('/course_views/{id}', 'CourseViewController@statusUpdate')->name('course_view.statusUpdate');
 
     Route::get('autocomplete', 'PrescriptionController@autocomplete')->name('autocomplete');
     Route::get('searchajax', ['as'=>'searchajax','uses'=>'PrescriptionController@searchResponse']);

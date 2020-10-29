@@ -69,6 +69,22 @@ class PrescriptionController extends Controller
         return $pdf->download('presscription-pdf');
     }
 
+    public function appointmentReject(Request $request, $id)
+    {
+        $data = ['a_status' => $request->get('a_status')];
+
+        try {
+            $update  = Appointment::find($id);
+            $update->update($data);
+            // Alert::success('Slider Updeated', 'Slider Successfully Updeated');
+            return redirect()->back();
+        } catch(\Exception $ex){
+            // Alert::error('DataInsert', $ex->getMessage());
+            return redirect()->back();
+        }
+
+    }
+
     public function prescriptionCreate($id)
     {
         $doctorDeg = User::where('id',auth()->user()->id)->get();
@@ -78,7 +94,7 @@ class PrescriptionController extends Controller
 
     public function appointmentShow()
     {
-        $appointments = Appointment::where('p_status',0)->where('doctor_id',auth()->user()->id)->get();
+        $appointments = Appointment::where('p_status',0)->where('a_status',0)->where('doctor_id',auth()->user()->id)->get();
         return view('admin.prescription.appointments', compact('appointments'));
     }
     /**

@@ -9,9 +9,9 @@
                 <ul class="breadcrumbs">
                     <li class="nav-home"><a href="{{ route('admin.dashboard')}}"><i class="flaticon-home"></i></a></li>
                     <li class="separator"><i class="flaticon-right-arrow"></i></li>
-                    <li class="nav-item"><a href="{{ route('medicine.index')}}">Medicine List</a></li>
+                    <li class="nav-item"><a href="{{ route('prescription.appointment') }}">Appoinments</a></li>
                     <li class="separator"><i class="flaticon-right-arrow"></i></li>
-                    <li class="nav-item"><a href="{{ route('medicine.create')}}">Add Medicine</a></li>
+                    <li class="nav-item active">Create Prescription</li>
                 </ul>
             </div>
             <div class="divider1"></div>
