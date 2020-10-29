@@ -75,6 +75,9 @@ Route::middleware(['auth','admin'])->prefix('admin')->namespace('Backend')->grou
     Route::post('prescriptions/{id}', 'PrescriptionController@store')->name('prescriptionCreate');
     Route::get('presscriptions/date/{patient_id}', 'PrescriptionController@prescriptionDates')->name('prescriptionDates');
     Route::get('presscriptions/prescription/show/{date}/{apnmt_id}', 'PrescriptionController@prescriptionShow')->name('prescriptionShow');
+    Route::get('presscriptions/prescription/showpdf/{date}/{apnmt_id}', 'PrescriptionController@prescriptionShowPdf')->name('prescriptionShowPdf');
+
+    Route::get('presscriptions/prescription/showpdfdownload/{date}/{apnmt_id}', 'PrescriptionController@prescriptionPdfDownload')->name('prescriptionPdfDownload');
 
     Route::get('autocomplete', 'PrescriptionController@autocomplete')->name('autocomplete');
     Route::get('searchajax', ['as'=>'searchajax','uses'=>'PrescriptionController@searchResponse']);

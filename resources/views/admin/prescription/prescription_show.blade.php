@@ -4,6 +4,7 @@
 <?php $p = 'prescription'; ?>
 <style>
     .icon i {
+        margin-left: 40px;
         font-size: 40px;
     }
     .medicin_area {
@@ -19,29 +20,19 @@
         font-weight: 600;
         font-size: 20px;
     }
-    ..medicin_area {
+    .v_line {
         position: relative;
     }
-    .medicin_area::before {
+    .v_line::before {
         content: "";
         position: absolute;
         background: red;
         width: 1px;
         height: 200%;
         top: 0;
-        left: 0;
+        left: 35px;
     }
-    @media print {
-        /* All your print styles go here */
-       .main-header,.sidebar,.page-header { display: none !important; }
-       .print_{
-           position: absolute;
-           top:0;
-           left: 0;
-           max-width: 1366px !important;
-           overflow: hidden;
-       }
-    }
+
 }
 </style>
 <div class="main-panel">
@@ -105,7 +96,7 @@
 
                 </div>
 
-                <div class="col-md-8">
+                <div class="col-md-8 v_line">
                     <div class="icon">
                         <i class="fas fa-prescription"></i>
                     </div>

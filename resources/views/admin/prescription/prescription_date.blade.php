@@ -33,7 +33,7 @@
                     </div>
                 @endif
 
-                <div class="col-md-9">
+                <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex align-items-center">
@@ -45,10 +45,11 @@
                                 <table id="multi-filter-select" class="display table table-striped table-hover" >
                                     <thead>
                                         <tr>
-                                            <th style="width:1%">SN</th>
+                                            <th style="width:6%;">SN</th>
                                             <th>Patient Name</th>
                                             <th>Date</th>
                                             <th class="no-sort" style="width:7%">Action</th>
+                                            <th class="no-sort" style="width:7%">Download</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
@@ -63,10 +64,12 @@
                                         @php $x=1;@endphp
                                         @foreach($prescriptionDates as $prescriptionDate)
                                         <tr>
-                                            <td>{{ $x++ }}</td>
+                                            <td class="text-center">{{ $x++ }}</td>
                                             <td>{{ $prescriptionDate->patient->name }}</td>
                                             <td>{{ \Carbon\Carbon::parse($prescriptionDate->date)->format('d/m/Y')}}</td>
                                             <td><a href="{{ route('prescriptionShow',[$prescriptionDate->date, $prescriptionDate->apnmt_id])}}">Show</a></td>
+                                            {{-- <td><a href="{{ route('prescriptionShowPdf',[$prescriptionDate->date, $prescriptionDate->apnmt_id])}}">pdf</a></td> --}}
+                                            <td class="text-center"><a href="{{ route('prescriptionPdfDownload',[$prescriptionDate->date, $prescriptionDate->apnmt_id])}}"><i class="fas fa-download"></i></a></td>
                                         </tr>
                                         @endforeach
                                     </tbody>

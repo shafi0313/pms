@@ -5,14 +5,16 @@ namespace App\Http\Controllers\Backend;
 use App\User;
 use Carbon\Carbon;
 use App\Models\Medicine;
-use App\Models\PrescriptionInfo;
+// use Barryvdh\DomPDF\PDF;
 use App\Models\Appointment;
+use App\Models\PatientTest;
 use App\Models\Prescription;
 use Illuminate\Http\Request;
+use App\Models\PrescriptionInfo;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
-use App\Models\PatientTest;
 use RealRashid\SweetAlert\Facades\Alert;
+use PDF;
 
 class PrescriptionController extends Controller
 {
@@ -36,12 +38,6 @@ class PrescriptionController extends Controller
 
     public function prescriptionShow(Request $request, $date, $apnmt_id)
     {
-        // return $appId = $request->get('appointmentId');
-
-        // $prscriptionInfos = PrescriptionInfo::FindOrFail();
-        // $prescriptionInfos = PrescriptionInfo::all();
-
-        // $doctor = User::all();
 
         $appointments = Appointment::where('id',auth()->user()->id);
         $patient_tests = PatientTest::where('apnmt_id', $apnmt_id)->where('date', $date)->get();
@@ -49,6 +45,28 @@ class PrescriptionController extends Controller
         $doctorDeg = User::where('id',auth()->user()->id)->get();
         $prescriptionShows = Prescription::where('date', $date)->get();
         return view('admin.prescription.prescription_show', compact(['prescriptionShows','prescriptionInfo','patient_tests','doctorDeg']));
+    }
+
+    public function prescriptionShowPdf(Request $request, $date, $apnmt_id)
+    {
+        $appointments = Appointment::where('id',auth()->user()->id);
+        $patient_tests = PatientTest::where('apnmt_id', $apnmt_id)->where('date', $date)->get();
+        $prescriptionInfo = Prescription::where('doctor_id',auth()->user()->id)->first();
+        $doctorDeg = User::where('id',auth()->user()->id)->get();
+        $prescriptionShows = Prescription::where('date', $date)->get();
+        return view('admin.prescription.prescription_show_pdf', compact(['prescriptionShows','prescriptionInfo','patient_tests','doctorDeg']));
+    }
+
+    public function prescriptionPdfDownload(Request $request, $date, $apnmt_id)
+    {
+        $appointments = Appointment::where('id',auth()->user()->id);
+        $patient_tests = PatientTest::where('apnmt_id', $apnmt_id)->where('date', $date)->get();
+        $prescriptionInfo = Prescription::where('doctor_id',auth()->user()->id)->first();
+        $doctorDeg = User::where('id',auth()->user()->id)->get();
+        $prescriptionShows = Prescription::where('date', $date)->get();
+
+        $pdf = PDF::loadView('admin.prescription.prescription_show_pdf', compact(['prescriptionShows','prescriptionInfo','patient_tests','doctorDeg']));
+        return $pdf->download('presscription-pdf');
     }
 
     public function prescriptionCreate($id)
