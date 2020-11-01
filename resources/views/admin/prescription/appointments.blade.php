@@ -59,9 +59,9 @@
                                                 <form action="{{route('prescription.appointmentReject',$appointment->id)}}" method="POST">
                                                     @csrf
                                                     <input type="hidden" value="1" name="a_status">
-                                                    <button class="btn btn-danger btn-sm" style="font-size: 17px;padding:0 10px;" type="submit" onclick="return confirm('Are you sure?')"><i class="far fa-times-circle" ></i></button>
+                                                    <button title="Reject" class="btn btn-danger btn-sm" style="font-size: 17px;padding:0 10px;" type="submit" onclick="return confirm('Are you sure?')"><i class="far fa-times-circle" ></i></button>
                                                 </form> <span style="margin: 0 5px">||</span>
-                                                <a class="btn btn-primary btn-sm" style="font-size: 17px;padding:0 10px;" href="{{ route('prescriptionCreate',$appointment->id)}}"><i class="fas fa-prescription"></i></a>
+                                                <a title="Accpet & Create Prescription" class="btn btn-primary btn-sm" style="font-size: 17px;padding:0 10px;" href="{{ route('prescriptionCreate',$appointment->id)}}"><i class="fas fa-prescription"></i></a>
                                             </td>
                                         </tr>
                                         @empty
