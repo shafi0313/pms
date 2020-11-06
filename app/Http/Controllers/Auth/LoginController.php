@@ -55,15 +55,23 @@ class LoginController extends Controller
             'password' => 'required',
         ]);
 
-        if (auth()->attempt(array('email' => $input['email'], 'password' => $input['password']))) {
-            if (auth()->user()->role==1) {
-                return redirect()->route('admin.dashboard');
-            } else {
-                return redirect()->route('setting.show', auth()->user()->id);
-            }
+        if (auth()->attempt(array('email' => $input['email'], 'password' => $input['password'], 'role' => [1]))) {
+            return redirect()->route('admin.dashboard');
+            // if (auth()->user()->role==1) {
+            //     return redirect()->route('admin.dashboard');
+            // } else {
+            //     return redirect()->route('setting.show', auth()->user()->id);
+            // }
         } else {
             // Alert::error('Password and Email Wrong!');
             return redirect()->route('login');
         }
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+
+        return redirect()->route('login');
     }
 }

@@ -10,7 +10,7 @@ class PatientTest extends Model
 
     public function medicalTest()
     {
-       return  $this->belongsTo(MedicalTest::class,'medical_test_id');
+       return  $this->belongsTo(TestCat::class,'test_cat_id');
     }
 
     public function doctor()

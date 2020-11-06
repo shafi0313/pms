@@ -38,7 +38,7 @@ class PrescriptionController extends Controller
     {
 
         $appointments = Appointment::where('id',auth()->user()->id);
-        $patient_tests = PatientTest::where('apnmt_id', $apnmt_id)->where('date', $date)->get();
+        $patient_tests = PatientTest::where('apnmt_id', $apnmt_id)->get();
         $prescriptionInfo = Prescription::where('doctor_id',auth()->user()->id)->first();
         $doctorDeg = User::where('id',auth()->user()->id)->get();
         $prescriptionShows = Prescription::where('date', $date)->get();
@@ -48,7 +48,7 @@ class PrescriptionController extends Controller
     public function prescriptionShowPdf(Request $request, $date, $apnmt_id)
     {
         $appointments = Appointment::where('id',auth()->user()->id);
-        $patient_tests = PatientTest::where('apnmt_id', $apnmt_id)->where('date', $date)->get();
+        $patient_tests = PatientTest::where('apnmt_id', $apnmt_id)->get();
         $prescriptionInfo = Prescription::where('doctor_id',auth()->user()->id)->first();
         $doctorDeg = User::where('id',auth()->user()->id)->get();
         $prescriptionShows = Prescription::where('date', $date)->get();

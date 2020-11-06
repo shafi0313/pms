@@ -7,33 +7,14 @@
         <div class="page-inner">
             <div class="page-header">
                 <ul class="breadcrumbs">
-                    <li class="nav-home">
-                    <a href="{{ route('admin.dashboard')}}">
-                            <i class="flaticon-home"></i>
-                        </a>
-                    </li>
-                    <li class="separator">
-                        <i class="flaticon-right-arrow"></i>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#"></a>
-                    </li>
+                    <li class="nav-home"><a href="{{ route('admin.dashboard')}}"><i class="flaticon-home"></i></a></li>
+                    <li class="separator"><i class="flaticon-right-arrow"></i></li>
+                    <li class="nav-item"><a href="#"></a></li>
                 </ul>
             </div>
             <div class="divider1"></div>
             <div class="row">
-
-                @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
-
-                <div class="col-md-9">
+                <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex align-items-center">
@@ -45,10 +26,10 @@
                                 <table id="multi-filter-select" class="display table table-striped table-hover" >
                                     <thead>
                                         <tr>
-                                            <th style="width:1%">SN</th>
+                                            <th style="width:40px">SN</th>
                                             <th>Patient Name</th>
                                             <th>Date</th>
-                                            <th class="no-sort" style="width:7%">Action</th>
+                                            <th class="no-sort text-center" style="width: 70px">Action</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
@@ -56,17 +37,17 @@
                                             <th>SN</th>
                                             <th>Patient Name</th>
                                             <th>Date</th>
-                                            <th>Status</th>
+                                            {{-- <th>Status</th> --}}
                                         </tr>
                                     </tfoot>
                                     <tbody>
                                         @php $x=1;@endphp
                                         @foreach($prescriptionDates as $prescriptionDate)
                                         <tr>
-                                            <td>{{ $x++ }}</td>
+                                            <td class="text-center">{{ $x++ }}</td>
                                             <td>{{ $prescriptionDate->patient->name }}</td>
                                             <td>{{ \Carbon\Carbon::parse($prescriptionDate->date)->format('d/m/Y')}}</td>
-                                            <td><a href="{{ route('patientTestShow',$prescriptionDate->date)}}">Show</a></td>
+                                            <td class="text-center"><a href="{{ route('patientTestShow',$prescriptionDate->date)}}">Show</a></td>
                                         </tr>
                                         @endforeach
                                     </tbody>

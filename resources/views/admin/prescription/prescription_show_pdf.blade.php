@@ -14,17 +14,9 @@
         integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous"> --}}
 
     <style>
-
-
-
-        /* body{
-            text-align: center;
-        } */
         .container {
             margin: 0 auto;
-            /* margin-right: 0 auto; */
             width: 700px;
-
         }
         .pres_patient {
             padding-top:5px;
@@ -38,9 +30,7 @@
             font-size: 16px;
             font-weight: 600;
         }
-
         .doctor_info {
-            /* margin-top: 50px; */
             margin-bottom: 30px;
         }
 
@@ -48,14 +38,9 @@
             margin-left: 40px;
             font-size: 40px;
         }
-
         .medicin_area {
             text-align: left
-            /* margin-left: 30px; */
         }
-
-
-
         .next_meet {
             font-size: 18px;
             font-weight: 600
@@ -68,7 +53,7 @@
             font-size: 18px;
         }
 
-        /* .v_line {
+        .v_line {
             position: relative;
         }
 
@@ -79,12 +64,11 @@
             width: 1px;
             height: 200%;
             top: 0;
-            left: 35px;
-        } */
+            left: -20px;
+        }
 
         .row {
             display: block;
-
         }
         .col_6 {
             width: 50%;
@@ -93,7 +77,7 @@
         .col_3 {
             width: 24%;
             display: inline-block;
-            text-align: right;
+            text-align: left;
         }
         .col_12{
             width: 100%;
@@ -101,7 +85,7 @@
     </style>
 </head>
 
-<body>
+<body class="print_page" id="print_page">
     <div class="container">
         <div class="row doctor_info" style="text-align: center">
             <div class="col-md-12 text-center">
@@ -119,38 +103,29 @@
             <div class="col_6">
                 <p>Name: {{$prescriptionInfo->patient->name}}</p>
             </div>
-            <div class="col_3">
+            <div class="col_3"  style="text-align: right">
                 <p>Age: {{$prescriptionInfo->patient->age}}</p>
             </div>
-            <div class="col_3">
+            <div class="col_3" style="text-align: right">
                 <p>Data: {{ \Carbon\Carbon::parse($prescriptionInfo->date)->format('d/m/Y') }}</p>
             </div>
         </div>
 
-        <div class="row">
-            <div class="col-md-3">
-                <table>
+        <div class="row" style="min-height: 180px">
+            <div class="col_3" style="margin-left: 10px; width: 30%">
+                <table class="table">
+                    @php $x=1 @endphp
                     @forelse($patient_tests as $patient_test)
                     <tr>
-                        <td>{{ $patient_test->medicalTest->name }}</td>
+                        <td>{{$x++}}. {{ $patient_test->medicalTest->name }}</td>
                     </tr>
                     @empty
-
                     @endforelse
                 </table>
             </div>
 
-            <div class="col_12 v_line">
-                {{-- <div class="icon">
-                    <i class="fas fa-prescription"></i>
-                </div> --}}
+            <div class="col_6 v_line" style="60%">
                 <table class="medicin_area">
-                    {{-- <tr>
-                        <th>Medicine Name</th>
-                        <th>Eating Time</th>
-                        <th>Days</th>
-                        <th>Note</th>
-                    </tr> --}}
                     @forelse($prescriptionShows as $prescriptionShow)
                     <tr>
                         <td style="width:300px">{{ $prescriptionShow->medicines->name }}</td>
@@ -165,15 +140,22 @@
             </div>
         </div>
         <div class="row">
-            <div class="">
+            <div>
                 <p class="advice">Advice: {{ $prescriptionInfo->prescriptionInfo->advice }}</p>
+                <p class="next_meet">Next meet: {{ $prescriptionInfo->prescriptionInfo->next_meet }}</p>
             </div>
         </div>
-        <p class="next_meet">Next meet: {{ $prescriptionInfo->prescriptionInfo->next_meet }}</p>
-    </div>
+        <input class="print btn btn-info px-5" type="button" onclick="printDiv('print_page')" value="Print">
 
-
+        <script>
+            function printDiv(print_page) {
+                var printContents = document.getElementById(print_page).innerHTML;
+                var originalContents = document.body.innerHTML;
+                document.body.innerHTML = printContents;
+                window.print();
+                document.body.innerHTML = originalContents;
+            }
+        </script>
 
 </body>
-
 </html>

@@ -3,6 +3,22 @@
 @section('content')
 <?php $p = 'prescription'; ?>
 <style>
+    .print_page {
+        width: 815px;
+        height: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+
+    /* .print_page {
+        height: 842px;
+        width: 595px;
+        margin-left: auto;
+        margin-right: auto;
+    } */
+</style>
+{{-- <style>
     .icon i {
         margin-left: 40px;
         font-size: 40px;
@@ -32,9 +48,11 @@
         top: 0;
         left: 35px;
     }
-
+    .test tr td{
+        font-size: 14px;
+    }
 }
-</style>
+</style> --}}
 <div class="main-panel">
     <div class="content">
         <div class="page-inner">
@@ -54,14 +72,11 @@
                 </ul>
             </div>
             <div class="divider1"></div>
-        <section class="print_">
+        <section class="print_page" id="print_page">
             <div class="container">
                 <div class="row doctor_info">
                     <div class="col-md-12 text-center">
                         <h1>{{$prescriptionInfo->doctor->name}}</h1>
-                        {{-- {{ $prescriptionInfo->Specialist->specialist }} --}}
-
-                        {{-- <h1>{{$appointments->doctor->name}}</h1> --}}
                         @foreach ($prescriptionInfo->specialistCat as $item)
                             <li style="list-style: none;font-size:15px">{{$item->degree}}</li>
                         @endforeach
@@ -85,20 +100,20 @@
             </div>
             <div class="row">
                 <div class="col-md-3">
-                    <table>
+                    <table class="table test">
+                        @php $x=1 @endphp
                         @forelse($patient_tests as $patient_test)
                         <tr>
-                            <td>{{ $patient_test->medicalTest->name }}</td>
+                            <td>{{$x++}}. {{ $patient_test->medicalTest->name }}</td>
                         </tr>
                         @empty
                         @endforelse
                     </table>
-
                 </div>
 
                 <div class="col-md-8 v_line">
                     <div class="icon">
-                        <i class="fas fa-prescription"></i>
+                        <i style="font-size: 45px" class="fas fa-prescription"></i>
                     </div>
                     <table class="table medicin_area">
                         @forelse($prescriptionShows as $prescriptionShow)
@@ -110,10 +125,7 @@
                         </tr>
                         @empty
                         <tr>Medicine Not Found</tr>
-
                         @endforelse
-
-
                     </table>
                 </div>
             </div>
@@ -122,11 +134,9 @@
                     <p class="advice">Advice: {{ $prescriptionInfo->prescriptionInfo->advice }}</p>
                 </div>
             </div>
-
                 <p class="text-center text-danger next_meet">Next meet: {{ $prescriptionInfo->prescriptionInfo->next_meet }}</p>
-
             </div>
-
+            <input class="print btn btn-info px-5" type="button" onclick="printDiv('print_page')" value="Print">
         </section>
         </div>
     </div>
@@ -197,6 +207,16 @@
             }
         });
     });
+</script>
+
+<script>
+    function printDiv(print_page) {
+        var printContents = document.getElementById(print_page).innerHTML;
+        var originalContents = document.body.innerHTML;
+        document.body.innerHTML = printContents;
+        window.print();
+        document.body.innerHTML = originalContents;
+    }
 </script>
 @endpush
 @endsection

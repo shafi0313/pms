@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
 
 use App\Http\Controllers\Controller;
+use App\Models\Prescription;
 use App\Models\VisitorInfo;
 use App\User;
 use Illuminate\Support\Facades\Auth;
@@ -40,7 +41,10 @@ class DashboardController extends Controller
 
         // $doctorPatients = Patient::where('doctor_id',$userId)->count();
         $doctorAppnmt = Appointment::where('doctor_id',$userId)->count();
-        return view('admin.dashboard',compact(['patients','doctors','appointments','doctorAppnmt']));
+
+        $prescription = Prescription::count();
+        $appointment = Appointment::count();
+        return view('admin.dashboard',compact(['patients','doctors','appointments','doctorAppnmt','prescription','appointment']));
     }
 
     public function VisitorInfo()

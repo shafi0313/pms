@@ -66,6 +66,7 @@
     color: #4D7CFE;
 }
 
+
 /* Data table  */
 .table td, .table th {
     padding: 5px 5px !important;
@@ -84,6 +85,10 @@ table.dataTable thead .sorting:after, table.dataTable thead .sorting:before, tab
 .no-sort {
     pointer-events: none!important;
     cursor: default!important;
+}
+
+select.form-control-sm:not([size]):not([multiple]), .input-group-sm>select.form-control:not([size]):not([multiple]), .input-group-sm>.input-group-prepend>select.input-group-text:not([size]):not([multiple]), .input-group-sm>.input-group-append>select.input-group-text:not([size]):not([multiple]), .input-group-sm>.input-group-prepend>select.btn:not([size]):not([multiple]), .input-group-sm>.input-group-append>select.btn:not([size]):not([multiple]) {
+    height: calc(27px + 1px);
 }
 
 /* Prescription */

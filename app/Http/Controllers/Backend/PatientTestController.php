@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\User;
 use Carbon\Carbon;
 use App\Models\Appointment;
 use App\Models\PatientTest;
@@ -32,8 +33,9 @@ class PatientTestController extends Controller
 
     public function patientTestCreate($id)
     {
+        $doctorDeg = User::where('id',auth()->user()->id)->get();
         $appointments = Appointment::find($id);
-        return view('admin.patient_test.create', compact('appointments'));
+        return view('admin.patient_test.create', compact('appointments','doctorDeg'));
     }
 
     public function appointmentShow()
@@ -44,10 +46,7 @@ class PatientTestController extends Controller
 
     public function testShow(Request $request, $date)
     {
-
-        // $prscriptionInfos = PrescriptionInfo::FindOrFail();
         $testInfo = PatientTest::where('doctor_id',auth()->user()->id)->first();
-
         $patient_tests = PatientTest::where('date', $date)->get();
         return view('admin.patient_test.test_show', compact(['patient_tests','testInfo']));
     }
@@ -73,30 +72,23 @@ class PatientTestController extends Controller
         $appId = $request->get('appointmentId');
         $appointments ['t_status'] = 1;
 
-        foreach($request->test_id as $key => $v){
+        foreach($request->test_cat_id as $key => $v){
             $data=[
                 'doctor_id' => $request->doctor_id[$key],
                 'patient_id' => $request->patient_id[$key],
                 'apnmt_id' => $request->apnmt_id[$key],
-                'test_id' => $request->test_id[$key],
+                'test_cat_id' => $request->test_cat_id[$key],
                 'date'=> Carbon::now(),
             ];
-            $prescription = PatientTest::create($data);
+            PatientTest::create($data);
         }
 
-        // $prescriptionInfo = [
-        //     'apnmt_id' => $appId,
-        //     'next_meet' => $request->input('next_meet'),
-        //     'advice' => $request->input('advice'),
-        // ];
-
         try {
-            // PrescriptionInfo::create($prescriptionInfo);
             Appointment::where('id',$appId)->update($appointments);
-            Alert::success('Patient Test Updeated', 'Patient Test Successfully Updeated');
+            toast('Patient Test Successfully Updeated','success');
             return redirect()->route('patient_test.appointment');
         } catch(\Exception $ex){
-            Alert::error('DataInsert', $ex->getMessage());
+            toast($ex->getMessage().'Patient Test Successfully Updeated','error');
             return redirect()->back();
         }
     }
@@ -148,7 +140,7 @@ class PatientTestController extends Controller
 
     public function patientsearch(Request $request){
         $query = $request->get('term','');
-        $medical_tests=DB::table('medical_tests');
+        $medical_tests=DB::table('test_cats');
         if($request->type=='medicalTest'){
             $medical_tests->where('name','LIKE','%'.$query.'%');
         }

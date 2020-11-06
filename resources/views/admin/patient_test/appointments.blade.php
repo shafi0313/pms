@@ -7,38 +7,19 @@
         <div class="page-inner">
             <div class="page-header">
                 <ul class="breadcrumbs">
-                    <li class="nav-home">
-                    <a href="{{ route('admin.dashboard')}}">
-                            <i class="flaticon-home"></i>
-                        </a>
-                    </li>
-                    <li class="separator">
-                        <i class="flaticon-right-arrow"></i>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#">Appoinments</a>
-                    </li>
+                    <li class="nav-home"><a href="{{ route('admin.dashboard')}}"><i class="flaticon-home"></i></a></li>
+                    <li class="separator"><i class="flaticon-right-arrow"></i></li>
+                    <li class="nav-item active">Appoinments</li>
                 </ul>
             </div>
             <div class="divider1"></div>
             <div class="row">
-
-                @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
-
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex align-items-center">
                                 <h4 class="card-title">Add Appoinment</h4>
-                            <a class="btn btn-primary btn-round ml-auto" href="{{ route('doctor.create') }}">
+                                <a class="btn btn-primary btn-round ml-auto" href="{{ route('doctor.create') }}">
                                     <i class="fa fa-plus"></i>
                                     Add New
                                 </a>
@@ -49,12 +30,12 @@
                                 <table id="multi-filter-select" class="display table table-striped table-hover" >
                                     <thead>
                                         <tr>
-                                            <th style="width:1%">SN</th>
+                                            <th style="width:38px">SN</th>
                                             <th>Patient Name</th>
                                             <th>Doctor Name</th>
                                             <th>Date</th>
                                             <th>Time</th>
-                                            <th class="no-sort" style="width:7%">Action</th>
+                                            <th class="no-sort text-center" style="width:7%">Action</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
@@ -71,12 +52,12 @@
                                         @php $x=1;@endphp
                                         @forelse($appointments as $appointment)
                                         <tr>
-                                            <td>{{ $x++ }}</td>
+                                            <td class="text-center">{{$x++}}</td>
                                             <td>{{ $appointment->patient->name }}</td>
                                             <td>{{ $appointment->doctor->name }}</td>
                                             <td>{{ \Carbon\Carbon::parse($appointment->date)->format('d/m/Y') }}</td>
                                             <td>{{ $appointment->time }}</td>
-                                            <td><a href="{{ route('patientTestCreate',$appointment->id)}}">Show</a>
+                                            <td class="text-center"><a href="{{ route('patientTestCreate',$appointment->id)}}">Show</a>
                                                 {{-- <div class="form-button-action">
                                                 <a href="" data-toggle="tooltip" title="" class="btn btn-link btn-primary" data-original-title="Edit Task">
                                                         <i class="fa fa-edit"></i>

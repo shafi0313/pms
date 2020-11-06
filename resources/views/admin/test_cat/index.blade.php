@@ -93,7 +93,7 @@
     var table = $('.data-table').DataTable({
         processing: true,
         serverSide: true,
-        ajax: "{{ route('medical_test.index') }}",
+        ajax: "{{ route('test-cat.index') }}",
         columns: [
             {data: 'DT_RowIndex', name: 'DT_RowIndex'},
             {data: 'name', name: 'name'},
@@ -113,7 +113,7 @@
 
     $('body').on('click', '.editBook', function () {
       var id = $(this).data('id');
-      $.get("{{ route('medical_test.index') }}" +'/' + id +'/edit', function (data) {
+      $.get("{{ route('test-cat.index') }}" +'/' + id +'/edit', function (data) {
           $('#modelHeading').html("Edit Medical Test Category");
           $('#saveBtn').val("edit-book");
           $('#ajaxModel').modal('show');
@@ -130,7 +130,7 @@
 
         $.ajax({
           data: $('#categoryForm').serialize(),
-          url: "{{ route('medical_test.store') }}",
+          url: "{{ route('test-cat.store') }}",
           type: "POST",
           dataType: 'json',
           success: function (data) {
@@ -153,7 +153,7 @@
         if($confirm == true ){
             $.ajax({
                 type: "DELETE",
-                url: "{{ route('medical_test.store') }}"+'/'+id,
+                url: "{{ route('test-cat.store') }}"+'/'+id,
                 success: function (data) {
                     table.draw();
                 },

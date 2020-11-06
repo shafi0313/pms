@@ -161,7 +161,7 @@
 
                 <li class="nav-item {{$p=='tools'?'active':''}}">
 					<a data-toggle="collapse" href="#tools">
-						<i class="fas fa-toolbox"></i>
+						<i class="fas fa-tools"></i>
 						<p>Tools</p>
 						<span class="caret"></span>
 					</a>
@@ -180,14 +180,14 @@
                                 </a>
                             </li>
                             <li>
-								<a href="{{ route('medical_test.index') }}">
+								<a href="{{ route('test-cat.index') }}">
                                     <i class="fas fa-microscope"></i>
                                     <p>Test Category</p>
                                 </a>
                             </li>
                             <li>
 								<a href="{{ route('doctor_chamber.index') }}">
-                                    <i class="fas fa-microscope"></i>
+                                    <i class="fas fa-clinic-medical"></i>
                                     <p>Doctor Chamber</p>
                                 </a>
 							</li>
@@ -225,7 +225,7 @@
 
                 <li class="nav-item {{$p=='patients'?'active':''}}">
                     <a data-toggle="collapse" href="#patients">
-                        <i class="fas fa-procedures"></i>
+                        <i class="fas fa-user-injured"></i>
                         <p>Patients</p>
                         <span class="caret"></span>
                     </a>
@@ -386,3 +386,9 @@
 	</div>
 </div>
 <!-- End Sidebar -->
+
+
+
+
+
+

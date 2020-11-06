@@ -22,17 +22,6 @@
             </div>
             <div class="divider1"></div>
             <div class="row">
-
-                @if ($errors->any())
-                    <div class="alert alert-danger">
-                        <ul>
-                            @foreach ($errors->all() as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
-                    </div>
-                @endif
-
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
@@ -68,7 +57,9 @@
                                             <td>{{ $prescriptionDate->patient->name }}</td>
                                             <td>{{ \Carbon\Carbon::parse($prescriptionDate->date)->format('d/m/Y')}}</td>
                                             <td><a href="{{ route('prescriptionShow',[$prescriptionDate->date, $prescriptionDate->apnmt_id])}}">Show</a></td>
+
                                             {{-- <td><a href="{{ route('prescriptionShowPdf',[$prescriptionDate->date, $prescriptionDate->apnmt_id])}}">pdf</a></td> --}}
+
                                             <td class="text-center"><a href="{{ route('prescriptionPdfDownload',[$prescriptionDate->date, $prescriptionDate->apnmt_id])}}"><i class="fas fa-download"></i></a></td>
                                         </tr>
                                         @endforeach

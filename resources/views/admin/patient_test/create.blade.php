@@ -9,9 +9,9 @@
                 <ul class="breadcrumbs">
                     <li class="nav-home"><a href="{{ route('admin.dashboard')}}"><i class="flaticon-home"></i></a></li>
                     <li class="separator"><i class="flaticon-right-arrow"></i></li>
-                    <li class="nav-item"><a href="{{ route('medicine.index')}}">Medicine List</a></li>
+                    <li class="nav-item"><a href="{{ route('patient_test.appointment')}}">Appointments</a></li>
                     <li class="separator"><i class="flaticon-right-arrow"></i></li>
-                    <li class="nav-item"><a href="{{ route('medicine.create')}}">Add Medicine</a></li>
+                    <li class="nav-item active">Add Test</li>
                 </ul>
             </div>
             <div class="divider1"></div>
@@ -35,10 +35,25 @@
                             </div>
                             @endif
 
+                            {{-- <div class="container">
+                                <div class="row doctor_info">
+                                    <div class="col-md-12 text-center">
+                                        <h1>{{$appointments->doctor->name}}</h1>
+                                    </div>
+                                </div>
+                            </div> --}}
+
                             <div class="container">
                                 <div class="row doctor_info">
                                     <div class="col-md-12 text-center">
                                         <h1>{{$appointments->doctor->name}}</h1>
+                                        @foreach ($appointments->specialistCat as $item)
+                                            <li style="list-style: none;font-size:15px">{{$item->degree}}</li>
+                                        @endforeach
+                                        @foreach ($doctorDeg as $degree)
+                                            <h2>{{$degree->doctorDegree->specialist}}</h2>
+                                        @endforeach
+
                                     </div>
                                 </div>
                             </div>
@@ -68,7 +83,7 @@
                                     </tr>
                                     <tr>
                                         <td><input type='checkbox' class='chkbox' /></td>
-                                        <input class="form-control autocomplete_txt" type="hidden" data-type="medicinesId" id="medicine_id_1" name="test_id[]" />
+                                        <input class="form-control autocomplete_txt" type="hidden" data-type="medicinesId" id="medicine_id_1" name="test_cat_id[]" />
                                         <td><input class="form-control autocomplete_txt" type="text" data-type="medicalTest" id="medicine_name_1" /></td>
                                         <input type="hidden" name="doctor_id[]" value="{{$appointments->doctor_id}}">
                                         <input type="hidden" name="patient_id[]" value="{{$appointments->patient_id}}">
@@ -110,7 +125,7 @@
     $(".addbtn").on('click', function () {
         count = $('table tr').length;
         var data = '<tr><td><input type="checkbox" class="chkbox"/></td>';
-        data += '<input class="form-control autocomplete_txt" type="hidden" data-type="medicinesId" id="medicine_id_' + i + '" name="test_id[]"/>';
+        data += '<input class="form-control autocomplete_txt" type="hidden" data-type="medicinesId" id="medicine_id_' + i + '" name="test_cat_id[]"/>';
         data += '<td><input class="form-control autocomplete_txt" type="text" data-type="medicalTest" id="medicine_name_' + i + '" /></td>';
         data += '<input type="hidden" name="doctor_id[]" value="{{$appointments->doctor->id}}">';
         data += '<input type="hidden" name="patient_id[]" value="{{$appointments->patient->id}}">';

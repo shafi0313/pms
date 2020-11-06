@@ -1,13 +1,11 @@
 <?php
 
-use App\Models\Appointment;
-use App\User;
-use App\Models\PatientTest;
-use App\Models\Prescription;
-use App\Models\SpecialistCat;
-use App\Models\SpecialistSubCat;
+use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Backend\PatientTestController;
+use App\Models\PatientTest;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('t', function () {
 //   return  Appointment::all();
 //   return  SpecialistSubCat::all();
-  return  User::with('doctorDegree')->get();
+  return  PatientTest::with('medicalTest')->get();
 });
 
 Route::middleware(['auth','admin'])->prefix('admin')->namespace('Backend')->group(function(){
@@ -46,9 +44,9 @@ Route::middleware(['auth','admin'])->prefix('admin')->namespace('Backend')->grou
 
     Route::resource('/medical_test','MedicalTestController');
 
+    Route::resource('/test-cat','TestCatController');
 
     Route::resource('/doctor_chamber','DoctorChamberController');
-
 
     Route::resource('/appointments', 'AppointmentController');
     Route::get('/appointment/patients', 'AppointmentController@patientList')->name('appointment.patient');
@@ -60,7 +58,8 @@ Route::middleware(['auth','admin'])->prefix('admin')->namespace('Backend')->grou
 
 
     Route::resource('patient_test', 'PatientTestController');
-    Route::get('patient_test_appointment', 'PatientTestController@appointmentShow')->name('patient_test.appointment');
+    // Route::get('patient_test_appointment', 'PatientTestController@appointmentShow')->name('patient_test.appointment');
+    Route::get('patient_test_appointment',[PatientTestController::class,'appointmentShow'])->name('patient_test.appointment');
     Route::get('patient/{id}', 'PatientTestController@patientTestCreate')->name('patientTestCreate');
     Route::get('patient_tests/date/{patient_id}', 'PatientTestController@testDate')->name('patientTestDate');
     Route::get('patient/prescription/show/{date}', 'PatientTestController@testShow')->name('patientTestShow');
@@ -69,7 +68,6 @@ Route::middleware(['auth','admin'])->prefix('admin')->namespace('Backend')->grou
 
     Route::get('autocomplete', 'PatientTestController@autocomplete')->name('autocomplete');
     Route::get('patientsearch', ['as'=>'patientsearch','uses'=>'PatientTestController@patientsearch']);
-
 
     Route::resource('prescription', 'PrescriptionController');
     Route::get('prescriptions/appointment', 'PrescriptionController@appointmentShow')->name('prescription.appointment');
@@ -82,20 +80,22 @@ Route::middleware(['auth','admin'])->prefix('admin')->namespace('Backend')->grou
 
     Route::get('presscriptions/prescription/showpdfdownload/{date}/{apnmt_id}', 'PrescriptionController@prescriptionPdfDownload')->name('prescriptionPdfDownload');
 
-    // Route::post('/course_views/{id}', 'CourseViewController@statusUpdate')->name('course_view.statusUpdate');
-
     Route::get('autocomplete', 'PrescriptionController@autocomplete')->name('autocomplete');
     Route::get('searchajax', ['as'=>'searchajax','uses'=>'PrescriptionController@searchResponse']);
 
+    Route::post('/login', [LoginController::class, 'logout'])->name('logout');
+
 });
 
-Route::get('/', function () {
-    // $ip = geoip()->getClientIP();
-    // $geoInfo = geoip()->getLocation($ip);
-    // dd($geoInfo);
-    // Alert::success('Success Title', 'Success Message');
-    return view('welcome');
-});
+
+
+// Route::get('/', function () {
+//     // $ip = geoip()->getClientIP();
+//     // $geoInfo = geoip()->getLocation($ip);
+//     // dd($geoInfo);
+//     // Alert::success('Success Title', 'Success Message');
+//     return view('welcome');
+// });
 
 Auth::routes();
 

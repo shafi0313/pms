@@ -107,8 +107,6 @@
                     </div>
                 </div>
 
-                @endrole
-
                 {{-- <div class="col-sm-6 col-md-3">
                     <div class="card card-stats card-round">
                         <div class="card-body">
@@ -120,14 +118,39 @@
                                 </div>
                                 <div class="col col-stats ml-3 ml-sm-0">
                                     <div class="numbers">
-                                        <p class="card-category">Order</p>
-                                        <h4 class="card-title">576</h4>
+                                        <p class="card-category">Prescriptions</p>
+                                        <h4 class="card-title">{{$prescription}}</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-6 col-md-3">
+                    <div class="card card-stats card-round">
+                        <div class="card-body">
+                            <div class="row align-items-center">
+                                <div class="col-icon">
+                                    <div class="icon-big text-center icon-secondary bubble-shadow-small">
+                                        <i class="far fa-check-circle"></i>
+                                    </div>
+                                </div>
+                                <div class="col col-stats ml-3 ml-sm-0">
+                                    <div class="numbers">
+                                        <p class="card-category">Appointments</p>
+                                        <h4 class="card-title">{{$appointment}}</h4>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div> --}}
+
+                @endrole
+
+
+
             </div>
         </div>
     </div>
