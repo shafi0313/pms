@@ -6,11 +6,10 @@
     <div class="content">
         <div class="page-inner">
             <div class="page-header">
-                <h4 class="page-title">Patient</h4>
                 <ul class="breadcrumbs">
                     <li class="nav-home"><a href="{{ route('admin.dashboard')}}"><i class="flaticon-home"></i></a></li>
                     <li class="separator"><i class="flaticon-right-arrow"></i></li>
-                    <li class="nav-item"><a href="{{ route('patients.index')}}">Show Patient</a></li>
+                    <li class="nav-item"><a href="{{ route('patients.index')}}">Patients</a></li>
                     <li class="separator"><i class="flaticon-right-arrow"></i></li>
                     <li class="nav-item active">Create Patient</li>
                 </ul>
@@ -39,35 +38,56 @@
                                 @csrf
                                 <div class="row">
                                     <div class="form-group col-sm-6">
-                                        <label for="name">Patient Name</label>
+                                        <label for="name">Patient Name <span class="tRed">*</span></label>
                                         <input type="text" name="name" class="form-control" id="name" value="{{old('name')}}" placeholder="Enter Name" required>
+                                        @error('name')
+                                            <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
                                     </div>
+
                                     <div class="form-group col-sm-6">
-                                        <label for="phone">Patient Contact No</label>
+                                        <label for="phone">Patient Contact No <span class="tRed">*</span></label>
                                         <input type="text" name="phone" class="form-control" id="phone" value="{{old('phone')}}" placeholder="Enter Contact No" required>
+                                        @error('phone')
+                                         <div class="alert alert-danger">{{ $message }} </div>
+                                        @enderror
                                     </div>
+
                                     <div class="form-group col-sm-6">
-                                        <label for="email">Patient Email</label>
-                                        <input type="email" name="email" class="form-control" id="email" value="{{old('email')}}" placeholder="Enter Name">
+                                        <label for="email">Patient Email <span class="tRed">*</span></label>
+                                        <input type="email" name="email" class="form-control" id="email" value="{{old('email')}}" placeholder="Enter Email">
+                                        @error('email')
+                                            <div class="alert alert-danger">{{ $message }} </div>
+                                        @enderror
                                     </div>
+
                                     <div class="form-check col-sm-3">
-                                        <label>Gender</label><br>
+                                        <label>Gender <span class="tRed">*</span></label><br>
                                         <label class="form-radio-label">
                                             <input class="form-radio-input" type="radio" name="gender" value="Male" checked="">
                                             <span class="form-radio-sign">Male</span>
                                         </label>
+
                                         <label class="form-radio-label ml-3">
                                             <input class="form-radio-input" type="radio" name="gender" value="Female">
                                             <span class="form-radio-sign">Female</span>
                                         </label>
                                     </div>
+
                                     <div class="form-group col-sm-3">
-                                        <label for="age">Patient Age</label>
+                                        <label for="age">Patient Age <span class="tRed">*</span></label>
                                         <input type="text" name="age" class="form-control" id="age" value="{{old('age')}}" placeholder="Enter Age" required>
+                                        @error('age')
+                                            <div class="alert alert-danger">{{ $message }} </div>
+                                        @enderror
                                     </div>
+
                                     <div class="form-group col-sm-12">
-                                        <label for="address">Patient Address</label>
+                                        <label for="address">Patient Address <span class="tRed">*</span></label>
                                         <textarea class="form-control" id="address" name="address" rows="2" {{old('address')}}></textarea>
+                                        @error('address')
+                                            <div class="alert alert-danger">{{ $message }} </div>
+                                        @enderror
                                     </div>
                                     <div class="form-group col-sm-12">
                                         <label for="medical_history">Medical History</label>
@@ -84,7 +104,7 @@
 
                                 <div class="row app" style="display: none">
                                     <div class="form-group col-sm-6">
-										<label for="">Select Specialist</label>
+										<label for="">Select Specialist <span class="tRed">*</span></label>
                                         <select class="form-control" id="doctorSpecialist">
                                             <option>Select Specialist</option>
                                             @foreach($doctorSpecialists as $specialistt)
@@ -93,19 +113,19 @@
                                         </select>
                                     </div>
                                     <div class="form-group col-md-6">
-										<label for="doctor">Select Doctor</label>
+										<label for="doctor">Select Doctor <span class="tRed">*</span></label>
                                         <select class="form-control" name="doctor_name" id="subs" required></select>
                                     </div>
 
 
                                     <div class="form-group col-md-6">
-										<label for="doctor">Appointment Time</label>
+										<label for="doctor">Appointment Time <span class="tRed">*</span></label>
                                         <select class="form-control" name="time" id="doctorTime" required></select>
                                     </div>
 
 
                                     <div class="form-group col-sm-6">
-                                        <label for="">Appointment Date</label>
+                                        <label for="">Appointment Date <span class="tRed">*</span></label>
                                         <input type="txte" name="date" class="form-control date-picker datepicker" Placeholder="DD/MM/YYYY" required>
                                     </div>
                                 </div>
