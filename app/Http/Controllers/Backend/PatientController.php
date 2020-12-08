@@ -42,7 +42,7 @@ class PatientController extends Controller
     public function subCat(Request $request)
     {
         $p_id = $request->cat_id;
-        $subcategories = User::where('doctor_specialist',$p_id)->get();
+        $subcategories = User::where('doctor_specialist', $p_id)->get();
         $subCat = '';
         $subCat .= '<option value="0">Select</option>';
         foreach($subcategories as $sub){
