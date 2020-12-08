@@ -100,9 +100,13 @@
             </div>
             <div class="row">
                 <div class="col-md-3">
+                    <div>{!! $prescriptionInfo->prescriptionInfo->symptoms !!}</div>
+                    <br>
                     <table class="table test">
+                        <h3 style="font-weight: bold; text-decoration:underline">Tests</h3>
                         @php $x=1 @endphp
                         @forelse($patient_tests as $patient_test)
+
                         <tr>
                             <td>{{$x++}}. {{ $patient_test->medicalTest->name }}</td>
                         </tr>

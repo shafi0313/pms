@@ -21,10 +21,6 @@
                         <div class="card-header">
                             <div class="d-flex align-items-center">
                                 <h4 class="card-title">Appoinments Table</h4>
-                            {{-- <a class="btn btn-primary btn-round ml-auto" href="{{ route('appoinment.create') }}">
-                                    <i class="fa fa-plus"></i>
-                                    Add New
-                                </a> --}}
                             </div>
                         </div>
                         <div class="card-body">

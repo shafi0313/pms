@@ -115,15 +115,18 @@ class PrescriptionController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'next_meet' => 'required',
-            'days' => 'required',
+            'medicine_id' => 'required',
             'eating_time' => 'required',
+            'days' => 'required',
+            'next_meet' => 'required',
         ]);
         // $s = 123;
         // return $ss =  str_split($s,1);
 
         $appId = $request->get('appointmentId');
         $appointments ['p_status'] = 1;
+
+        DB::beginTransaction();
 
         foreach($request->medicine_id as $key => $v){
             $data=[
@@ -143,6 +146,7 @@ class PrescriptionController extends Controller
             'apnmt_id' => $appId,
             'next_meet' => $request->input('next_meet'),
             'advice' => $request->input('advice'),
+            'symptoms' => $request->input('symptoms'),
         ];
 
         try {
@@ -150,8 +154,10 @@ class PrescriptionController extends Controller
             Appointment::where('id',$appId)->update($appointments);
             Alert::success('Prescription Updeated', 'Prescription Successfully Updeated');
             return redirect()->route('prescription.appointment');
+            DB::commit();
         } catch(\Exception $ex){
             Alert::error('DataInsert', $ex->getMessage());
+            DB::rollBack();
             return redirect()->back();
         }
     }

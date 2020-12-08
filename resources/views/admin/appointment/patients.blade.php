@@ -1,5 +1,5 @@
 @extends('admin.layout.master')
-@section('title', 'Dashboard')
+@section('title', 'Appointment')
 @section('content')
 <?php $p = 'appoinments'; ?>
 <div class="main-panel">
@@ -9,12 +9,6 @@
                 <ul class="breadcrumbs">
                     <li class="nav-home">
                         <a href="{{ route('admin.dashboard')}}"><i class="flaticon-home"></i></a>
-                    </li>
-                    <li class="separator">
-                        <i class="flaticon-right-arrow"></i>
-                    </li>
-                    <li class="nav-item">
-                    <a href="#">Appoinment</a>
                     </li>
                     <li class="separator"><i class="flaticon-right-arrow"></i></li>
                     <li class="nav-item active">All Patients</li>
@@ -45,7 +39,7 @@
                                             <th>Phone</th>
                                             <th>Address</th>
                                             <th>Medical History</th>
-                                            <th class="no-sort" style="width:7%">Action</th>
+                                            <th class="no-sort text-center" style="width:50px">Action</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
@@ -57,7 +51,6 @@
                                             <th>Phone</th>
                                             <th>Address</th>
                                             <th>Medical History</th>
-                                            <th>Action</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
@@ -71,7 +64,7 @@
                                             <td>{{ $patient->phone }}</td>
                                             <td>{{ $patient->address }}</td>
                                             <td>{{ $patient->mdical_history }}</td>
-                                            <td><a href="{{ route('appointmentCreate',$patient->id)}}">Select</a></td>
+                                            <td class="text-center"><a href="{{ route('appointmentCreate',$patient->id)}}">Select</a></td>
                                         </tr>
                                         @endforeach
                                     </tbody>

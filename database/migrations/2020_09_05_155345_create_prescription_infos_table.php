@@ -18,6 +18,7 @@ class CreatePrescriptionInfosTable extends Migration
             $table->integer('apnmt_id');
             $table->text('next_meet');
             $table->text('advice')->nullable();
+            $table->text('symptoms')->nullable();
             $table->timestamps();
         });
     }

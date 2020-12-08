@@ -6,7 +6,9 @@
 	<title>@yield('title') | {{config('app.name')}}</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
     <meta content='{{csrf_token()}}' name='csrf-token' />
-	<link rel="icon" href="{{ asset('backend/assets/img/icon.ico') }}" type="image/x-icon"/>
+    <link rel="icon" href="{{ asset('backend/assets/img/icon.ico') }}" type="image/x-icon"/>
+    
+    <script src="https://cdn.ckeditor.com/ckeditor5/23.1.0/classic/ckeditor.js"></script>
 
 	<!-- Fonts and icons -->
 	<script src="{{ asset('backend/assets/js/plugin/webfont/webfont.min.js') }}"></script>
