@@ -126,8 +126,6 @@ class PrescriptionController extends Controller
         $appId = $request->get('appointmentId');
         $appointments ['p_status'] = 1;
 
-        DB::beginTransaction();
-
         foreach($request->medicine_id as $key => $v){
             $data=[
                 'doctor_id' => $request->doctor_id[$key],
@@ -149,10 +147,12 @@ class PrescriptionController extends Controller
             'symptoms' => $request->input('symptoms'),
         ];
 
+        DB::beginTransaction();
+
         try {
             PrescriptionInfo::create($prescriptionInfo);
             Appointment::where('id',$appId)->update($appointments);
-            Alert::success('Prescription Updeated', 'Prescription Successfully Updeated');
+            Alert::success('Prescription Insert', 'Prescription Successfully Inserted');
             return redirect()->route('prescription.appointment');
             DB::commit();
         } catch(\Exception $ex){

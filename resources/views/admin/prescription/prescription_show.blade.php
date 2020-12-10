@@ -99,8 +99,14 @@
                 </div>
             </div>
             <div class="row">
+                <style>
+                    .symptoms p{
+                        margin: 0 !important;
+                        padding: 2px 0 !important;
+                    }
+                </style>
                 <div class="col-md-3">
-                    <div>{!! $prescriptionInfo->prescriptionInfo->symptoms !!}</div>
+                    <div class="symptoms">{!! $prescriptionInfo->prescriptionInfo->symptoms !!}</div>
                     <br>
                     <table class="table test">
                         <h3 style="font-weight: bold; text-decoration:underline">Tests</h3>
