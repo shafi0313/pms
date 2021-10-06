@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 29, 2020 at 07:15 AM
+-- Generation Time: Oct 06, 2021 at 07:41 PM
 -- Server version: 5.7.24
--- PHP Version: 7.4.7
+-- PHP Version: 7.4.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -45,7 +45,8 @@ CREATE TABLE `appointments` (
 --
 
 INSERT INTO `appointments` (`id`, `patient_id`, `doctor_id`, `p_status`, `t_status`, `a_status`, `date`, `time`, `created_at`, `updated_at`) VALUES
-(1, 11, '10', 1, 1, 0, '2020-12-08', '8AM to 10AM Sunday', '2020-12-08 05:00:14', '2020-12-08 05:14:32');
+(1, 11, '10', 1, 1, 0, '2020-12-08', '8AM to 10AM Sunday', '2020-12-08 05:00:14', '2020-12-08 05:14:32'),
+(2, 11, '10', 0, 0, 0, '2021-02-28', '8AM to 10AM Sunday', '2021-02-19 02:56:55', '2021-02-19 02:56:55');
 
 -- --------------------------------------------------------
 
@@ -1354,7 +1355,7 @@ ALTER TABLE `visitor_infos`
 -- AUTO_INCREMENT for table `appointments`
 --
 ALTER TABLE `appointments`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `doctor_chambers`
